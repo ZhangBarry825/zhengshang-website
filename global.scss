@@ -1,3 +1,8 @@
+@mixin page-style{
+  width: 100%;
+  min-width: 1300px;
+}
+
 @mixin line-hidden($line:1){
   display: -webkit-box;
   -webkit-box-orient: vertical;

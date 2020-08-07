@@ -48,6 +48,7 @@
 
 <style scoped lang="scss">
 .header-page{
+    z-index: 2;
     width: 100%;
     position: absolute;
     .center{

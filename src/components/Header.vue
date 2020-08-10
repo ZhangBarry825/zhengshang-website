@@ -50,6 +50,8 @@
 .header-page{
     z-index: 2;
     width: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
     .center{
         width: 1300px;

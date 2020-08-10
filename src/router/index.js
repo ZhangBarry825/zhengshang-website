@@ -10,6 +10,11 @@ Vue.use(VueRouter)
     name: 'Home',
     component: Home
   },
+    {
+      path: '/Business',
+      name: 'Business',
+      component:  () => import( '../views/Business')
+    },
   {
     path: '/about',
     name: 'About',

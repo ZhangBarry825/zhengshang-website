@@ -12,8 +12,13 @@ Vue.use(VueRouter)
   },
     {
       path: '/Business',
-      name: 'Business',
+      name: 'business',
       component:  () => import( '../views/Business')
+    },
+    {
+      path: '/GovCloud',
+      name: 'govcloud',
+      component:  () => import( '../views/GovCloud')
     },
   {
     path: '/about',

@@ -31,6 +31,11 @@ const routes = [
     component:  () => import( '../views/MiniProgram')
   },
   {
+    path: '/app-develop',
+    name: 'App',
+    component:  () => import( '../views/App')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting

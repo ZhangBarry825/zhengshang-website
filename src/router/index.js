@@ -11,15 +11,25 @@ const routes = [
     component: Home
   },
     {
-      path: '/Business',
+      path: '/business',
       name: 'business',
       component:  () => import( '../views/Business')
     },
     {
-      path: '/GovCloud',
+      path: '/gov-cloud',
       name: 'govcloud',
       component:  () => import( '../views/GovCloud')
     },
+  {
+    path: '/web-construct',
+    name: 'WebConstruct',
+    component:  () => import( '../views/WebConstruct')
+  },
+  {
+    path: '/mini-program',
+    name: 'MiniProgram',
+    component:  () => import( '../views/MiniProgram')
+  },
   {
     path: '/about',
     name: 'About',

@@ -2,7 +2,7 @@
     <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':''">
         <div class="center">
             <div class="left">
-                <h2 class="text">{{typeIndex==0?"系统集成":typeIndex==1?"政务云":typeIndex==2?"新闻中心":typeIndex==3?"关于我们":typeIndex==4?"联系我们":""}}</h2>
+                <h2 class="text">{{typeIndex==0?"系统集成":typeIndex==1?"政务云":typeIndex==2?"网站建设":typeIndex==3?"小程序定制开发":typeIndex==4?"联系我们":""}}</h2>
                 <div class="border"></div>
             </div>
             <div class="right"></div>
@@ -56,6 +56,27 @@
             }
         }
     }
+    .class2{
+        background-image: url("../assets/images/webb.png");
+        .center{
+            .right{
+                margin-top: 193px;
+                width: 805px;
+                height: 537px;
+                background-image: url("../assets/images/webb2.png");
+            }
+        }
+    }
+    .class3{
+        background-image: url("../assets/images/mini1.png");
+        .center{
+            .right{
+                width:593px;
+                height:462px;
+                background-image: url("../assets/images/mini2.png");
+            }
+        }
+    }
     .background-page{
         @include page-style;
         height: 780px;
@@ -89,7 +110,7 @@
                 @include back-img-center;
             }
             .scroller{
-                z-index: 9;
+                z-index: 10;
                 cursor: pointer;
                 width:46px;
                 height:46px;

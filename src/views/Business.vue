@@ -668,6 +668,10 @@
                                 display: flex;
                                 justify-content: center;
                                 align-self: center;
+
+                                font-size:24px;
+                                font-weight:400;
+                                color:rgba(51,51,51,1);
                             }
 
                             .logo {

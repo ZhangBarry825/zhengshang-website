@@ -133,8 +133,127 @@
                 </div>
             </div>
         </div>
-        <div class="white-box"></div>
-        <div class="gray-box"></div>
+        <div class="white-box">
+            <div class="progress">
+                <img src="../assets/images/pro.png" alt="">
+                <div class="text">系统开发流程</div>
+            </div>
+        </div>
+        <div class="gray-box">
+            <div class="delivery-standard">
+                <div class="title">交付标准</div>
+                <div class="items">
+                    <div class="item">
+                        <div class="logo">
+                            <img src="../assets/images/d1.png" alt="">
+                        </div>
+                        <div class="item-text">项目计划书</div>
+                        <img class="hoverImg" src="../assets/images/df1.png">
+                    </div>
+                    <div class="item">
+                        <div class="logo">
+                            <img src="../assets/images/d2.png" alt="">
+                        </div>
+                        <div class="item-text">设计稿源文件</div>
+                        <img class="hoverImg" src="../assets/images/df2.png">
+                    </div>
+                    <div class="item">
+                        <div class="logo">
+                            <img src="../assets/images/d3.png" alt="">
+                        </div>
+                        <div class="item-text">源代码</div>
+                        <img class="hoverImg" src="../assets/images/df3.png">
+                    </div>
+                    <div class="item">
+                        <div class="logo">
+                            <img src="../assets/images/d4.png" alt="">
+                        </div>
+                        <div class="item-text">使用文档</div>
+                        <img class="hoverImg" src="../assets/images/df4.png">
+                    </div>
+                    <div class="item">
+                        <div class="logo">
+                            <img src="../assets/images/d5.png" alt="">
+                        </div>
+                        <div class="item-text">账号信息</div>
+                        <img class="hoverImg" src="../assets/images/df5.png">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-box">
+                <div class="security-standard">
+                    <div class="title">系统安全标准</div>
+                    <div class="items">
+                        <div class="item item1">
+                            <div class="item-title">源代码安全</div>
+                            <div class="li">1、防SQL注入</div>
+                            <div class="li">2、过滤拦截机制</div>
+                            <div class="li">3、并发安全机制</div>
+                            <div class="li">4、加密(MDS、RSA、DES)</div>
+                            <div class="img">
+                                <img src="../assets/images/se0.png" alt="">
+                            </div>
+                        </div>
+                        <div class="item item2">
+                            <div class="item-title">程序安全</div>
+                            <div class="li">1、身份认证机制</div>
+                            <div class="li">2、权限控制</div>
+                            <div class="li">3、渗透测试</div>
+                            <div class="li">4、日志追踪</div>
+                            <div class="img">
+                                <img src="../assets/images/se1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="item item3">
+                            <div class="item-title">数据库安全</div>
+                            <div class="li">1、双机容错</div>
+                            <div class="li">2、数据备份</div>
+                            <div class="li">3、灾难恢复</div>
+                            <div class="li">
+                                4、数据存储(基于RAID的存
+                                储技术)
+                            </div>
+                            <div class="img">
+                                <img src="../assets/images/se2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="item item4">
+                            <div class="item-title">服务器安全</div>
+                            <div class="li">1、防火墙</div>
+                            <div class="li">2、入侵检测</div>
+                            <div class="li">3、漏洞扫描</div>
+                            <div class="li">4、物理隔离</div>
+                            <div class="img">
+                                <img src="../assets/images/se3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="technology-support">
+                <div class="title">
+                    技术支持
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="../assets/images/j1.png" class="item-img" alt="">
+                        <div class="item-title">程序使用培训</div>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/images/j2.png" class="item-img" alt="">
+                        <div class="item-title">项目问题咨询</div>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/images/j3.png" class="item-img" alt="">
+                        <div class="item-title">项目部署及维护</div>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/images/j4.png" class="item-img" alt="">
+                        <div class="item-title">后期功能升级和修改</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -181,6 +300,7 @@
             width: 1300px;
             position: relative;
             .ability{
+                z-index: 9;
                 min-width: 1300px;
                 height:996px;
                 background:rgba(15,21,51,1);
@@ -291,11 +411,228 @@
             width: 100%;
             height: 300px;
             background-color: #ffffff;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            .progress{
+                z-index: 10;
+                width:1300px;
+                height:852px;
+                background:rgba(255,255,255,1);
+                position: absolute;
+                top:732px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .text{
+                    position: absolute;
+                    right: 169px;
+                    top: 111px;
+                    font-size:34px;
+                    font-weight:500;
+                    color:rgba(51,51,51,1);
+                }
+            }
         }
         .gray-box{
             width:100%;
-            height:2715px;
             background:rgba(243,245,247,1);
+            .delivery-standard{
+                margin: 0 auto;
+                padding-top: 1290px;
+                width: 1300px;
+                .title {
+                    width: 100%;
+                    font-size: 34px;
+                    font-weight: 500;
+                    color: rgba(51, 51, 51, 1);
+                    text-align: center;
+                    padding: 68px 0 50px 0;
+                    margin-bottom: 55px;
+                }
+                .items {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .item {
+                        background-color: #ffffff;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-self: center;
+                        box-shadow: 0px 3px 30px 0px rgba(106, 122, 156, 0.3);
+                        width: 220px;
+                        height: 146px;
+                        position: relative;
+
+                        .item-text {
+                            display: flex;
+                            justify-content: center;
+                            align-self: center;
+
+                            font-size:22px;
+                            font-weight:400;
+                            color:rgba(51,51,51,1);
+                        }
+
+                        .logo {
+                            z-index: 9;
+                            width: 56px;
+                            height: 56px;
+                            background: rgba(255, 255, 255, 1);
+                            box-shadow: 0px 0px 20px 0px rgba(24, 94, 224, 0.15);
+                            border-radius: 50%;
+                            position: absolute;
+                            top: -28px;
+                            left: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .hoverImg {
+                            display: none;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            @include back-img-center;
+                        }
+                    }
+
+                    .item:hover {
+                        border-radius: 5px;
+
+                        .hoverImg {
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+            .bottom-box{
+                margin-top: 64px;
+                width: 100%;
+                height: 828px;
+                background-image: url("../assets/images/btm.png");
+                @include back-img-center;
+                background-size: 120% 110%;
+                .security-standard{
+                    width: 1300px;
+                    margin: 0 auto;
+                    padding-top: 20px;
+                    .title {
+                        width: 100%;
+                        font-size:34px;
+                        font-weight:500;
+                        color:rgba(255,255,255,1);
+                        text-align: center;
+                        padding: 68px 0 50px 0;
+                        margin-bottom: 30px;
+                    }
+                    .items{
+                        width: 100%;
+                        height: 412px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .item{
+                            width:279px;
+                            height:412px;
+                            background:rgba(23,39,99,.7);
+
+                            .item-title{
+                                margin-top: 26px;
+                                font-size:24px;
+                                font-weight:500;
+                                color:rgba(255,255,255,1);
+                                margin-bottom: 51px;
+                                width: 100%;
+                                text-align: center;
+                            }
+                            .li{
+                                font-size:18px;
+                                font-weight:400;
+                                color:rgba(255,255,255,1);
+                                margin-bottom: 22px;
+                                padding: 0 20px;
+                                box-sizing: border-box;
+                                line-height: 1.5;
+                            }
+
+                            .img{
+                                padding: 0 33px;
+                                box-sizing: border-box;
+                                margin-top: 51px;
+                                width: 100%;
+                                text-align: right;
+                                img{
+                                    width: 64px;
+                                    height: 64px;
+                                }
+                            }
+                        }
+                        .item2{
+                            img{
+                                width:66px !important;
+                                height:53px !important;
+                            }
+                        }
+                        .item3{
+                            .img{
+                                margin-top: 20px;
+                                img{
+                                    width:64px;
+                                    height:64px;
+                                }
+                            }
+
+                        }
+                        .item4{
+                            img{
+                                width:54px !important;
+                                height:56px !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .technology-support{
+                position: relative;
+                top: -130px;
+                width: 1300px;
+                margin: 0 auto;
+                .title {
+                    width: 100%;
+                    font-size:34px;
+                    color:rgba(51,51,51,1);
+                    text-align: center;
+                    margin-bottom: 60px;
+                }
+                .items{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .item{
+                        width: 287px;
+                        display: flex;
+                        flex-direction: column;
+                        .item-img{
+                            width:287px;
+                            height:201px;
+                        }
+                        .item-title{
+                            width: 100%;
+                            text-align: center;
+                            font-size:24px;
+                            font-weight:500;
+                            color:rgba(51,51,51,1);
+                            margin: 30px 0;
+                        }
+                    }
+                }
+            }
         }
     }
 

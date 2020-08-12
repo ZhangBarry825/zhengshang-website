@@ -32,8 +32,8 @@ const routes = [
   },
   {
     path: '/app-develop',
-    name: 'App',
-    component:  () => import( '../views/App')
+    name: 'Application',
+    component:  () => import( '../views/Application')
   },
   {
     path: '/about',

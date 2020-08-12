@@ -1,8 +1,8 @@
 <template>
-    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':''">
+    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':''">
         <div class="center">
             <div class="left">
-                <h2 class="text">{{typeIndex==0?"系统集成":typeIndex==1?"政务云":typeIndex==2?"网站建设":typeIndex==3?"小程序定制开发":typeIndex==4?"App定制化开发":""}}</h2>
+                <h2 class="text">{{typeIndex==0?"系统集成":typeIndex==1?"政务云":typeIndex==2?"网站建设":typeIndex==3?"小程序定制开发":typeIndex==4?"App定制化开发":typeIndex==5?"物联网":""}}</h2>
                 <div class="border"></div>
             </div>
             <div class="right"></div>
@@ -84,6 +84,20 @@
                 width:853px;
                 height:496px;
                 background-image: url("../assets/images/appback2.png");
+            }
+        }
+    }
+    .class5{
+        background-image: url("../assets/images/wlw0.png");
+        .center{
+            position: relative;
+            .left{
+                flex-shrink: 0;
+            }
+            .right{
+                width:1131px;
+                height:756px;
+
             }
         }
     }

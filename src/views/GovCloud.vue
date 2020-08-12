@@ -3,11 +3,11 @@
         <Header ></Header>
         <Background :type-index="1"></Background>
         <div class="center">
-            <div class="ability" :style="'width:'+(1300+(screenWidth-1300)/2+(screenWidth-1300)*3/10)+'px;left:-'+(screenWidth-1300)*3/10+'px'">
+            <div class="ability" >
                 <div class="ability-title">
                     可开发行业
                 </div>
-                <div class="list-line1">
+                <div class="list-line1" :style="'margin-left: '+marginWidth+'px;'">
                     <div class="item" @mouseenter="itemHover(0)" @mouseleave="itemHover(-1)">
                         <div class="item-line1">
                             <img :src="activeIndex==0?require('../assets/images/kkh0.png'):require('../assets/images/kk0.png')" alt="">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="list-line2">
+                <div class="list-line2" :style="'margin-left: '+marginWidth+'px;'">
                     <div class="item" @mouseenter="itemHover(5)" @mouseleave="itemHover(-1)">
                         <div class="item-line1">
                             <img :src="activeIndex==5?require('../assets/images/kkh5.png'):require('../assets/images/kk5.png')" alt="">
@@ -279,6 +279,12 @@
                 this.activeIndex = index
             }
         },
+        computed:{
+          marginWidth(){
+              let res= ((this.screenWidth-1300)/2-120)>0?((this.screenWidth-1300)/2-120):0
+              return res
+          }
+        },
         mounted() {
             this.screenWidth = document.body.clientWidth;
             this.screenHeight = document.body.clientHeight;
@@ -295,16 +301,21 @@
 <style scoped lang="scss">
     .GovCloud-page{
         @include page-style;
+        position: relative;
         .center{
             margin: 0 auto;
-            width: 1300px;
-            position: relative;
+            width: 100%;
+            height:996px;
+            position: absolute;
+            overflow-x: hidden;
             .ability{
                 z-index: 9;
+                width: 100%;
                 min-width: 1300px;
                 height:996px;
                 background:rgba(15,21,51,1);
                 position: absolute;
+                left: 120px;
                 .ability-title{
                     width: 100%;
                     text-align: center;
@@ -314,7 +325,6 @@
                     margin: 94px 0;
                 }
                 .list-line1{
-                    margin-left: 180px;
                     width: 1300px;
                     display: flex;
                     .item:hover{
@@ -360,7 +370,6 @@
                     }
                 }
                 .list-line2{
-                    margin-left: 180px;
                     width: 1300px;
                     display: flex;
                     .item:hover{

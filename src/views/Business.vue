@@ -694,7 +694,8 @@
                                 position: absolute;
                                 width: 100%;
                                 height: 100%;
-                                @include back-img-center;
+                                left: 0;
+                                top: 0;
                             }
                         }
 

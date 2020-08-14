@@ -191,6 +191,7 @@
         }
 
         .menu-tag {
+            z-index: 9999999999999999 !important;
             width: 100%;
             background-color: #ffffff;
 
@@ -219,6 +220,7 @@
                         margin-bottom: 24px;
                     }
 
+
                     .lists {
                         width: 100%;
                         display: flex;
@@ -232,6 +234,11 @@
                             flex-direction: column;
                             margin-bottom: 29px;
 
+                            .list-title:hover{
+                                .text{
+                                    color: rgba(24, 94, 224, 1);
+                                }
+                            }
                             .list-title {
                                 width: 100%;
                                 display: flex;
@@ -273,7 +280,7 @@
                                 }
 
                                 .list-item:hover {
-                                    color: rgba(255, 131, 56, 1);
+                                    color: rgba(24, 94, 224, 1);
                                 }
                             }
 
@@ -322,7 +329,7 @@
                                 }
 
                                 .item:hover {
-                                    color: #FF8338;
+                                    color: rgba(24, 94, 224, 1);
                                 }
                             }
                         }

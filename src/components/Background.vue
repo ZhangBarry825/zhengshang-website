@@ -130,7 +130,7 @@
                 }
             }
             .right{
-                z-index: 9;
+                z-index: 1;
                 @include back-img-center;
             }
             .scroller{

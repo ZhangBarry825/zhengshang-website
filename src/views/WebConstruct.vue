@@ -103,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+                <img src="../assets/images/other.png" alt="" class="other-img">
             </div>
         </div>
         <div class="progress-box">
@@ -375,7 +376,7 @@
                 width: 1300px;
                 margin: 0 auto;
                 margin-bottom: 50px;
-
+                position: relative;
                 .title {
                     width: 100%;
                     font-size: 34px;
@@ -485,6 +486,12 @@
                     .column3 {
                         width: 300px;
                     }
+                }
+
+                .other-img{
+                    position: absolute;
+                    right: 450px;
+                    bottom: 50px;
                 }
             }
 

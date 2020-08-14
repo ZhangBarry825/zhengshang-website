@@ -16,7 +16,7 @@
                         <div class="item" :class="businessIndex==0?'selected':''" @click="businessSelect(0)">
                             <img class="visible" src="../assets/images/z1.png" alt="">
                             <img class="hidden" src="../assets/images/zz1.png" alt="">
-                            <div class="text">社交</div>
+                            <div class="text">智能家居</div>
                         </div>
                         <div class="item" :class="businessIndex==1?'selected':''" @click="businessSelect(1)">
                             <img class="visible" src="../assets/images/z2.png" alt="">

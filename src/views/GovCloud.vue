@@ -343,6 +343,7 @@
                         flex-direction: column;
                         padding: 42px;
                         box-sizing: border-box;
+                        align-items: flex-start;
                         .item-line1{
 
                         }
@@ -387,6 +388,7 @@
                         flex-direction: column;
                         padding: 42px;
                         box-sizing: border-box;
+                        align-items: flex-start;
                         .item-line1{
 
                         }

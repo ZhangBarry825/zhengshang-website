@@ -727,6 +727,7 @@
                                 font-size:18px;
                                 font-weight:400;
                                 color:rgba(51,51,51,1);
+                                text-align: left;
                             }
                         }
                     }

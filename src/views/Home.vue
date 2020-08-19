@@ -81,7 +81,7 @@
         @include page-style;
 
         .home-back {
-            background-image: url("../assets/images/home-back.png");
+            background-image: url("../assets/images/home-back.gif");
             @include back-img-center;
             width: 100%;
             min-width: 1300px;

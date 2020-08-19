@@ -114,15 +114,13 @@
                             </div>
                             <div class="left-item">
                                 <div class="item-title">六个角色</div>
-                                <div class="item-context">
-                                    项目经理、产品经理、UI设计师、前端开发工程师、<br>
+                                <div class="item-context">项目经理、产品经理、UI设计师、前端开发工程师、<br>
                                     JAVA开发工程师、系统测试工程师
                                 </div>
                             </div>
                             <div class="left-item">
                                 <div class="item-title">阶段成果</div>
-                                <div class="item-context">
-                                    《开工确认单》、《需求原型确认单》<br>
+                                <div class="item-context">《开工确认单》、《需求原型确认单》<br>
                                     《UI设计确认单》、《测试报告确认单》
                                 </div>
                             </div>
@@ -539,7 +537,7 @@
                             font-size: 34px;
                             font-weight: 500;
                             color: rgba(255, 255, 255, 1);
-                            margin-bottom: 72px;
+                            margin-bottom: 60px;
                         }
 
                         .left-item {
@@ -550,8 +548,8 @@
                                 font-size: 24px;
                                 font-weight: 400;
                                 color: rgba(255, 255, 255, 1);
-                                margin-bottom: 27px;
-                                margin-top: 57px;
+                                margin-bottom: 28px;
+                                margin-top: 50px;
                             }
 
                             .item-context {
@@ -643,8 +641,8 @@
                         font-weight: 500;
                         color: rgba(51, 51, 51, 1);
                         text-align: center;
-                        padding: 68px 0 50px 0;
-                        margin-bottom: 55px;
+                        padding: 80px 0 40px 0;
+                        margin-bottom: 40px;
                     }
 
                     .items {
@@ -718,8 +716,8 @@
                         font-weight: 500;
                         color: rgba(51, 51, 51, 1);
                         text-align: center;
-                        padding: 68px 0 50px 0;
-                        margin-bottom: 55px;
+                        padding: 110px 0 50px 0;
+                        margin-bottom: 20px;
                     }
 
                     .items {

@@ -7,18 +7,10 @@
                 <div class="title">可开发行业</div>
                 <div class="content">
                     <div class="left">
-                        <div class="left-title">直播类小程序</div>
-                        <div class="left-item">
-                            <div class="line1">多渠道预热，蓄水前置流量</div>
-                            <div class="line2">提前曝光直播内容，社群、首页、详情页开启活动预热</div>
-                        </div>
-                        <div class="left-item">
-                            <div class="line1">全场景推广，快速引流获客</div>
-                            <div class="line2">直播导购、产品展示、新品发布、助力商家“流量"变成“销量”</div>
-                        </div>
-                        <div class="left-item">
-                            <div class="line1">边看边买，导购在线推荐</div>
-                            <div class="line2">在线演示增强信任，OMG热搜式销货，提高转化</div>
+                        <div class="left-title">{{textList[selectedIndex].title}}</div>
+                        <div class="left-item" v-for="item in textList[selectedIndex].itemList">
+                            <div class="line1">{{item.title}}</div>
+                            <div class="line2">{{item.context}}</div>
                         </div>
                         <div class="more">
                             <div class="text">了解更多</div>
@@ -26,54 +18,52 @@
                         </div>
                     </div>
                     <div class="right">
-                        <img src="../assets/images/circle.png" alt="">
-                        <div class="item item0">
+                        <img class="active-item0" src="../assets/images/circle.png" alt="">
+                        <div class="item item0 active-item4" :class="selectedIndex==3?'selected':''" @mouseenter="selectChange(3)">
                             <img class="visible" src="../assets/images/kk0.png" alt="">
                             <img class="hidden" src="../assets/images/kkh0.png" alt="">
                             <div class="text">社交</div>
                         </div>
-                        <div class="item item1">
+                        <div class="item item1 active-item1" :class="selectedIndex==0?'selected':''" @mouseenter="selectChange(0)">
                             <img class="visible" src="../assets/images/kk1.png" alt="">
                             <img class="hidden" src="../assets/images/kkh1.png" alt="">
                             <div class="text">直播</div>
                         </div>
-                        <div class="item item2">
+                        <div class="item item2 active-item3" :class="selectedIndex==2?'selected':''" @mouseenter="selectChange(2)">
                             <img class="visible" src="../assets/images/kk2.png" alt="">
                             <img class="hidden" src="../assets/images/kkh2.png" alt="">
                             <div class="text">教育</div>
                         </div>
-                        <div class="item item3">
+                        <div class="item item3 active-item2" :class="selectedIndex==1?'selected':''" @mouseenter="selectChange(1)">
                             <img class="visible" src="../assets/images/kk3.png" alt="">
                             <img class="hidden" src="../assets/images/kkh3.png" alt="">
                             <div class="text">医疗</div>
                         </div>
-                        <div class="item item4">
+                        <div class="item item4 active-item9" :class="selectedIndex==8?'selected':''" @mouseenter="selectChange(8)">
                             <img class="visible" src="../assets/images/kk4.png" alt="">
                             <img class="hidden" src="../assets/images/kkh4.png" alt="">
                             <div class="text">健身</div>
                         </div>
-                        <div class="item item5">
+                        <div class="item item5 active-item8" :class="selectedIndex==7?'selected':''" @mouseenter="selectChange(7)">
                             <img class="visible" src="../assets/images/kk5.png" alt="">
                             <img class="hidden" src="../assets/images/kkh5.png" alt="">
                             <div class="text">团购</div>
                         </div>
-                        <div class="item item6">
+                        <div class="item item6 active-item7" :class="selectedIndex==6?'selected':''" @mouseenter="selectChange(6)">
                             <img class="visible" src="../assets/images/kk6.png" alt="">
                             <img class="hidden" src="../assets/images/kkh6.png" alt="">
                             <div class="text">外卖</div>
                         </div>
-                        <div class="item item7">
+                        <div class="item item7 active-item6" :class="selectedIndex==5?'selected':''" @mouseenter="selectChange(5)">
                             <img class="visible" src="../assets/images/kk7.png" alt="">
                             <img class="hidden" src="../assets/images/kkh7.png" alt="">
                             <div class="text">跑腿</div>
                         </div>
-                        <div class="item item8">
+                        <div class="item item8 active-item5" :class="selectedIndex==4?'selected':''" @mouseenter="selectChange(4)">
                             <img class="visible" src="../assets/images/kk8.png" alt="">
                             <img class="hidden" src="../assets/images/kkh8.png" alt="">
                             <div class="text">交友</div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -156,7 +146,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pagination"></div>
+                        <div class="pagination">
+                            <div class="right">
+                                <img v-if="progressPage==0" src="../assets/images/left-gray.png" alt="">
+                                <img v-else src="../assets/images/left-blue.png" @click="changePage(-1)">
+                                <img v-if="progressPage==1" src="../assets/images/right-gray.png" alt="">
+                                <img v-else src="../assets/images/right-blue.png" @click="changePage(1)">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -325,34 +322,239 @@
         },
         data() {
             return {
-                progressIndex: 1
+                progressIndex: 0,
+                selectedIndex:0,
+                progressPage:0,
+                textList:[
+                    {
+                        title:'直播类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'医疗类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'教育类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'社交类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'交友类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'跑腿类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'外卖类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'团购类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                    {
+                        title:'健身类小程序',
+                        itemList:[
+                            {
+                                title:'多渠道预热，蓄水前置流量',
+                                context:'提前曝光直播内容，社群、首页、详情页开启活动预热'
+                            },
+                            {
+                                title:'全场景推广，快速引流获客',
+                                context:'直播导购、产品展示、新品发布、助力商家“流量"变成“销量”'
+                            },
+                            {
+                                title:'边看边买，导购在线推荐',
+                                context:'在线演示增强信任，OMG热搜式销货，提高转化'
+                            }
+                        ]
+                    },
+                ]
             }
         },
         methods: {
+            changePage(index){
+                this.progressPage+=index
+                if(this.progressPage==1){
+                    this.progressList=[
+                        {
+                            num:'05',
+                            title:'品牌定位规范',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                        {
+                            num:'06',
+                            title:'交互视觉设计',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                        {
+                            num:'07',
+                            title:'行业数据分析',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                    ]
+                }else {
+                    this.progressList=[
+                        {
+                            num:'01',
+                            title:'行业数据分析',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                        {
+                            num:'02',
+                            title:'品牌定位规范',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                        {
+                            num:'03',
+                            title:'交互视觉设计',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                        {
+                            num:'04',
+                            title:'行业数据分析',
+                            context:'甲方乙方组建团队，了解项目需求，进行行业数据分析，甲方乙方组建团队'
+                        },
+                    ]
+                }
+            },
+            selectChange(index){
+                this.selectedIndex=index
+            },
             selectProgress(index) {
                 this.progressIndex = index
-                switch (index) {
-                    case 1:
-                        break;
-                    case 2:
-                        document.getElementById('item1').scrollIntoView({block: 'start', behavior: 'smooth'})
-                        break;
-                    case 3:
-                        document.getElementById('item2').scrollIntoView({block: 'start', behavior: 'smooth'})
-                        break;
-                    case 4:
-                        document.getElementById('item3').scrollIntoView({block: 'start', behavior: 'smooth'})
-                        break;
-                    case 5:
-                        document.getElementById('item4').scrollIntoView({block: 'start', behavior: 'smooth'})
-                        break;
-                    case 6:
-                        document.getElementById('item5').scrollIntoView({block: 'start', behavior: 'smooth'})
-                        break;
-                    case 7:
-                        break;
-
-                }
+                // switch (index) {
+                //     case 1:
+                //         break;
+                //     case 2:
+                //         document.getElementById('item1').scrollIntoView({block: 'start', behavior: 'smooth'})
+                //         break;
+                //     case 3:
+                //         document.getElementById('item2').scrollIntoView({block: 'start', behavior: 'smooth'})
+                //         break;
+                //     case 4:
+                //         document.getElementById('item3').scrollIntoView({block: 'start', behavior: 'smooth'})
+                //         break;
+                //     case 5:
+                //         document.getElementById('item4').scrollIntoView({block: 'start', behavior: 'smooth'})
+                //         break;
+                //     case 6:
+                //         document.getElementById('item5').scrollIntoView({block: 'start', behavior: 'smooth'})
+                //         break;
+                //     case 7:
+                //         break;
+                //
+                // }
 
             }
         }
@@ -478,6 +680,22 @@
                                 display: none;
                             }
                         }
+                        .selected{
+                            background: rgba(0, 76, 229, 1);
+                            box-shadow: 0px 3px 25px 0px rgba(101, 110, 158, 0.2);
+
+                            .text {
+                                color: #ffffff;
+                            }
+
+                            .visible {
+                                display: none;
+                            }
+
+                            .hidden {
+                                display: block;
+                            }
+                        }
 
                         .item:hover {
                             background: rgba(0, 76, 229, 1);
@@ -548,7 +766,7 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-
+                padding-bottom: 50px;
                 .title {
                     width: 100%;
                     text-align: center;
@@ -592,7 +810,7 @@
                             -ms-overflow-style: none;
 
                             width: 435px;
-                            height: 500px;
+                            height: 603px;
                             overflow: scroll;
 
                             .item:first-child {
@@ -613,13 +831,14 @@
                                     flex-direction: row;
                                     align-items: center;
                                     justify-content: flex-end;
-                                    margin-bottom: 10px;
-                                    padding-top: 20px;
+                                    margin-bottom: 20px;
+                                    padding-top: 35px;
 
                                     .text {
                                         font-size: 24px;
                                         font-weight: 500;
                                         color: rgba(51, 51, 51, 1);
+                                        padding: 10px 0;
                                     }
 
                                     .num {
@@ -639,6 +858,9 @@
                                 }
                             }
 
+                            .item:hover{
+                                border-right: 5px solid #FF8337;
+                            }
                             .selected {
                                 border-right: 5px solid #FF8337;
 
@@ -651,7 +873,25 @@
                         }
 
                         .pagination {
+                            width: 100%;
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 40px 0;
 
+                            .right {
+                                display: flex;
+                                flex-direction: row;
+
+                                img {
+                                    cursor: pointer;
+                                    width: 12px;
+                                    height: 22px;
+                                }
+
+                                img:first-child {
+                                    margin-right: 47px;
+                                }
+                            }
                         }
                     }
                 }
@@ -741,6 +981,9 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    .item:hover{
+                        box-shadow: 0px 3px 50px 0px rgba(105, 122, 156, 0.25);
+                    }
                     .item{
                         width:269px;
                         height:392px;
@@ -776,9 +1019,9 @@
         }
 
         .technology-support{
-
             width: 1300px;
             margin: 0 auto;
+            padding-bottom: 50px;
             .title {
                 width: 100%;
                 font-size:34px;

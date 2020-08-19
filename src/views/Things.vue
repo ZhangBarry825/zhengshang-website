@@ -763,7 +763,7 @@
                                 flex-direction: column;
                                 padding: 25px 0;
                                 box-sizing: border-box;
-
+                                align-items: flex-start;
                                 .item {
                                     margin: 25px 0;
                                     font-size: 22px;

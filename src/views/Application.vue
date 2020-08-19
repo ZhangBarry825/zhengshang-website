@@ -343,7 +343,9 @@
                         width: 840px;
                         height: 840px;
                         background-image: url("../assets/images/circle0.png");
-
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
                         img {
 
                         }
@@ -354,10 +356,11 @@
                         display: flex;
                         flex-direction: row;
                         align-items: center;
+                        margin-right: 25px;
                     }
 
                     .right {
-                        width: 350px;
+                        width: 320px;
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
@@ -396,6 +399,9 @@
                             .visible {
                                 display: none;
                             }
+                        }
+                        .item:nth-child(2n){
+                            justify-content: flex-end;
                         }
 
                         .item {

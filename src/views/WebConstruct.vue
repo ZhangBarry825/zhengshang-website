@@ -696,6 +696,9 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                .item:hover{
+                    box-shadow: 0px 3px 50px 0px rgba(105, 122, 156, 0.25);
+                }
                 .item{
                     background-color: #ffffff;
                     width:269px;

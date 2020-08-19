@@ -527,6 +527,7 @@
                 height: 828px;
                 background-image: url("../assets/images/btm.png");
                 @include back-img-center;
+
                 background-size: 120% 110%;
                 .security-standard{
                     width: 1300px;

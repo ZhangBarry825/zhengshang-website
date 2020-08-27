@@ -142,8 +142,8 @@
     .isFixed {
         position: fixed !important;
         background-color: #ffffff;
-        box-shadow: 0 8px 20px 0 rgba(167, 176, 208, 0.2);
-
+        box-shadow: 0 8px 20px 0 rgba(167, 176, 208, 0.4);
+        z-index: 999 !important;
         .center {
             .right {
                 .item {

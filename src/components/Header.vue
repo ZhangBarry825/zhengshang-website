@@ -1,33 +1,33 @@
 <template>
-    <div class="header-page" @mouseleave="hideMenus">
+    <div class="header-page " :class="{'isFixed':isFixed}" @mouseleave="hideMenus">
         <div class="center">
             <div class="left">
-                <img src="../assets/images/logo.png" alt="">
+                <img :src="isFixed?logo1:logo" alt="">
             </div>
             <div class="right">
-                <div class="item" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==0}" @mouseover="showMenus">
                     <span>首页</span>
-                    <div class="border" v-if="menu==0"></div>
+                    <div class="border"></div>
                 </div>
-                <div class="item" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==1}" @mouseover="showMenus">
                     <span>业务领域</span>
-                    <div class="border" v-if="menu==1"></div>
+                    <div class="border"></div>
                 </div>
-                <div class="item" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==2}" @mouseover="showMenus">
                     <span>客户案例</span>
-                    <div class="border" v-if="menu==2"></div>
+                    <div class="border"></div>
                 </div>
-                <div class="item" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==3}" @mouseover="showMenus">
                     <span>新闻中心</span>
-                    <div class="border" v-if="menu==3"></div>
+                    <div class="border"></div>
                 </div>
-                <div class="item">
+                <div class="item" :class="{'selected':menu==4}" >
                     <span>关于我们</span>
-                    <div class="border" v-if="menu==4"></div>
+                    <div class="border"></div>
                 </div>
-                <div class="item">
+                <div class="item" :class="{'selected':menu==5}" >
                     <span>联系我们</span>
-                    <div class="border" v-if="menu==5"></div>
+                    <div class="border"></div>
                 </div>
             </div>
         </div>
@@ -85,6 +85,9 @@
         },
         data() {
             return {
+                logo: require('../assets/images/logo.png'),
+                logo1: require('../assets/images/logo1.png'),
+                isFixed: false,
                 isMenuShow: false,
                 businessItems: [
                     {
@@ -122,25 +125,64 @@
             },
             hideMenus() {
                 this.isMenuShow = false
+            },
+            handleScroll() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
+                this.isFixed = scrollTop > 0 ? true : false;  // 如果滚动到顶部了，this.isFixed就为true
+                console.log(this.isFixed)
             }
+        },
+        mounted() {
+            window.addEventListener('scroll', this.handleScroll)
         }
     }
 </script>
 
 <style scoped lang="scss">
+    .isFixed {
+        position: fixed !important;
+        background-color: #ffffff;
+        box-shadow: 0 8px 20px 0 rgba(167, 176, 208, 0.2);
+
+        .center {
+            .right {
+                .item {
+                    span {
+                        color: #333333 !important;
+                    }
+                    .border {
+                        background: #014CE5 !important;
+                        opacity: 0;
+                    }
+                }
+                .selected{
+                    span {
+                        color: #014CE5 !important;
+                    }
+                    .border {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
     .header-page {
+        transition: all .6s;
+        position: fixed;
         z-index: 2;
         width: 100%;
         top: 0;
         left: 0;
-        position: absolute;
         display: flex;
         flex-direction: column;
 
         .fade-enter-active, .fade-leave-active {
             transition: opacity .5s;
         }
-        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+        {
             opacity: 0;
         }
 
@@ -166,6 +208,7 @@
                 justify-content: space-around;
                 align-items: center;
 
+
                 .item {
                     cursor: pointer;
                     height: 100%;
@@ -184,16 +227,23 @@
                         height: 4px;
                         background: #fff;
                         border-radius: 2px;
+                        opacity: 0;
+                    }
+                }
 
+                .selected {
+                    .border {
+                        opacity: 1;
                     }
                 }
             }
         }
 
         .menu-tag {
-            z-index: 9999999999999999 !important;
+            z-index: 99 !important;
             width: 100%;
             background-color: #ffffff;
+
 
             .menu-center {
                 width: 1300px;
@@ -234,11 +284,12 @@
                             flex-direction: column;
                             margin-bottom: 29px;
 
-                            .list-title:hover{
-                                .text{
+                            .list-title:hover {
+                                .text {
                                     color: rgba(24, 94, 224, 1);
                                 }
                             }
+
                             .list-title {
                                 width: 100%;
                                 display: flex;

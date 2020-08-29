@@ -31,8 +31,8 @@
                 </div>
             </div>
         </div>
-        <transition name="fade" v-if="isMenuShow" >
-            <div class="menu-tag">
+        <transition name="fade" >
+            <div class="menu-tag" v-if="isMenuShow" >
                 <div class="menu-center">
                     <div class="center-left">
                         <div class="item-title">业务领域</div>
@@ -155,13 +155,13 @@
             if(this.needFixed){
                 this.isFixed=true
             }
+
         },
         mounted() {
             if(this.needFixed){
                 this.isFixed=true
             }
             window.addEventListener('scroll', this.handleScroll)
-
         }
     }
 </script>
@@ -169,7 +169,7 @@
 <style scoped lang="scss">
 
     .fade-enter-active, .fade-leave-active {
-        transition: all .5s;
+        transition: opacity .5s;
     }
 
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
@@ -178,7 +178,6 @@
     }
 
     .isFixed {
-
         position: fixed !important;
         background-color: #ffffff;
         box-shadow: 0 8px 20px 0 rgba(167, 176, 208, 0.4);
@@ -211,7 +210,7 @@
     }
 
     .header-page {
-
+        transition: all 0.6s;
         position: fixed;
         z-index: 2;
         width: 100%;

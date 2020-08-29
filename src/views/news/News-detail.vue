@@ -69,7 +69,7 @@
                     <div class="line2">微信小程序三周年，又一个“互联网时代”重启了？</div>
                     <div class="line3">2020-08-19</div>
                 </div>
-                <div class="back">
+                <div class="back" @click="$router.push('/news')">
                     <div class="text">返回列表</div>
                     <img src="../../assets/images/back0.png" alt="">
                 </div>

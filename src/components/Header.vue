@@ -13,19 +13,19 @@
                     <span>业务领域</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==2}" @mouseover="showMenus" @click="goTo('/business/case')">
+                <div class="item" :class="{'selected':menu==2}" @mouseover="showMenus" @click="goTo('/case')">
                     <span>客户案例</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==3}" @mouseover="showMenus" @click="goTo('/business/news')">
+                <div class="item" :class="{'selected':menu==3}" @mouseover="showMenus" @click="goTo('/news')">
                     <span>新闻中心</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==4}" @click="goTo('/business/us')">
+                <div class="item" :class="{'selected':menu==4}" @click="goTo('/us')">
                     <span>关于我们</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==5}" @click="goTo('/business/contact')">
+                <div class="item" :class="{'selected':menu==5}" @click="goTo('/contact')">
                     <span>联系我们</span>
                     <div class="border"></div>
                 </div>
@@ -140,7 +140,6 @@
             handleScroll() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
                 this.isFixed = scrollTop > 0 ? true : false;  // 如果滚动到顶部了，this.isFixed就为true
-                console.log(this.isFixed)
 
                 window.onscroll = function () {
                     var sl = -Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);

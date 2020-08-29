@@ -8,7 +8,11 @@ Vue.config.productionTip = false
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
-
+let author={
+  'construct by': 'BarryZhang',
+  'email':'530027054@qq.com'
+}
+console.warn(author)
 new Vue({
   router,
   store,

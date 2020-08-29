@@ -1,14 +1,14 @@
 <template>
-    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':typeIndex==6?'class6':''">
+    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':typeIndex==6?'class6':typeIndex==7?'class7':''">
         <div class="center">
             <div class="left">
-                <h2 class="text">{{typeIndex==0 ?"系统集成":typeIndex==1 ?"政务云":typeIndex==2 ?"网站建设":typeIndex==3 ?"小程序定制开发":typeIndex==4 ?"App定制化开发":typeIndex==5 ?"物联网":typeIndex==6 ?"客户案例":""}}</h2>
+                <h2 class="text">{{typeIndex==0 ?"系统集成":typeIndex==1 ?"政务云":typeIndex==2 ?"网站建设":typeIndex==3 ?"小程序定制开发":typeIndex==4 ?"App定制化开发":typeIndex==5 ?"物联网":typeIndex==6 ?"客户案例":typeIndex==7 ?"新闻中心":""}}</h2>
                 <div class="border"></div>
             </div>
             <div class="right"></div>
-            <div class="scroller" @click="scrollTo"></div>
+            <div class="scroller" v-if="showScroll" @click="scrollTo"></div>
         </div>
-        <div id="toHere"></div>
+        <div id="toHere" ></div>
     </div>
 </template>
 
@@ -19,6 +19,10 @@
             typeIndex:{
                 type:Number,
                 default:0
+            },
+            showScroll:{
+                type:Boolean,
+                default:true
             }
         },
         data(){
@@ -108,6 +112,18 @@
                 width: 905px;
                 height: 708px;
                 background-image: url("../assets/images/khal00.png");
+                background-position: 60px center !important;
+            }
+        }
+    }
+    .class7{
+        background-image: url("../assets/images/ns.png");
+        .center{
+            .right{
+                width: 905px;
+                height: 780px;
+                background-image: url("../assets/images/ns0.png");
+                background-position: 100px center !important;
             }
         }
     }

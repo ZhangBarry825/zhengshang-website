@@ -31,8 +31,8 @@
                 </div>
             </div>
         </div>
-        <transition name="fade">
-            <div v-if="isMenuShow" class="menu-tag">
+        <transition name="fade" v-if="isMenuShow" >
+            <div class="menu-tag">
                 <div class="menu-center">
                     <div class="center-left">
                         <div class="item-title">业务领域</div>
@@ -81,13 +81,17 @@
             menu: {
                 type: Number,
                 default: -1
+            },
+            needFixed: {
+                type: Boolean,
+                default: false
             }
         },
         data() {
             return {
+                isFixed:false,
                 logo: require('../assets/images/logo.png'),
                 logo1: require('../assets/images/logo1.png'),
-                isFixed: false,
                 isMenuShow: false,
                 businessItems: [
                     {
@@ -147,14 +151,34 @@
                 }
             }
         },
+        updated() {
+            if(this.needFixed){
+                this.isFixed=true
+            }
+        },
         mounted() {
+            if(this.needFixed){
+                this.isFixed=true
+            }
             window.addEventListener('scroll', this.handleScroll)
+
         }
     }
 </script>
 
 <style scoped lang="scss">
+
+    .fade-enter-active, .fade-leave-active {
+        transition: all .5s;
+    }
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+    {
+        opacity: 0;
+    }
+
     .isFixed {
+
         position: fixed !important;
         background-color: #ffffff;
         box-shadow: 0 8px 20px 0 rgba(167, 176, 208, 0.4);
@@ -187,7 +211,7 @@
     }
 
     .header-page {
-        transition: background-color .6s;
+
         position: fixed;
         z-index: 2;
         width: 100%;
@@ -197,14 +221,6 @@
         display: flex;
         flex-direction: column;
 
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity .5s;
-        }
-
-        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-        {
-            opacity: 0;
-        }
 
         .center {
             width: 1300px;

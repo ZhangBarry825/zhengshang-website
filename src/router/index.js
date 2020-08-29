@@ -12,8 +12,7 @@ const routes = [
     },
     {
         path: '/home',
-        name: 'Home',
-        component: Home
+        redirect:'/'
     },
     {
         path: '/business/system',
@@ -49,6 +48,21 @@ const routes = [
         path: '/case',
         name: 'Case',
         component: () => import( '../views/case/Case')
+    },
+    {
+        path: '/case-detail',
+        name: 'CaseDetail',
+        component: () => import( '../views/case/CaseDetail')
+    },
+    {
+        path: '/news',
+        name: 'News',
+        component: () => import( '../views/news/News')
+    },
+    {
+        path: '/news-detail',
+        name: 'NewsDetail',
+        component: () => import( '../views/news/News-detail')
     },
     {
         path: '/about',

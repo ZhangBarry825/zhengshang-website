@@ -1,31 +1,31 @@
 <template>
-    <div class="header-page " :class="{'isFixed':isFixed}" @mouseleave="hideMenus">
+    <div class="header-page" id="fixed" :class="{'isFixed':isFixed}" @mouseleave="hideMenus">
         <div class="center">
             <div class="left">
                 <img :src="isFixed?logo1:logo" alt="">
             </div>
             <div class="right">
-                <div class="item" :class="{'selected':menu==0}" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==0}" @mouseover="showMenus" @click="goTo('/home')">
                     <span>首页</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==1}" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==1}" @mouseover="showMenus" @click="goTo('/business/app-develop')">
                     <span>业务领域</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==2}" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==2}" @mouseover="showMenus" @click="goTo('/business/case')">
                     <span>客户案例</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==3}" @mouseover="showMenus">
+                <div class="item" :class="{'selected':menu==3}" @mouseover="showMenus" @click="goTo('/business/news')">
                     <span>新闻中心</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==4}" >
+                <div class="item" :class="{'selected':menu==4}" @click="goTo('/business/us')">
                     <span>关于我们</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==5}" >
+                <div class="item" :class="{'selected':menu==5}" @click="goTo('/business/contact')">
                     <span>联系我们</span>
                     <div class="border"></div>
                 </div>
@@ -40,10 +40,10 @@
                             <div class="list" v-for="item in businessItems">
                                 <div class="list-title">
                                     <div class="dot"></div>
-                                    <div class="text">{{item.title}}</div>
+                                    <div class="text"  @click="goTo(item.url)">{{item.title}}</div>
                                 </div>
                                 <div class="list-content">
-                                    <div class="list-item" v-for="item2 in item.items">{{item2}}</div>
+                                    <div class="list-item"  @click="goTo(item.url)" v-for="item2 in item.items">{{item2}}</div>
                                 </div>
                             </div>
                         </div>
@@ -51,15 +51,15 @@
                     <div class="center-right">
                         <div class="right-top">
                             <div class="right-left">
-                                <div class="item-title">客户案例</div>
+                                <div class="item-title" @click="goTo(caseUrl)">客户案例</div>
                                 <div class="right-items">
-                                    <div class="item" v-for="item in caseList">{{item}}</div>
+                                    <div class="item" v-for="item in caseList" @click="goTo(caseUrl)">{{item}}</div>
                                 </div>
                             </div>
                             <div class="right-left">
-                                <div class="item-title">新闻中心</div>
+                                <div class="item-title" @click="goTo(newsUrl)">新闻中心</div>
                                 <div class="right-items">
-                                    <div class="item" v-for="item in newsList">{{item}}</div>
+                                    <div class="item" v-for="item in newsList" @click="goTo(newsUrl)">{{item}}</div>
                                 </div>
                             </div>
                         </div>
@@ -92,27 +92,33 @@
                 businessItems: [
                     {
                         title: 'APP开发',
-                        items: ['社交', '交友', '跑腿', '直播', '教育', '外卖', '团购', '医疗',]
+                        items: ['社交', '交友', '跑腿', '直播', '教育', '外卖', '团购', '医疗',],
+                        url:'/business/app-develop'
                     },
                     {
                         title: '系统集成',
-                        items: ['ERP企业管理系统', '报表管理系统', 'CRM客户管理系统', '日程管理系统', '客户管理系统', '项目管理系统']
+                        items: ['ERP企业管理系统', '报表管理系统', 'CRM客户管理系统', '日程管理系统', '客户管理系统', '项目管理系统'],
+                        url:'/business/system'
                     },
                     {
                         title: '小程序开发',
-                        items: ['展示小程序', '平台直播', '商城小程序       ', '相亲交友', '社区团购', '其他']
+                        items: ['展示小程序', '平台直播', '商城小程序       ', '相亲交友', '社区团购', '其他'],
+                        url:'/business/mini-program'
                     },
                     {
                         title: '政务云',
-                        items: ['政府OA办公系统', '档案管理系统', '人事管理系统', '采购管理系统', '流程管理系统', '会议管理系统']
+                        items: ['政府OA办公系统', '档案管理系统', '人事管理系统', '采购管理系统', '流程管理系统', '会议管理系统'],
+                        url:'/business/gov-cloud'
                     },
                     {
                         title: '网站建设',
-                        items: ['企业官网', '行业门户     ', '社区论坛', '电商网站']
+                        items: ['企业官网', '行业门户     ', '社区论坛', '电商网站'],
+                        url:'/business/web-construct'
                     },
                     {
                         title: '物联网',
-                        items: ['人工智能', '人脸识别     ', '硬件设备', '语音系统']
+                        items: ['人工智能', '人脸识别     ', '硬件设备', '语音系统'],
+                        url:'/business/internet-things'
                     }
                 ],
                 caseList: ['APP开发', '小程序开发', '网站建设', '系统集成', '物联网', '政务云'],
@@ -120,6 +126,11 @@
             }
         },
         methods: {
+            goTo(path){
+                this.$router.push({
+                    path:path
+                })
+            },
             showMenus() {
                 this.isMenuShow = true
             },
@@ -130,6 +141,11 @@
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
                 this.isFixed = scrollTop > 0 ? true : false;  // 如果滚动到顶部了，this.isFixed就为true
                 console.log(this.isFixed)
+
+                window.onscroll = function () {
+                    var sl = -Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
+                    document.getElementById('fixed').style.left = sl + 'px';
+                }
             }
         },
         mounted() {
@@ -144,21 +160,25 @@
         background-color: #ffffff;
         box-shadow: 0 8px 20px 0 rgba(167, 176, 208, 0.4);
         z-index: 999 !important;
+
         .center {
             .right {
                 .item {
                     span {
                         color: #333333 !important;
                     }
+
                     .border {
                         background: #014CE5 !important;
                         opacity: 0;
                     }
                 }
-                .selected{
+
+                .selected {
                     span {
                         color: #014CE5 !important;
                     }
+
                     .border {
                         opacity: 1;
                     }
@@ -168,10 +188,11 @@
     }
 
     .header-page {
-        transition: all .6s;
+        transition: background-color .6s;
         position: fixed;
         z-index: 2;
         width: 100%;
+        min-width: 1300px;
         top: 0;
         left: 0;
         display: flex;

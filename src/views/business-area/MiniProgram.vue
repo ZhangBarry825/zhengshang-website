@@ -1,6 +1,6 @@
 <template>
     <div class="mini-program">
-        <Header></Header>
+        <Header :menu="1"></Header>
         <Background :type-index="3"></Background>
         <div class="center">
             <div class="business">
@@ -14,54 +14,54 @@
                         </div>
                         <div class="more">
                             <div class="text">了解更多</div>
-                            <img src="../assets/images/more1.png" alt="">
+                            <img src="../../assets/images/more1.png" alt="">
                         </div>
                     </div>
                     <div class="right">
-                        <img class="active-item0" src="../assets/images/circle.png" alt="">
+                        <img class="active-item0" src="../../assets/images/circle.png" alt="">
                         <div class="item item0 active-item4" :class="selectedIndex==3?'selected':''" @mouseenter="selectChange(3)">
-                            <img class="visible" src="../assets/images/kk0.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh0.png" alt="">
+                            <img class="visible" src="../../assets/images/kk0.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh0.png" alt="">
                             <div class="text">社交</div>
                         </div>
                         <div class="item item1 active-item1" :class="selectedIndex==0?'selected':''" @mouseenter="selectChange(0)">
-                            <img class="visible" src="../assets/images/kk1.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh1.png" alt="">
+                            <img class="visible" src="../../assets/images/kk1.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh1.png" alt="">
                             <div class="text">直播</div>
                         </div>
                         <div class="item item2 active-item3" :class="selectedIndex==2?'selected':''" @mouseenter="selectChange(2)">
-                            <img class="visible" src="../assets/images/kk2.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh2.png" alt="">
+                            <img class="visible" src="../../assets/images/kk2.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh2.png" alt="">
                             <div class="text">教育</div>
                         </div>
                         <div class="item item3 active-item2" :class="selectedIndex==1?'selected':''" @mouseenter="selectChange(1)">
-                            <img class="visible" src="../assets/images/kk3.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh3.png" alt="">
+                            <img class="visible" src="../../assets/images/kk3.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh3.png" alt="">
                             <div class="text">医疗</div>
                         </div>
                         <div class="item item4 active-item9" :class="selectedIndex==8?'selected':''" @mouseenter="selectChange(8)">
-                            <img class="visible" src="../assets/images/kk4.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh4.png" alt="">
+                            <img class="visible" src="../../assets/images/kk4.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh4.png" alt="">
                             <div class="text">健身</div>
                         </div>
                         <div class="item item5 active-item8" :class="selectedIndex==7?'selected':''" @mouseenter="selectChange(7)">
-                            <img class="visible" src="../assets/images/kk5.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh5.png" alt="">
+                            <img class="visible" src="../../assets/images/kk5.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh5.png" alt="">
                             <div class="text">团购</div>
                         </div>
                         <div class="item item6 active-item7" :class="selectedIndex==6?'selected':''" @mouseenter="selectChange(6)">
-                            <img class="visible" src="../assets/images/kk6.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh6.png" alt="">
+                            <img class="visible" src="../../assets/images/kk6.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh6.png" alt="">
                             <div class="text">外卖</div>
                         </div>
                         <div class="item item7 active-item6" :class="selectedIndex==5?'selected':''" @mouseenter="selectChange(5)">
-                            <img class="visible" src="../assets/images/kk7.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh7.png" alt="">
+                            <img class="visible" src="../../assets/images/kk7.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh7.png" alt="">
                             <div class="text">跑腿</div>
                         </div>
                         <div class="item item8 active-item5" :class="selectedIndex==4?'selected':''" @mouseenter="selectChange(4)">
-                            <img class="visible" src="../assets/images/kk8.png" alt="">
-                            <img class="hidden" src="../assets/images/kkh8.png" alt="">
+                            <img class="visible" src="../../assets/images/kk8.png" alt="">
+                            <img class="hidden" src="../../assets/images/kkh8.png" alt="">
                             <div class="text">交友</div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                 <div class="title">小程序开发流程</div>
                 <div class="content">
                     <div class="left">
-                        <img src="../assets/images/pro00.png" alt="">
+                        <img src="../../assets/images/pro00.png" alt="">
                     </div>
                     <div class="right">
                         <div class="items">
@@ -148,10 +148,10 @@
                         </div>
                         <div class="pagination">
                             <div class="right">
-                                <img v-if="progressPage==0" src="../assets/images/left-gray.png" alt="">
-                                <img v-else src="../assets/images/left-blue.png" @click="changePage(-1)">
-                                <img v-if="progressPage==1" src="../assets/images/right-gray.png" alt="">
-                                <img v-else src="../assets/images/right-blue.png" @click="changePage(1)">
+                                <img v-if="progressPage==0" src="../../assets/images/left-gray.png" alt="">
+                                <img v-else src="../../assets/images/left-blue.png" @click="changePage(-1)">
+                                <img v-if="progressPage==1" src="../../assets/images/right-gray.png" alt="">
+                                <img v-else src="../../assets/images/right-blue.png" @click="changePage(1)">
                             </div>
                         </div>
                     </div>
@@ -164,31 +164,31 @@
                 <div class="items">
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/images/q1.png" alt="">
+                            <img src="../../assets/images/q1.png" alt="">
                         </div>
                         <div class="text">产品文档</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/images/q2.png" alt="">
+                            <img src="../../assets/images/q2.png" alt="">
                         </div>
                         <div class="text">设计稿源文件</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/images/q3.png" alt="">
+                            <img src="../../assets/images/q3.png" alt="">
                         </div>
                         <div class="text">源代码</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/images/q4.png" alt="">
+                            <img src="../../assets/images/q4.png" alt="">
                         </div>
                         <div class="text">使用文档</div>
                     </div>
                     <div class="item">
                         <div class="circle">
-                            <img src="../assets/images/q5.png" alt="">
+                            <img src="../../assets/images/q5.png" alt="">
                         </div>
                         <div class="text">账号信息</div>
                     </div>
@@ -202,19 +202,19 @@
                     <div class="item">
                         <div class="item-title">源代码安全</div>
                         <div class="li">
-                            <img src="../assets/images/ss1.png" alt="">
+                            <img src="../../assets/images/ss1.png" alt="">
                             <div class="text">防SQL注入</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss3.png" alt="">
+                            <img src="../../assets/images/ss3.png" alt="">
                             <div class="text">过滤拦截机制</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss4.png" alt="">
+                            <img src="../../assets/images/ss4.png" alt="">
                             <div class="text">并发安全机制</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss1.png" alt="">
+                            <img src="../../assets/images/ss1.png" alt="">
                             <div class="text">
                                 加密(MDS、RSA、<br>
                                 DES)
@@ -224,38 +224,38 @@
                     <div class="item">
                         <div class="item-title">程序安全</div>
                         <div class="li">
-                            <img src="../assets/images/ss5.png" alt="">
+                            <img src="../../assets/images/ss5.png" alt="">
                             <div class="text">身份认证机制</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss6.png" alt="">
+                            <img src="../../assets/images/ss6.png" alt="">
                             <div class="text">权限控制</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss7.png" alt="">
+                            <img src="../../assets/images/ss7.png" alt="">
                             <div class="text">渗透测试</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss8.png" alt="">
+                            <img src="../../assets/images/ss8.png" alt="">
                             <div class="text">日志追踪</div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="item-title">数据库安全</div>
                         <div class="li">
-                            <img src="../assets/images/ss9.png" alt="">
+                            <img src="../../assets/images/ss9.png" alt="">
                             <div class="text">双机容错</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss10.png" alt="">
+                            <img src="../../assets/images/ss10.png" alt="">
                             <div class="text">数据备份</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss11.png" alt="">
+                            <img src="../../assets/images/ss11.png" alt="">
                             <div class="text">灾难恢复</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss12.png" alt="">
+                            <img src="../../assets/images/ss12.png" alt="">
                             <div class="text">
                                 数据存储(基于RAID<br>
                                 的存储技术)
@@ -265,19 +265,19 @@
                     <div class="item">
                         <div class="item-title">服务器安全</div>
                         <div class="li">
-                            <img src="../assets/images/ss13.png" alt="">
+                            <img src="../../assets/images/ss13.png" alt="">
                             <div class="text">防火墙</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss14.png" alt="">
+                            <img src="../../assets/images/ss14.png" alt="">
                             <div class="text">入侵检测</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss15.png" alt="">
+                            <img src="../../assets/images/ss15.png" alt="">
                             <div class="text">漏洞扫描</div>
                         </div>
                         <div class="li">
-                            <img src="../assets/images/ss16.png" alt="">
+                            <img src="../../assets/images/ss16.png" alt="">
                             <div class="text">物理隔离</div>
                         </div>
                     </div>
@@ -290,35 +290,39 @@
             </div>
             <div class="items">
                 <div class="item">
-                    <img src="../assets/images/j1.png" class="item-img" alt="">
+                    <img src="../../assets/images/j1.png" class="item-img" alt="">
                     <div class="item-title">程序使用培训</div>
                 </div>
                 <div class="item">
-                    <img src="../assets/images/j2.png" class="item-img" alt="">
+                    <img src="../../assets/images/j2.png" class="item-img" alt="">
                     <div class="item-title">项目问题咨询</div>
                 </div>
                 <div class="item">
-                    <img src="../assets/images/j3.png" class="item-img" alt="">
+                    <img src="../../assets/images/j3.png" class="item-img" alt="">
                     <div class="item-title">项目部署及维护</div>
                 </div>
                 <div class="item">
-                    <img src="../assets/images/j4.png" class="item-img" alt="">
+                    <img src="../../assets/images/j4.png" class="item-img" alt="">
                     <div class="item-title">后期功能升级和修改</div>
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
-    import Header from "../components/Header";
-    import Background from "../components/Background";
+    import Header from "../../components/Header";
+    import Background from "../../components/Background";
+    import Footer from "../../components/Footer";
+
 
     export default {
         name: "MiniProgram",
         components: {
             Header: Header,
             Background: Background,
+            Footer
         },
         data() {
             return {
@@ -899,7 +903,7 @@
         }
 
         .delivery-standard {
-            background-image: url("../assets/images/jfbz.png");
+            background-image: url("../../assets/images/jfbz.png");
             @include back-img-center;
             width: 100%;
             min-width: 1300px;
@@ -962,7 +966,7 @@
             height: 600px;
             width: 100%;
             min-width: 1300px;
-            background-image: url("../assets/images/sysback.png");
+            background-image: url("../../assets/images/sysback.png");
             background-repeat: no-repeat;
             background-size: 100%;
             background-position: 0 120%;
@@ -988,7 +992,7 @@
                         width:269px;
                         height:392px;
                         background-color: #ffffff;
-                        background-image: url("../assets/images/item.png");
+                        background-image: url("../../assets/images/item.png");
                         padding: 28px 20px;
                         box-sizing: border-box;
                         .item-title{

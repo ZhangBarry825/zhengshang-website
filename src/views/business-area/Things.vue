@@ -1,6 +1,6 @@
 <template>
     <div class="things-page">
-        <Header></Header>
+        <Header :menu="1"></Header>
         <Background :type-index="5"></Background>
         <div class="gray">
             <div class="ability">
@@ -11,7 +11,7 @@
                     <div class="list-line1">
                         <div class="item" @mouseenter="itemHover(0)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==0?require('../assets/images/kkh0.png'):require('../assets/images/kk0.png')"
+                                <img :src="activeIndex==0?require('../../assets/images/kkh0.png'):require('../../assets/images/kk0.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -19,12 +19,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==0">了解更多</a>
-                                <img v-show="activeIndex==0" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==0" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(1)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==1?require('../assets/images/kkh1.png'):require('../assets/images/kk1.png')"
+                                <img :src="activeIndex==1?require('../../assets/images/kkh1.png'):require('../../assets/images/kk1.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -32,12 +32,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==1">了解更多</a>
-                                <img v-show="activeIndex==1" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==1" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(2)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==2?require('../assets/images/kkh2.png'):require('../assets/images/kk2.png')"
+                                <img :src="activeIndex==2?require('../../assets/images/kkh2.png'):require('../../assets/images/kk2.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -45,12 +45,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==2">了解更多</a>
-                                <img v-show="activeIndex==2" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==2" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(3)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==3?require('../assets/images/kkh3.png'):require('../assets/images/kk3.png')"
+                                <img :src="activeIndex==3?require('../../assets/images/kkh3.png'):require('../../assets/images/kk3.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -58,12 +58,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==3">了解更多</a>
-                                <img v-show="activeIndex==3" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==3" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(4)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==4?require('../assets/images/kkh4.png'):require('../assets/images/kk4.png')"
+                                <img :src="activeIndex==4?require('../../assets/images/kkh4.png'):require('../../assets/images/kk4.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -71,14 +71,14 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==4">了解更多</a>
-                                <img v-show="activeIndex==4" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==4" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="list-line2">
                         <div class="item" @mouseenter="itemHover(5)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==5?require('../assets/images/kkh5.png'):require('../assets/images/kk5.png')"
+                                <img :src="activeIndex==5?require('../../assets/images/kkh5.png'):require('../../assets/images/kk5.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -86,12 +86,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==5">了解更多</a>
-                                <img v-show="activeIndex==5" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==5" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(6)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==6?require('../assets/images/kkh6.png'):require('../assets/images/kk6.png')"
+                                <img :src="activeIndex==6?require('../../assets/images/kkh6.png'):require('../../assets/images/kk6.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -99,12 +99,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==6">了解更多</a>
-                                <img v-show="activeIndex==6" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==6" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(7)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==7?require('../assets/images/kkh7.png'):require('../assets/images/kk7.png')"
+                                <img :src="activeIndex==7?require('../../assets/images/kkh7.png'):require('../../assets/images/kk7.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -112,12 +112,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==7">了解更多</a>
-                                <img v-show="activeIndex==7" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==7" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(8)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==8?require('../assets/images/kkh8.png'):require('../assets/images/kk8.png')"
+                                <img :src="activeIndex==8?require('../../assets/images/kkh8.png'):require('../../assets/images/kk8.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -125,12 +125,12 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==8">了解更多</a>
-                                <img v-show="activeIndex==8" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==8" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                         <div class="item" @mouseenter="itemHover(9)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
-                                <img :src="activeIndex==9?require('../assets/images/kkh9.png'):require('../assets/images/kk9.png')"
+                                <img :src="activeIndex==9?require('../../assets/images/kkh9.png'):require('../../assets/images/kk9.png')"
                                      alt="">
                             </div>
                             <div class="item-line2">
@@ -138,7 +138,7 @@
                             </div>
                             <div class="item-line3">
                                 <a v-show="activeIndex==9">了解更多</a>
-                                <img v-show="activeIndex==9" src="../assets/images/more0.png" alt="">
+                                <img v-show="activeIndex==9" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                 <div class="center">
                     <div class="title">系统开发流程</div>
                     <div class="content">
-                        <img src="../assets/images/progress0.png" alt="">
+                        <img src="../../assets/images/progress0.png" alt="">
                         <div class="items">
                             <div class="item item1">
                                 <div class="item-num">01</div>
@@ -189,38 +189,38 @@
                 <div class="items">
                     <div class="item">
                         <div class="logo">
-                            <img src="../assets/images/d1.png" alt="">
+                            <img src="../../assets/images/d1.png" alt="">
                         </div>
                         <div class="item-text">项目计划书</div>
-                        <img class="hoverImg" src="../assets/images/df1.png">
+                        <img class="hoverImg" src="../../assets/images/df1.png">
                     </div>
                     <div class="item">
                         <div class="logo">
-                            <img src="../assets/images/d2.png" alt="">
+                            <img src="../../assets/images/d2.png" alt="">
                         </div>
                         <div class="item-text">设计稿源文件</div>
-                        <img class="hoverImg" src="../assets/images/df2.png">
+                        <img class="hoverImg" src="../../assets/images/df2.png">
                     </div>
                     <div class="item">
                         <div class="logo">
-                            <img src="../assets/images/d3.png" alt="">
+                            <img src="../../assets/images/d3.png" alt="">
                         </div>
                         <div class="item-text">源代码</div>
-                        <img class="hoverImg" src="../assets/images/df3.png">
+                        <img class="hoverImg" src="../../assets/images/df3.png">
                     </div>
                     <div class="item">
                         <div class="logo">
-                            <img src="../assets/images/d4.png" alt="">
+                            <img src="../../assets/images/d4.png" alt="">
                         </div>
                         <div class="item-text">使用文档</div>
-                        <img class="hoverImg" src="../assets/images/df4.png">
+                        <img class="hoverImg" src="../../assets/images/df4.png">
                     </div>
                     <div class="item">
                         <div class="logo">
-                            <img src="../assets/images/d5.png" alt="">
+                            <img src="../../assets/images/d5.png" alt="">
                         </div>
                         <div class="item-text">账号信息</div>
-                        <img class="hoverImg" src="../assets/images/df5.png">
+                        <img class="hoverImg" src="../../assets/images/df5.png">
                     </div>
                 </div>
             </div>
@@ -243,10 +243,10 @@
                                     <img :src="securityIndex==3?dotBlue:dotWhite" alt="">
                                 </div>
                                 <div class="right">
-                                    <img v-if="securityIndex==0" src="../assets/images/left-gray.png" alt="">
-                                    <img v-else src="../assets/images/left-blue.png" @click="changePage(-1)">
-                                    <img v-if="securityIndex==3" src="../assets/images/right-gray.png" alt="">
-                                    <img v-else src="../assets/images/right-blue.png" @click="changePage(1)">
+                                    <img v-if="securityIndex==0" src="../../assets/images/left-gray.png" alt="">
+                                    <img v-else src="../../assets/images/left-blue.png" @click="changePage(-1)">
+                                    <img v-if="securityIndex==3" src="../../assets/images/right-gray.png" alt="">
+                                    <img v-else src="../../assets/images/right-blue.png" @click="changePage(1)">
                                 </div>
                             </div>
                         </div>
@@ -254,41 +254,41 @@
                 </div>
                 <div class="right">
                     <div class="right-title">系统安全标准</div>
-                    <img src="../assets/images/right-img.png" alt="">
+                    <img src="../../assets/images/right-img.png" alt="">
                 </div>
             </div>
             <div class="technology-support">
                 <div class="left">
-                    <img src="../assets/images/ss-l.png" alt="">
+                    <img src="../../assets/images/ss-l.png" alt="">
                 </div>
                 <div class="right">
-                    <div class="right-title">技术支持</div>
+                    <div class="right-title">技术支1持</div>
                     <div class="right-content" :style="'width:'+(745+(screenWidth-1300)/2)+'px;'">
                         <div class="content-content">
                             <div class="right-item">
                                 <div class="line1">
-                                    <img src="../assets/images/c1.png" alt="">
+                                    <img src="../../assets/images/c1.png" alt="">
                                     <div class="text">程序使用培训</div>
                                 </div>
                                 <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
                             </div>
                             <div class="right-item">
                                 <div class="line1">
-                                    <img src="../assets/images/c2.png" alt="">
+                                    <img src="../../assets/images/c2.png" alt="">
                                     <div class="text">项目问题咨询</div>
                                 </div>
                                 <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
                             </div>
                             <div class="right-item">
                                 <div class="line1">
-                                    <img src="../assets/images/c3.png" alt="">
+                                    <img src="../../assets/images/c3.png" alt="">
                                     <div class="text">项目部署及维护</div>
                                 </div>
                                 <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
                             </div>
                             <div class="right-item">
                                 <div class="line1">
-                                    <img src="../assets/images/c4.png" alt="">
+                                    <img src="../../assets/images/c4.png" alt="">
                                     <div class="text">后期功能升级和修改</div>
                                 </div>
                                 <div class="line2">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
@@ -300,33 +300,36 @@
             </div>
         </div>
 
-
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
-    import Header from "../components/Header";
-    import Background from "../components/Background";
+    import Header from "../../components/Header";
+    import Background from "../../components/Background";
+    import Footer from "../../components/Footer";
+
 
     export default {
         name: "Things",
         components: {
             Header: Header,
             Background: Background,
+            Footer:Footer
         },
         data() {
             return {
-                dotBlue: require('../assets/images/dot-blue.png'),
-                dotWhite: require('../assets/images/dot-white.png'),
+                dotBlue: require('../../assets/images/dot-blue.png'),
+                dotWhite: require('../../assets/images/dot-white.png'),
                 securityIndex: 0,
                 screenWidth: '',
                 screenHeight: '',
                 activeIndex: -1,
                 securityImg:[
-                    require('../assets/images/cc1.png'),
-                    require('../assets/images/cc2.png'),
-                    require('../assets/images/cc3.png'),
-                    require('../assets/images/cc4.png'),
+                    require('../../assets/images/cc1.png'),
+                    require('../../assets/images/cc2.png'),
+                    require('../../assets/images/cc3.png'),
+                    require('../../assets/images/cc4.png'),
                 ],
                 securityList: [
                     {
@@ -531,7 +534,7 @@
             width: 100%;
             min-width: 1300px;
             background-color: #f4f5f8;
-            background-image: url("../assets/images/bottom-back.png");
+            background-image: url("../../assets/images/bottom-back.png");
             background-repeat: no-repeat;
             background-position: right;
 

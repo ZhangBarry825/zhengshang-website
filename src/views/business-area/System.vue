@@ -1,6 +1,6 @@
 <template>
     <div class="business-page">
-        <Header ></Header>
+        <Header :menu="1"></Header>
         <Background :type-index="0"></Background>
         <div class="ability">
             <div class="center">
@@ -12,7 +12,7 @@
                         <div class="line line0" @mouseenter="itemHover(0)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a1.png" alt="">
+                                    <img src="../../assets/images/a1.png" alt="">
                                 </div>
                                 <div class="right-text">移动社交</div>
                             </div>
@@ -23,7 +23,7 @@
                         <div class="line line1" @mouseenter="itemHover(1)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a2.png" alt="">
+                                    <img src="../../assets/images/a2.png" alt="">
                                 </div>
                                 <div class="right-text">视频直播</div>
                             </div>
@@ -34,7 +34,7 @@
                         <div class="line line2" @mouseenter="itemHover(2)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a3.png" alt="">
+                                    <img src="../../assets/images/a3.png" alt="">
                                 </div>
                                 <div class="right-text">线上教育</div>
                             </div>
@@ -47,7 +47,7 @@
                         <div class="line line3" @mouseenter="itemHover(3)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a4.png" alt="">
+                                    <img src="../../assets/images/a4.png" alt="">
                                 </div>
                                 <div class="right-text">智慧医疗</div>
                             </div>
@@ -58,7 +58,7 @@
                         <div class="line line4" @mouseenter="itemHover(4)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a5.png" alt="">
+                                    <img src="../../assets/images/a5.png" alt="">
                                 </div>
                                 <div class="right-text">移动商城</div>
                             </div>
@@ -71,7 +71,7 @@
                         <div class="line line5" @mouseenter="itemHover(5)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a6.png" alt="">
+                                    <img src="../../assets/images/a6.png" alt="">
                                 </div>
                                 <div class="right-text">跑腿外送</div>
                             </div>
@@ -82,7 +82,7 @@
                         <div class="line line6" @mouseenter="itemHover(6)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a7.png" alt="">
+                                    <img src="../../assets/images/a7.png" alt="">
                                 </div>
                                 <div class="right-text">智慧外卖</div>
                             </div>
@@ -93,7 +93,7 @@
                         <div class="line line7" @mouseenter="itemHover(7)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../assets/images/a8.png" alt="">
+                                    <img src="../../assets/images/a8.png" alt="">
                                 </div>
                                 <div class="right-text">智慧健身</div>
                             </div>
@@ -127,37 +127,37 @@
                         </div>
                         <div class="right">
                             <div class="right-item">
-                                <img src="../assets/images/p1.png" alt="">
+                                <img src="../../assets/images/p1.png" alt="">
                                 <div class="text">行业数据分析</div>
                             </div>
                             <div class="connect"></div>
                             <div class="right-item">
-                                <img src="../assets/images/p2.png" alt="">
+                                <img src="../../assets/images/p2.png" alt="">
                                 <div class="text">品牌定位规范</div>
                             </div>
                             <div class="connect"></div>
                             <div class="right-item">
-                                <img src="../assets/images/p3.png" alt="">
+                                <img src="../../assets/images/p3.png" alt="">
                                 <div class="text">功能需求调研</div>
                             </div>
                             <div class="connect"></div>
                             <div class="right-item">
-                                <img src="../assets/images/p4.png" alt="">
+                                <img src="../../assets/images/p4.png" alt="">
                                 <div class="text">交互视觉设计</div>
                             </div>
                             <div class="connect"></div>
                             <div class="right-item">
-                                <img src="../assets/images/p5.png" alt="">
+                                <img src="../../assets/images/p5.png" alt="">
                                 <div class="text">双端同步开发</div>
                             </div>
                             <div class="connect"></div>
                             <div class="right-item">
-                                <img src="../assets/images/p6.png" alt="">
+                                <img src="../../assets/images/p6.png" alt="">
                                 <div class="text">后端并行开发</div>
                             </div>
                             <div class="connect"></div>
                             <div class="right-item last-item">
-                                <img src="../assets/images/p7.png" alt="">
+                                <img src="../../assets/images/p7.png" alt="">
                                 <div class="text">测试上线交付使用</div>
                             </div>
                         </div>
@@ -173,38 +173,38 @@
                     <div class="items">
                         <div class="item">
                             <div class="logo">
-                                <img src="../assets/images/d1.png" alt="">
+                                <img src="../../assets/images/d1.png" alt="">
                             </div>
                             <div class="item-text">项目计划书</div>
-                            <img class="hoverImg" src="../assets/images/df1.png">
+                            <img class="hoverImg" src="../../assets/images/df1.png">
                         </div>
                         <div class="item">
                             <div class="logo">
-                                <img src="../assets/images/d2.png" alt="">
+                                <img src="../../assets/images/d2.png" alt="">
                             </div>
                             <div class="item-text">设计稿源文件</div>
-                            <img class="hoverImg" src="../assets/images/df2.png">
+                            <img class="hoverImg" src="../../assets/images/df2.png">
                         </div>
                         <div class="item">
                             <div class="logo">
-                                <img src="../assets/images/d3.png" alt="">
+                                <img src="../../assets/images/d3.png" alt="">
                             </div>
                             <div class="item-text">源代码</div>
-                            <img class="hoverImg" src="../assets/images/df3.png">
+                            <img class="hoverImg" src="../../assets/images/df3.png">
                         </div>
                         <div class="item">
                             <div class="logo">
-                                <img src="../assets/images/d4.png" alt="">
+                                <img src="../../assets/images/d4.png" alt="">
                             </div>
                             <div class="item-text">使用文档</div>
-                            <img class="hoverImg" src="../assets/images/df4.png">
+                            <img class="hoverImg" src="../../assets/images/df4.png">
                         </div>
                         <div class="item">
                             <div class="logo">
-                                <img src="../assets/images/d5.png" alt="">
+                                <img src="../../assets/images/d5.png" alt="">
                             </div>
                             <div class="item-text">账号信息</div>
-                            <img class="hoverImg" src="../assets/images/df5.png">
+                            <img class="hoverImg" src="../../assets/images/df5.png">
                         </div>
                     </div>
                 </div>
@@ -212,9 +212,9 @@
                     <h2 class="security-title ">系统安全标准</h2>
                     <div class="items">
                         <div class="item">
-                            <img class="back" src="../assets/images/s1.png">
+                            <img class="back" src="../../assets/images/s1.png">
                             <div class="title">
-                                <img src="../assets/images/t1.png" alt="">
+                                <img src="../../assets/images/t1.png" alt="">
                                 <h2>源代码安全</h2>
                             </div>
                             <div class="li">
@@ -231,9 +231,9 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img class="back" src="../assets/images/s2.png">
+                            <img class="back" src="../../assets/images/s2.png">
                             <div class="title">
-                                <img src="../assets/images/t2.png" alt="">
+                                <img src="../../assets/images/t2.png" alt="">
                                 <h2>程序安全</h2>
                             </div>
                             <div class="li">
@@ -250,9 +250,9 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img class="back" src="../assets/images/s1.png">
+                            <img class="back" src="../../assets/images/s1.png">
                             <div class="title">
-                                <img src="../assets/images/t1.png" alt="">
+                                <img src="../../assets/images/t1.png" alt="">
                                 <h2>数据库安全</h2>
                             </div>
                             <div class="li">
@@ -270,9 +270,9 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img class="back" src="../assets/images/s4.png">
+                            <img class="back" src="../../assets/images/s4.png">
                             <div class="title">
-                                <img src="../assets/images/t4.png" alt="">
+                                <img src="../../assets/images/t4.png" alt="">
                                 <h2>服务器安全</h2>
                             </div>
                             <div class="li">
@@ -293,10 +293,10 @@
                 <div class="support">
                     <div class="left">
                         <div class="dots">
-                            <img src="../assets/images/dots.png" alt="">
+                            <img src="../../assets/images/dots.png" alt="">
                         </div>
                         <div class="left-img-box">
-                            <img src="../assets/images/ba.png" alt="">
+                            <img src="../../assets/images/ba.png" alt="">
                         </div>
                     </div>
                     <div class="right">
@@ -304,28 +304,28 @@
                         <div class="support-items">
                             <div class="support-item">
                                 <div class="support-item-title">
-                                    <img src="../assets/images/su1.png" >
+                                    <img src="../../assets/images/su1.png" >
                                     <div class="title-text">程序使用培训</div>
                                 </div>
                                 <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
                             </div>
                             <div class="support-item">
                                 <div class="support-item-title">
-                                    <img src="../assets/images/su2.png" >
+                                    <img src="../../assets/images/su2.png" >
                                     <div class="title-text">项目问题咨询</div>
                                 </div>
                                 <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
                             </div>
                             <div class="support-item">
                                 <div class="support-item-title">
-                                    <img src="../assets/images/su3.png" >
+                                    <img src="../../assets/images/su3.png" >
                                     <div class="title-text">项目部署及维护</div>
                                 </div>
                                 <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
                             </div>
                             <div class="support-item">
                                 <div class="support-item-title">
-                                    <img src="../assets/images/su4.png" >
+                                    <img src="../../assets/images/su4.png" >
                                     <div class="title-text">后期功能升级和修改</div>
                                 </div>
                                 <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
@@ -336,17 +336,20 @@
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
-    import Header from "../components/Header";
-    import Background from "../components/Background";
+    import Header from "../../components/Header";
+    import Footer from "../../components/Footer";
+    import Background from "../../components/Background";
 
     export default {
-        name: "Business",
+        name: "System",
         components: {
             Header: Header,
+            Footer: Footer,
             Background: Background,
         },
         data() {
@@ -354,8 +357,8 @@
                 screenWidth: '',
                 screenHeight: '',
                 activeIndex: -1,
-                more0: require('../assets/images/more0.png'),
-                more1: require('../assets/images/more1.png'),
+                more0: require('../../assets/images/more0.png'),
+                more1: require('../../assets/images/more1.png'),
             }
         },
         methods: {
@@ -404,7 +407,7 @@
                 .items {
                     width: 100%;
                     height: 630px;
-                    background-image: url("../assets/images/ability.png");
+                    background-image: url("../../assets/images/ability.png");
                     @include back-img-center;
                     display: flex;
                     flex-direction: row;
@@ -515,7 +518,7 @@
                 .back {
                     width: 100%;
                     height: 420px;
-                    background-image: url("../assets/images/progress-back.png");
+                    background-image: url("../../assets/images/progress-back.png");
                     @include back-img-center;
                 }
 
@@ -624,8 +627,9 @@
             margin-top: 331px;
             width: 100%;
             height: 1973px;
-            background-image: url("../assets/images/back-bottom.png");
+            background-image: url("../../assets/images/back-bottom.png");
             @include back-img-center;
+            padding-bottom: 50px;
 
             .center {
                 width: 1300px;
@@ -772,6 +776,7 @@
                     flex-direction: row;
                     justify-content: space-between;
                     margin-top: 120px;
+
 
                     .left {
                         width: 405px;

@@ -11,34 +11,34 @@ const routes = [
     component: Home
   },
     {
-      path: '/business',
+      path: '/business/system',
       name: 'business',
-      component:  () => import( '../views/Business')
+      component:  () => import( '../views/business-area/System')
     },
     {
-      path: '/gov-cloud',
+      path: '/business/gov-cloud',
       name: 'govcloud',
-      component:  () => import( '../views/GovCloud')
+      component:  () => import( '../views/business-area/GovCloud')
     },
   {
-    path: '/web-construct',
+    path: '/business/web-construct',
     name: 'WebConstruct',
-    component:  () => import( '../views/WebConstruct')
+    component:  () => import( '../views/business-area/WebConstruct')
   },
   {
-    path: '/mini-program',
+    path: '/business/mini-program',
     name: 'MiniProgram',
-    component:  () => import( '../views/MiniProgram')
+    component:  () => import( '../views/business-area/MiniProgram')
   },
   {
-    path: '/app-develop',
+    path: '/business/app-develop',
     name: 'Application',
-    component:  () => import( '../views/Application')
+    component:  () => import( '../views/business-area/Application')
   },
   {
-    path: '/internet-things',
+    path: '/business/internet-things',
     name: 'Things',
-    component:  () => import( '../views/Things')
+    component:  () => import( '../views/business-area/Things')
   },
   {
     path: '/about',

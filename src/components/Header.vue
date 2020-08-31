@@ -21,7 +21,7 @@
                     <span>新闻中心</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==4}" @click="goTo('/us')">
+                <div class="item" :class="{'selected':menu==4}" @click="goTo('/about')">
                     <span>关于我们</span>
                     <div class="border"></div>
                 </div>

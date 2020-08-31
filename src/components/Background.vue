@@ -1,8 +1,8 @@
 <template>
-    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':typeIndex==6?'class6':typeIndex==7?'class7':''">
+    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':typeIndex==6?'class6':typeIndex==7?'class7':typeIndex==8?'class8':typeIndex==9?'class9':''">
         <div class="center">
             <div class="left">
-                <h2 class="text">{{typeIndex==0 ?"系统集成":typeIndex==1 ?"政务云":typeIndex==2 ?"网站建设":typeIndex==3 ?"小程序定制开发":typeIndex==4 ?"App定制化开发":typeIndex==5 ?"物联网":typeIndex==6 ?"客户案例":typeIndex==7 ?"新闻中心":""}}</h2>
+                <h2 class="text">{{typeIndex==0 ?"系统集成":typeIndex==1 ?"政务云":typeIndex==2 ?"网站建设":typeIndex==3 ?"小程序定制开发":typeIndex==4 ?"App定制化开发":typeIndex==5 ?"物联网":typeIndex==6 ?"客户案例":typeIndex==7 ?"新闻中心":typeIndex==8 ?"关于我们":typeIndex==9 ?"联系我们":""}}</h2>
                 <div class="border"></div>
             </div>
             <div class="right"></div>
@@ -123,6 +123,28 @@
                 width: 905px;
                 height: 780px;
                 background-image: url("../assets/images/ns0.png");
+                background-position: 100px center !important;
+            }
+        }
+    }
+    .class8{
+        background-image: url("../assets/images/gyw.png");
+        .center{
+            .right{
+                width: 905px;
+                height: 780px;
+                background-image: url("../assets/images/gyw0.png");
+                background-position: 100px center !important;
+            }
+        }
+    }
+    .class9{
+        background-image: url("../assets/images/lx.png");
+        .center{
+            .right{
+                width: 905px;
+                height: 780px;
+                background-image: url("../assets/images/lx0.png");
                 background-position: 100px center !important;
             }
         }

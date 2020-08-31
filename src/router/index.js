@@ -15,14 +15,24 @@ const routes = [
         redirect:'/'
     },
     {
+        path: '/business',
+        name: 'Business',
+        component: () => import( '../views/business-area/Business')
+    },
+    {
         path: '/business/system',
         name: 'business',
         component: () => import( '../views/business-area/System')
     },
+    // {
+    //     path: '/business/gov-cloud',
+    //     name: 'govcloud',
+    //     component: () => import( '../views/business-area/GovCloud')
+    // },
     {
         path: '/business/gov-cloud',
         name: 'govcloud',
-        component: () => import( '../views/business-area/GovCloud')
+        component: () => import( '../views/business-area/GovService')
     },
     {
         path: '/business/web-construct',

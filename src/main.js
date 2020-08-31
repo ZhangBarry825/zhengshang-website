@@ -17,6 +17,11 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  ak: 'b0nN1SLy6xKgqtT07XkAgVGMVMdqaUyZ'
+})
+
 let author={
   'construct by': 'BarryZhang',
   'email':'530027054@qq.com'

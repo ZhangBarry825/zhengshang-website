@@ -1,8 +1,8 @@
 <template>
-    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':typeIndex==6?'class6':typeIndex==7?'class7':typeIndex==8?'class8':typeIndex==9?'class9':''">
+    <div class="background-page " ref="hhh" :class="typeIndex==0?'class0':typeIndex==1?'class1':typeIndex==2?'class2':typeIndex==3?'class3':typeIndex==4?'class4':typeIndex==5?'class5':typeIndex==6?'class6':typeIndex==7?'class7':typeIndex==8?'class8':typeIndex==9?'class9':typeIndex==10?'class10':''">
         <div class="center">
             <div class="left">
-                <h2 class="text">{{typeIndex==0 ?"系统集成":typeIndex==1 ?"政务云":typeIndex==2 ?"网站建设":typeIndex==3 ?"小程序定制开发":typeIndex==4 ?"App定制化开发":typeIndex==5 ?"物联网":typeIndex==6 ?"客户案例":typeIndex==7 ?"新闻中心":typeIndex==8 ?"关于我们":typeIndex==9 ?"联系我们":""}}</h2>
+                <h2 class="text">{{typeIndex==0 ?"系统集成":typeIndex==1 ?"政务云":typeIndex==2 ?"网站建设":typeIndex==3 ?"小程序定制开发":typeIndex==4 ?"App定制化开发":typeIndex==5 ?"物联网":typeIndex==6 ?"客户案例":typeIndex==7 ?"新闻中心":typeIndex==8 ?"关于我们":typeIndex==10 ?"业务领域":typeIndex==9 ?"联系我们":""}}</h2>
                 <div class="border"></div>
             </div>
             <div class="right"></div>
@@ -149,6 +149,18 @@
             }
         }
     }
+    .class10{
+        background-image: url("../assets/images/ywly.png");
+        .center{
+            .right{
+                width: 1028px;
+                height: 530px;
+                background-image: url("../assets/images/ywly0.png");
+                position: relative;
+                left: 100px;
+            }
+        }
+    }
     .background-page{
         @include page-style;
         height: 780px;
@@ -162,6 +174,7 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
+            overflow: hidden;
             .left{
                 display: flex;
                 flex-direction: column;

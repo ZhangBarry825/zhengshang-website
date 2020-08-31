@@ -9,7 +9,7 @@
                     <span>首页</span>
                     <div class="border"></div>
                 </div>
-                <div class="item" :class="{'selected':menu==1}" @mouseover="showMenus" @click="goTo('/business/app-develop')">
+                <div class="item" :class="{'selected':menu==1}" @mouseover="showMenus" @click="goTo('/business')">
                     <span>业务领域</span>
                     <div class="border"></div>
                 </div>
@@ -210,7 +210,7 @@
     }
 
     .header-page {
-        transition: all 0.6s;
+        transition: background-color 0.6s;
         position: fixed;
         z-index: 2;
         width: 100%;

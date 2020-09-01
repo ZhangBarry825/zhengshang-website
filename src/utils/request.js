@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 import { MessageBox, Message } from 'element-ui'
 
 const service = axios.create({
@@ -11,6 +12,7 @@ service.interceptors.request.use(
     config => {
 
         config.headers['X-Token'] = ''
+        config.data=qs.stringify(config.data)
 
         return config
     },

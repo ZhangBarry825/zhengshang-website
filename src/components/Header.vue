@@ -51,15 +51,15 @@
                     <div class="center-right">
                         <div class="right-top">
                             <div class="right-left">
-                                <div class="item-title" @click="goTo(caseUrl)">客户案例</div>
+                                <div class="item-title" >客户案例</div>
                                 <div class="right-items">
-                                    <div class="item" v-for="item in caseList" @click="goTo(caseUrl)">{{item}}</div>
+                                    <div class="item" v-for="item in businessItems" @click="goTo(item.url)">{{item.title}}</div>
                                 </div>
                             </div>
                             <div class="right-left">
-                                <div class="item-title" @click="goTo(newsUrl)">新闻中心</div>
+                                <div class="item-title" >新闻中心</div>
                                 <div class="right-items">
-                                    <div class="item" v-for="item in newsList" @click="goTo(newsUrl)">{{item}}</div>
+                                    <div class="item" v-for="item in newsList" @click="goTo('/news')">{{item}}</div>
                                 </div>
                             </div>
                         </div>

@@ -139,7 +139,8 @@
                 <div class="center-title">关于我们</div>
                 <div class="center-title-en">ABOUT US</div>
                 <div class="content">
-                    <div class="left" :style="'background-image: url('+require('../assets/images/us-about.png')+')'"></div>
+                    <div class="left"
+                         :style="'background-image: url('+require('../assets/images/us-about.png')+')'"></div>
                     <div class="right">
                         <div class="text">
                             郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。
@@ -154,6 +155,18 @@
             </div>
         </div>
         <Footer></Footer>
+
+        <link rel='stylesheet' href='http://5sh5sh.cn/assets/css/index/cgwl_online.css'>
+        <div class="cgwl-form" id="cgwl-kefu">
+            <i class="cgwl-icon"></i>
+            <form class="cgwl-item"
+                  action="http://5sh5sh.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0"
+                  method="post" target="_blank">
+                <input type="hidden" name="product" value='123'>
+                <input type="submit" value='在线咨询'>
+            </form>
+        </div>
+
     </div>
 </template>
 
@@ -239,8 +252,22 @@
                 return this.$refs.mySwiper.swiper
             }
         },
+        methods: {
+            alertDialog() {
+                setInterval(() => {
+                    var form = document.createElement('form');
+                    form.action = 'http://5sh5sh.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
+                    form.target = '_blank';
+                    form.method = 'POST';
+                    document.body.appendChild(form);
+                    form.submit();
+                }, 30000)
+            }
+        },
         mounted() {
             this.swiper.slideTo(1, 1000, false)
+            //咨询弹窗 30s
+            // this.alertDialog()
 
             this.screenWidth = document.body.clientWidth;
             this.screenHeight = document.body.clientHeight;
@@ -843,6 +870,7 @@
                     justify-content: flex-start;
                     flex-wrap: wrap;
                     width: 1010px;
+
                     .item {
                         width: 200px;
                         height: 120px;
@@ -858,17 +886,19 @@
             }
         }
 
-        .about-us{
+        .about-us {
             width: 100%;
             min-width: 1300px;
             display: flex;
             justify-content: center;
             padding: 100px;
             box-sizing: border-box;
-            .center{
+
+            .center {
                 width: 1300px;
                 position: relative;
-                .center-title{
+
+                .center-title {
                     width: 100%;
                     text-align: center;
                     font-size: 34px;
@@ -876,13 +906,14 @@
                     color: #333333;
                     margin-bottom: 165px;
                 }
-                .center-title-en{
+
+                .center-title-en {
                     z-index: 1;
                     width: 271px;
                     height: 116px;
                     background: #014CE5;
                     position: absolute;
-                    left:519px;
+                    left: 519px;
                     margin-top: -59px;
                     font-size: 34px;
                     font-weight: bold;
@@ -893,13 +924,15 @@
                     align-items: center;
                     box-sizing: border-box;
                 }
-                .content{
+
+                .content {
                     width: 100%;
                     min-width: 1300px;
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-end;
-                    .left{
+
+                    .left {
                         width: 572px;
                         height: 461px;
                         @include back-img-center;
@@ -907,25 +940,29 @@
                         margin-top: -80px;
                         left: 0;
                     }
-                    .right{
+
+                    .right {
                         width: 829px;
                         height: 491px;
                         background: #FFFFFF;
                         padding: 115px 49px 0 152px;
                         box-sizing: border-box;
-                        .text{
+
+                        .text {
                             font-size: 16px;
                             font-weight: 400;
                             color: #333333;
                             line-height: 38px;
                             white-space: pre-line;
                         }
-                        .more{
+
+                        .more {
                             margin-top: 20px;
                             width: 100%;
                             display: flex;
                             justify-content: flex-end;
-                            img{
+
+                            img {
                                 cursor: pointer;
                                 width: 37px;
                                 height: 12px;

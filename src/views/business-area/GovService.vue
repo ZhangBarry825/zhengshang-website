@@ -118,7 +118,6 @@
     import Background from "../../components/Background";
     import Footer from "../../components/Footer";
     import {govCloud} from "../../../public/MockData";
-    import {getTest,postTest} from "../../utils/api";
 
     export default {
         name: "GovService",
@@ -158,7 +157,7 @@
         },
         mounted() {
             this.swiper.slideTo(1, 1000, false)
-            postTest({a:123})
+
         }
     }
 </script>

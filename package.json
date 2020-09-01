@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
     "qs": "^6.9.4",
+    "scrollreveal": "^4.0.7",
     "vant": "^2.10.3",
     "vue": "^2.6.11",
     "vue-animate-number": "^0.4.2",

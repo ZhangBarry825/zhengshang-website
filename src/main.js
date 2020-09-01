@@ -25,6 +25,9 @@ Vue.use(BaiduMap, {
 import VueAnimateNumber from 'vue-animate-number'
 Vue.use(VueAnimateNumber)
 
+import {animateFun} from './utils/common.js';
+Vue.prototype.$ami = animateFun;
+
 let author={
   'powered by': 'BarryZhang',
   'email':'530027054@qq.com'

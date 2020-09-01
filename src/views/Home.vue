@@ -89,12 +89,13 @@
                 <div class="center-title">服务过的客户</div>
                 <div class="content">
                     <div class="content-item" v-for="item in 4">
-                        <div class="line1">
+                        <div class="line1 active-item1">
                             <animate-number
                                     from="1"
                                     to="10000"
                                     duration="2000"
                                     easing="easeOutQuad"
+                                    ref="myNum"
                             ></animate-number>
                             <div class="symbol">+</div>
                         </div>
@@ -271,9 +272,20 @@
             }
         },
         mounted() {
+            let that = this
             this.swiper.slideTo(1, 1000, false)
             //咨询弹窗 30s
             // this.alertDialog()
+
+
+            this.$nextTick(()=>{
+                //轮播图特效
+                that.$ami('.active-item1',0,'top','100%',0.9,true,()=>{
+                    console.log('哈哈哈哈哈')
+                    that.$refs.myNum
+                    that.$refs.myNum.start
+                });
+            });
 
             this.screenWidth = document.body.clientWidth;
             this.screenHeight = document.body.clientHeight;

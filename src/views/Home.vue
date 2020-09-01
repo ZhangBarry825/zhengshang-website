@@ -89,7 +89,13 @@
                 <div class="center-title">服务过的客户</div>
                 <div class="content">
                     <div class="content-item" v-for="item in 4">
-                        <div class="line1">200
+                        <div class="line1">
+                            <animate-number
+                                    from="1"
+                                    to="10000"
+                                    duration="2000"
+                                    easing="easeOutQuad"
+                            ></animate-number>
                             <div class="symbol">+</div>
                         </div>
                         <div class="line2">线上线下微小企业</div>

@@ -22,6 +22,9 @@ Vue.use(BaiduMap, {
   ak: 'b0nN1SLy6xKgqtT07XkAgVGMVMdqaUyZ'
 })
 
+import VueAnimateNumber from 'vue-animate-number'
+Vue.use(VueAnimateNumber)
+
 let author={
   'powered by': 'BarryZhang',
   'email':'530027054@qq.com'

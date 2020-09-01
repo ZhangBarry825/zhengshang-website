@@ -23,7 +23,7 @@ Vue.use(BaiduMap, {
 })
 
 let author={
-  'construct by': 'BarryZhang',
+  'powered by': 'BarryZhang',
   'email':'530027054@qq.com'
 }
 console.warn(author)

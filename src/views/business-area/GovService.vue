@@ -41,19 +41,71 @@
                     </van-tabs>
                 </div>
                 <div class="items">
-                    <div class="item" v-for="item in 4">
+                    <div class="item" v-for="item in solveMethodsList">
                         <div class="line1">
-                            <img class="blue" src="../../assets/images/rr011.png" alt="">
-                            <img class="white" src="../../assets/images/rr01.png" alt="">
-                            <div class="text">城市操作系统</div>
+                            <img class="blue" :src="item.src0" alt="">
+                            <img class="white" :src="item.src1" alt="">
+                            <div class="text">{{item.title}}</div>
                         </div>
-                        <div class="line2">以城市智慧化管理和运营为核心，感知城市全域数据、融合多源异构数据，构建智慧城市的应用体系</div>
+                        <div class="line2">{{item.description}}</div>
                         <div class="line3">
                             <div class="text">了解更多</div>
                             <img class="blue" src="../../assets/images/r-b.png" alt="">
                             <img class="white" src="../../assets/images/r-w.png" alt="">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="function">
+            <div class="center">
+                <div class="center-title">智慧的政务功能方案</div>
+                <div class="items">
+                    <div class="item" v-for="item in functionList">
+                        <div class="line1">
+                            <div class="img">
+                                <img :src="item.src" alt="">
+                            </div>
+                        </div>
+                        <div class="line2">{{item.title}}</div>
+                        <div class="line3">{{item.description}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="special-method">
+            <div class="center">
+                <div class="center-title">方案特点及架构</div>
+                <div class="items">
+                    <div class="item" v-for="item in specialList">
+                        <div class="line1">
+                            <img :src="item.logo" alt="" class="img">
+                            <div class="text">{{item.title}}</div>
+                        </div>
+                        <div class="line2">
+                            {{item.description}}
+                        </div>
+                    </div>
+                </div>
+                <div class="center-title2">整体架构图</div>
+                <div class="all-system-img" :style="'background-image: url('+require('../../assets/images/as.png')+')'"></div>
+            </div>
+        </div>
+        <div class="gray"></div>
+        <div class="service-case">
+            <div class="center">
+                <div class="center-title">服务案例</div>
+                <div class="items">
+                    <div class="item" v-for="item in serviceCaseList" :style="'background-image: url('+item.src+')'">
+                        <div class="back-gray">
+                            <div class="line1">{{item.title}}</div>
+                            <div class="line2">{{item.description}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="more">
+                    <div class="text">了解更多</div>
+                    <img src="../../assets/images/right-blue1.png" alt="">
                 </div>
             </div>
         </div>
@@ -65,6 +117,7 @@
     import Header from "../../components/Header";
     import Background from "../../components/Background";
     import Footer from "../../components/Footer";
+    import {govCloud} from "../../../public/MockData";
 
     export default {
         name: "GovService",
@@ -75,41 +128,12 @@
         },
         data() {
             return {
-                textList: [
-                    {
-                        title: '互联网+政务服务平台',
-                        description: '以互联网定制开发为主营业务，专注微信服务号、企业号、微信公众平台开发和微信小程序等的微信开发服务。凭借专业的研发团队，在微信商城、会员、分销、营销互动以及商业地产、酒店、医疗美容、汽车和零售等行业具有丰富的开发经验，全方位满足企业个性化需求',
-                        img: require('../../assets/images/gb.png')
-                    },
-                    {
-                        title: '专业的互联网方案解决专家',
-                        description: '以互联网定制开发为主营业务，专注微信服务号、企业号、微信公众平台开发和微信小程序等的微信开发服务。凭借专业的研发团队，在微信商城、会员、分销、营销互动以及商业地产、酒店、医疗美容、汽车和零售等行业具有丰富的开发经验，全方位满足企业个性化需求',
-                        img: require('../../assets/images/gb.png')
-                    },
-                    {
-                        title: '互联网+政务服务平台',
-                        description: '以互联网定制开发为主营业务，专注微信服务号、企业号、微信公众平台开发和微信小程序等的微信开发服务。凭借专业的研发团队，在微信商城、会员、分销、营销互动以及商业地产、酒店、医疗美容、汽车和零售等行业具有丰富的开发经验，全方位满足企业个性化需求',
-                        img: require('../../assets/images/gb.png')
-                    }
-                ],
-                areaList: [
-                    {
-                        title: '智慧城市建设',
-                        description: '做好智慧城市顶层设计，推进城市治理现代化，分布建设万物互联的全感知全连接的基础软硬件设施及数据连接管道',
-                        url: require('../../assets/images/ly1.png')
-                    }, {
-                        title: '大数据',
-                        description: '基于Hadoop/NoSQL 等技术，支持海量数据计算与存储，满足智慧城市大数据量处理需求，在感知监察、智慧公安、智能交通等领域建立了成功案例',
-                        url: require('../../assets/images/ly2.png')
-                    }, {
-                        title: '数字化',
-                        description: '以元数据智能驱动为基座，形成数据管控平台，面向各业务领域提供大数据建设、管理及数据服务的能力，构建全链路一站式的数据资产管控中心',
-                        url: require('../../assets/images/ly3.png')
-                    }, {
-                        title: '信息安全',
-                        description: '高标准的运维管控体系，为客户提供合规、可用、安全、可信的云计算服务',
-                        url: require('../../assets/images/ly4.png')
-                    }],
+                solveMethodsList:govCloud.solveMethodsList,
+                functionList:govCloud.functionList,
+                serviceCaseList:govCloud.serviceCaseList,
+                specialList:govCloud.specialList,
+                textList: govCloud.textList,
+                areaList: govCloud.areaList,
                 swiperOption: {
                     loop: true,
                     pagination: '.swiper-pagination',
@@ -118,26 +142,7 @@
                     // observeParents: true,
                 },
                 activeIndex: 0,
-                tabList: [
-                    {
-                        title: 'APP开发'
-                    },
-                    {
-                        title: '小程序开发'
-                    },
-                    {
-                        title: '网站建设'
-                    },
-                    {
-                        title: '系统集成'
-                    },
-                    {
-                        title: '物联网'
-                    },
-                    {
-                        title: '政务云'
-                    },
-                ]
+                tabList: govCloud.tabList
             }
         },
         computed: {
@@ -470,8 +475,251 @@
                         }
                     }
 
-                    .item:nth-child(2),.item:nth-child(5){
+                    .item:nth-child(2), .item:nth-child(5) {
                         margin: 0 calc(50% - 555px);
+                    }
+                }
+            }
+        }
+
+        .function {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: white;
+
+            .center {
+                width: 1300px;
+                padding-bottom: 100px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+
+                .center-title {
+                    padding: 80px 0;
+                    padding-bottom: 70px;
+                    font-size: 34px;
+                    font-weight: 500;
+                    width: 100%;
+                    text-align: center;
+                    color: #333333;
+                }
+
+                .items {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+
+                    .item {
+                        width: 310px;
+                        height: 352px;
+                        display: flex;
+                        flex-direction: column;
+                        border: 1px solid #ffffff;
+                        padding: 40px 30px;
+                        box-sizing: border-box;
+
+                        .line1 {
+                            width: 84px;
+                            height: 84px;
+                            box-shadow: 0px 3px 30px 0px rgba(105, 122, 156, 0.2);
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .line2 {
+                            margin: 40px 0;
+                            font-size: 24px;
+                            font-weight: 500;
+                            color: #333333;
+                        }
+
+                        .line3 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: #9DA9C3;
+                            @include line-hidden(3);
+                            line-height: 26px;
+                        }
+                    }
+
+                    .item:nth-child(-n+4) {
+                        margin-bottom: 20px;
+                    }
+
+                    .item:hover {
+                        border: 1px solid #004BE5;
+                    }
+                }
+            }
+        }
+
+        .special-method {
+            width: 100%;
+            height: 1106px;
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            background-image: url("../../assets/images/special.png");
+            @include back-img-center;
+
+            .center {
+                width: 1300px;
+                padding-bottom: 100px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                .center-title {
+                    padding: 80px 0;
+                    font-size: 34px;
+                    font-weight: 500;
+                    width: 100%;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+                .items{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    .item{
+                        width: 628px;
+                        height: 207px;
+                        background: rgba(6, 25, 73, 0.7);
+                        display: flex;
+                        flex-direction: column;
+                        padding: 36px 41px;
+                        box-sizing: border-box;
+                        .line1{
+                            display: flex;
+                            align-items: center;
+                            .text{
+                                margin-left: 20px;
+                                font-size: 24px;
+                                font-weight: 400;
+                                color: #FFFFFF;
+                            }
+                        }
+                        .line2{
+                            margin-top: 40px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #FFFFFF;
+                            line-height: 24px;
+                            opacity: 0.7;
+                            @include line-hidden(2);
+                        }
+                    }
+                    .item:nth-child(2n){
+                        margin-left: 44px;
+                    }
+                    .item:nth-child(-n+2){
+                        margin-bottom: 40px;
+                    }
+                }
+                .center-title2 {
+                    padding: 80px 0;
+                    font-size: 28px;
+                    font-weight: 500;
+                    width: 100%;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+                .all-system-img{
+                    position: absolute;
+                    width: 1300px;
+                    height: 663px;
+                    @include back-img-center;
+                    bottom: -369px;
+                    background-color: white;
+                }
+            }
+        }
+        .gray{
+            width: 100%;
+            height: 465px;
+            background-color: #f7f8fa;
+        }
+        .service-case {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: white;
+
+            .center {
+                width: 1300px;
+                padding-bottom: 100px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .center-title {
+                    padding: 80px 0;
+                    padding-bottom: 70px;
+                    font-size: 34px;
+                    font-weight: 500;
+                    width: 100%;
+                    text-align: center;
+                    color: #333333;
+                }
+                .items{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .item{
+                        width: 586px;
+                        height: 323px;
+                        position: relative;
+                        .back-gray{
+                            padding: 70px 43px;
+                            box-sizing: border-box;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            background-color: rgba(2, 7, 20, .7);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .line1{
+                                font-size: 24px;
+                                font-weight: 400;
+                                color: #FEFEFE;
+                            }
+                            .line2{
+                                margin-top: 50px;
+                                font-size: 16px;
+                                font-weight: 400;
+                                color: #FEFEFE;
+                                line-height: 34px;
+                                @include line-hidden(3)
+                            }
+                        }
+                    }
+                }
+                .more{
+                    margin-top: 80px;
+                    width: 164px;
+                    height: 61px;
+                    border: 2px solid #004CE5;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    .text{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #004BE5;
+                    }
+                    img{
+                        margin-left: 5px;
                     }
                 }
             }

@@ -1,6 +1,321 @@
+//首页数据
+export const homePageData={
+    //我们的服务
+    serviceList: [
+        {
+            img: require('../src/assets/images/hs1.png'),
+            title: 'APP开发',
+            description: '助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现'
+        },
+        {
+            img: require('../src/assets/images/hs2.png'),
+            title: '小程序开发',
+            description: '助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现'
+        },
+        {
+            img: require('../src/assets/images/hs3.png'),
+            title: '网站建设',
+            description: '助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现'
+        },
+        {
+            img: require('../src/assets/images/hs4.png'),
+            title: '系统集成',
+            description: '助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现'
+        },
+        {
+            img: require('../src/assets/images/hs5.png'),
+            title: '物联网',
+            description: '助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现'
+        },
+        {
+            img: require('../src/assets/images/hs6.png'),
+            title: '政务云',
+            description: '助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现流量高效变现助力商家实现'
+        }
+    ],
+    //我们的优势
+    ourAdvantages:[
+        {
+            title:'详细的了解功能需求',
+            img:require('../src/assets/images/ys1.png')
+        },
+        {
+            title:'创意精细的设计',
+            img:require('../src/assets/images/ys2.png')
+        },
+        {
+            title:'规范的代码开发',
+            img:require('../src/assets/images/ys3.png')
+        },
+        {
+            title:'安全稳定的数据库',
+            img:require('../src/assets/images/ys4.png')
+        },
+        {
+            title:'强大的专业技术团队',
+            img:require('../src/assets/images/ys5.png')
+        },
+        {
+            title:'线下实体公司',
+            img:require('../src/assets/images/ys6.png')
+        },
+        {
+            title:'用户至上的服务',
+            img:require('../src/assets/images/ys7.png')
+        },
+        {
+            title:'众多行业开发经验',
+            img:require('../src/assets/images/ys8.png')
+        }
+    ],
+    //服务过的客户
+    serviceCustomerList:[
+        {
+            number:200,
+            symbol:'+',
+            title:'线上线下微小企业'
+        },
+        {
+            number:106,
+            symbol:'',
+            title:'个人用户'
+        },
+        {
+            number:68,
+            symbol:'',
+            title:'创新创业公司'
+        },
+        {
+            number:10000,
+            symbol:'+',
+            title:'政府和公共服务机构'
+        },
+    ]
+}
+//业务领域-App定制化开发
+export const appPage={
+    //可开发行业
+    businessList:[
+        {
+            img:require('../src/assets/images/k1.png'),
+            img0:require('../src/assets/images/zz1.png'),
+            img1:require('../src/assets/images/z1.png'),
+            title:'智能家居',
+        },
+        {
+            img:require('../src/assets/images/k2.png'),
+            img0:require('../src/assets/images/zz2.png'),
+            img1:require('../src/assets/images/z2.png'),
+            title:'教育',
+        },
+        {
+            img:require('../src/assets/images/k3.png'),
+            img0:require('../src/assets/images/zz3.png'),
+            img1:require('../src/assets/images/z3.png'),
+            title:'直播',
+        },
+        {
+            img:require('../src/assets/images/k4.png'),
+            img0:require('../src/assets/images/zz4.png'),
+            img1:require('../src/assets/images/z4.png'),
+            title:'医疗',
+        },
+        {
+            img:require('../src/assets/images/k5.png'),
+            img0:require('../src/assets/images/zz5.png'),
+            img1:require('../src/assets/images/z5.png'),
+            title:'商城',
+        },
+        {
+            img:require('../src/assets/images/k6.png'),
+            img0:require('../src/assets/images/zz6.png'),
+            img1:require('../src/assets/images/z6.png'),
+            title:'外卖',
+        },
+        {
+            img:require('../src/assets/images/k7.png'),
+            img0:require('../src/assets/images/zz7.png'),
+            img1:require('../src/assets/images/z7.png'),
+            title:'二手车',
+        },
+        {
+            img:require('../src/assets/images/k8.png'),
+            img0:require('../src/assets/images/zz8.png'),
+            img1:require('../src/assets/images/z8.png'),
+            title:'健身',
+        },
+        {
+            img:require('../src/assets/images/k9.png'),
+            img0:require('../src/assets/images/zz9.png'),
+            img1:require('../src/assets/images/z9.png'),
+            title:'交友',
+        },
+        {
+            img:require('../src/assets/images/k10.png'),
+            img0:require('../src/assets/images/zz10.png'),
+            img1:require('../src/assets/images/z10.png'),
+            title:'房产',
+        },
+    ],
+    //App开发流程
+    appDevProgress:require('../src/assets/images/progress.png'),
+    //交付标准
+    payStandard:[
+        {
+            title:'产品文档',
+            backImg:require('../src/assets/images/df1.png'),
+            logo:require('../src/assets/images/d1.png')
+        },
+        {
+            title:'设计稿源文件',
+            backImg:require('../src/assets/images/df2.png'),
+            logo:require('../src/assets/images/d2.png')
+        },
+        {
+            title:'源代码',
+            backImg:require('../src/assets/images/df3.png'),
+            logo:require('../src/assets/images/d3.png')
+        },
+        {
+            title:'使用文档',
+            backImg:require('../src/assets/images/df4.png'),
+            logo:require('../src/assets/images/d4.png')
+        },
+        {
+            title:'账号信息',
+            backImg:require('../src/assets/images/df5.png'),
+            logo:require('../src/assets/images/d5.png')
+        },
+    ],
+    //系统安全标准
+    systemSecurityList:[
+        {
+            title:'源代码安全',
+            children: [{
+                title: '防SQL注入',
+                img: require('../src/assets/images/bz1.png')
+            },{
+                title: '过滤拦截机制',
+                img: require('../src/assets/images/bz2.png')
+            },{
+                title: '并发安全机制',
+                img: require('../src/assets/images/bz3.png')
+            },{
+                title: '加密(MDS、RSA、DES)',
+                img: require('../src/assets/images/bz4.png')
+            }],
+        },
+        {
+            title:'程序安全',
+            children: [{
+                title: '防SQL注入',
+                img: require('../src/assets/images/bz1.png')
+            },{
+                title: '过滤拦截机制',
+                img: require('../src/assets/images/bz2.png')
+            },{
+                title: '并发安全机制',
+                img: require('../src/assets/images/bz3.png')
+            },{
+                title: '加密(MDS、RSA、DES)',
+                img: require('../src/assets/images/bz4.png')
+            }],
+        },
+        {
+            title:'数据库安全',
+            children: [{
+                title: '防SQL注入',
+                img: require('../src/assets/images/bz1.png')
+            },{
+                title: '过滤拦截机制',
+                img: require('../src/assets/images/bz2.png')
+            },{
+                title: '并发安全机制',
+                img: require('../src/assets/images/bz3.png')
+            },{
+                title: '加密(MDS、RSA、DES)',
+                img: require('../src/assets/images/bz4.png')
+            }],
+        },
+        {
+            title:'服务器安全',
+            children: [{
+                title: '防SQL注入',
+                img: require('../src/assets/images/bz1.png')
+            },{
+                title: '过滤拦截机制',
+                img: require('../src/assets/images/bz2.png')
+            },{
+                title: '并发安全机制',
+                img: require('../src/assets/images/bz3.png')
+            },{
+                title: '加密(MDS、RSA、DES)',
+                img: require('../src/assets/images/bz4.png')
+            }],
+        }
+    ],
+    //技术支持
+    technologySupportList:[
+        {
+            title:'程序使用培训',
+            img:require('../src/assets/images/j1.png')
+        },
+        {
+            title:'项目问题咨询',
+            img:require('../src/assets/images/j2.png')
+        },
+        {
+            title:'项目部署及维护',
+            img:require('../src/assets/images/j3.png')
+        },
+        {
+            title:'后期功能升级和修改',
+            img:require('../src/assets/images/j4.png')
+        },
+    ]
+
+}
+
+//业务领域-系统集成
+export const systemPage={
+    availableBusiness:[
+        {
+            title:'移动社交',
+            img:require('../src/assets/images/a1.png')
+        },
+        {
+            title:'视频直播',
+            img:require('../src/assets/images/a2.png')
+        },
+        {
+            title:'线上教育',
+            img:require('../src/assets/images/a3.png')
+        },
+        {
+            title:'智慧医疗',
+            img:require('../src/assets/images/a4.png')
+        },
+        {
+            title:'移动商城',
+            img:require('../src/assets/images/a5.png')
+        },
+        {
+            title:'跑腿外送',
+            img:require('../src/assets/images/a6.png')
+        },
+        {
+            title:'智慧外卖',
+            img:require('../src/assets/images/a7.png')
+        },
+        {
+            title:'智慧健身',
+            img:require('../src/assets/images/a8.png')
+        },
+    ]
+}
 
 //政务云页面数据
-const govCloud={
+export const govCloud={
     solveMethodsList:[
         {
             title:'城市操作系统',
@@ -161,4 +476,4 @@ const govCloud={
 }
 
 
-export {govCloud}
+// export {homePageData,govCloud}

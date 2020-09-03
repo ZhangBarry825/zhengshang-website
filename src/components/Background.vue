@@ -174,7 +174,6 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            overflow: hidden;
             .left{
                 display: flex;
                 flex-direction: column;

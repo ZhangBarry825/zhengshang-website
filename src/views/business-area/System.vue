@@ -12,9 +12,9 @@
                         <div class="line line0" @mouseenter="itemHover(0)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a1.png" alt="">
+                                    <img :src="availableBusiness[0].img" alt="">
                                 </div>
-                                <div class="right-text">移动社交</div>
+                                <div class="right-text">{{availableBusiness[0].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==0?more0:more1" alt="">
@@ -23,9 +23,9 @@
                         <div class="line line1" @mouseenter="itemHover(1)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a2.png" alt="">
+                                    <img :src="availableBusiness[1].img" alt="">
                                 </div>
-                                <div class="right-text">视频直播</div>
+                                <div class="right-text">{{availableBusiness[1].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==1?more0:more1" alt="">
@@ -34,9 +34,9 @@
                         <div class="line line2" @mouseenter="itemHover(2)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a3.png" alt="">
+                                    <img :src="availableBusiness[2].img" alt="">
                                 </div>
-                                <div class="right-text">线上教育</div>
+                                <div class="right-text">{{availableBusiness[2].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==2?more0:more1" alt="">
@@ -47,9 +47,9 @@
                         <div class="line line3" @mouseenter="itemHover(3)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a4.png" alt="">
+                                    <img :src="availableBusiness[3].img" alt="">
                                 </div>
-                                <div class="right-text">智慧医疗</div>
+                                <div class="right-text">{{availableBusiness[3].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==3?more0:more1" alt="">
@@ -58,9 +58,9 @@
                         <div class="line line4" @mouseenter="itemHover(4)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a5.png" alt="">
+                                    <img :src="availableBusiness[4].img" alt="">
                                 </div>
-                                <div class="right-text">移动商城</div>
+                                <div class="right-text">{{availableBusiness[4].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==4?more0:more1" alt="">
@@ -71,9 +71,9 @@
                         <div class="line line5" @mouseenter="itemHover(5)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a6.png" alt="">
+                                    <img :src="availableBusiness[5].img" alt="">
                                 </div>
-                                <div class="right-text">跑腿外送</div>
+                                <div class="right-text">{{availableBusiness[5].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==5?more0:more1" alt="">
@@ -82,9 +82,9 @@
                         <div class="line line6" @mouseenter="itemHover(6)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a7.png" alt="">
+                                    <img :src="availableBusiness[6].img" alt="">
                                 </div>
-                                <div class="right-text">智慧外卖</div>
+                                <div class="right-text">{{availableBusiness[6].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==6?more0:more1" alt="">
@@ -93,9 +93,9 @@
                         <div class="line line7" @mouseenter="itemHover(7)" @mouseleave="itemHover(-1)">
                             <div class="context">
                                 <div class="left-logo">
-                                    <img src="../../assets/images/a8.png" alt="">
+                                    <img :src="availableBusiness[7].img" alt="">
                                 </div>
-                                <div class="right-text">智慧健身</div>
+                                <div class="right-text">{{availableBusiness[7].title}}</div>
                             </div>
                             <div class="more">
                                 <img :src="activeIndex==7?more0:more1" alt="">
@@ -344,6 +344,7 @@
     import Header from "../../components/Header";
     import Footer from "../../components/Footer";
     import Background from "../../components/Background";
+    import {systemPage} from "../../../public/MockData";
 
     export default {
         name: "System",
@@ -354,6 +355,7 @@
         },
         data() {
             return {
+                availableBusiness:systemPage.availableBusiness,
                 screenWidth: '',
                 screenHeight: '',
                 activeIndex: -1,

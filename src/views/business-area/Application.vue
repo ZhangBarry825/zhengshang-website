@@ -13,55 +13,10 @@
                         <img src="../../assets/images/l.png" alt="">
                     </div>
                     <div class="right">
-                        <div class="item" :class="businessIndex==0?'selected':''" @click="businessSelect(0)">
-                            <img class="visible" src="../../assets/images/z1.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz1.png" alt="">
-                            <div class="text">智能家居</div>
-                        </div>
-                        <div class="item" :class="businessIndex==1?'selected':''" @click="businessSelect(1)">
-                            <img class="visible" src="../../assets/images/z2.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz2.png" alt="">
-                            <div class="text">教育</div>
-                        </div>
-                        <div class="item" :class="businessIndex==2?'selected':''" @click="businessSelect(2)">
-                            <img class="visible" src="../../assets/images/z3.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz3.png" alt="">
-                            <div class="text">直播</div>
-                        </div>
-                        <div class="item" :class="businessIndex==3?'selected':''" @click="businessSelect(3)">
-                            <img class="visible" src="../../assets/images/z4.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz4.png" alt="">
-                            <div class="text">医疗</div>
-                        </div>
-                        <div class="item" :class="businessIndex==4?'selected':''" @click="businessSelect(4)">
-                            <img class="visible" src="../../assets/images/z5.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz5.png" alt="">
-                            <div class="text">商城</div>
-                        </div>
-                        <div class="item" :class="businessIndex==5?'selected':''" @click="businessSelect(5)">
-                            <img class="visible" src="../../assets/images/z6.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz6.png" alt="">
-                            <div class="text">外卖</div>
-                        </div>
-                        <div class="item" :class="businessIndex==6?'selected':''" @click="businessSelect(6)">
-                            <img class="visible" src="../../assets/images/z7.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz7.png" alt="">
-                            <div class="text">二手车</div>
-                        </div>
-                        <div class="item" :class="businessIndex==7?'selected':''" @click="businessSelect(7)">
-                            <img class="visible" src="../../assets/images/z8.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz8.png" alt="">
-                            <div class="text">健身</div>
-                        </div>
-                        <div class="item" :class="businessIndex==8?'selected':''" @click="businessSelect(8)">
-                            <img class="visible" src="../../assets/images/z9.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz9.png" alt="">
-                            <div class="text">交友</div>
-                        </div>
-                        <div class="item" :class="businessIndex==9?'selected':''" @click="businessSelect(9)">
-                            <img class="visible" src="../../assets/images/z10.png" alt="">
-                            <img class="hidden" src="../../assets/images/zz10.png" alt="">
-                            <div class="text">房产</div>
+                        <div class="item" v-for="(item,index) in businessList" :class="businessIndex==index?'selected':''" @click="businessSelect(index)">
+                            <img class="visible" :src="item.img1" alt="">
+                            <img class="hidden" :src="item.img0" alt="">
+                            <div class="text">{{item.title}}</div>
                         </div>
                     </div>
                 </div>
@@ -70,57 +25,21 @@
         <div class="progress">
             <div class="center">
                 <div class="title">APP开发流程</div>
-                <img src="../../assets/images/progress.png" alt="">
+                <img :src="appDevProgress" alt="">
             </div>
         </div>
         <div class="jfbz">
             <div class="center">
                 <div class="title">交付标准</div>
                 <div class="items">
-                    <div class="item">
+                    <div class="item" v-for="item in payStandard">
                         <div class="top">
-                            <img src="../../assets/images/df1.png" alt="">
+                            <img :src="item.backImg" alt="">
                         </div>
                         <div class="middle">
-                            <img src="../../assets/images/d1.png" alt="">
+                            <img :src="item.logo" alt="">
                         </div>
-                        <div class="bottom">产品文档</div>
-                    </div>
-                    <div class="item">
-                        <div class="top">
-                            <img src="../../assets/images/df2.png" alt="">
-                        </div>
-                        <div class="middle">
-                            <img src="../../assets/images/d2.png" alt="">
-                        </div>
-                        <div class="bottom">设计稿源文件</div>
-                    </div>
-                    <div class="item">
-                        <div class="top">
-                            <img src="../../assets/images/df3.png" alt="">
-                        </div>
-                        <div class="middle">
-                            <img src="../../assets/images/d3.png" alt="">
-                        </div>
-                        <div class="bottom">源代码</div>
-                    </div>
-                    <div class="item">
-                        <div class="top">
-                            <img src="../../assets/images/df4.png" alt="">
-                        </div>
-                        <div class="middle">
-                            <img src="../../assets/images/d4.png" alt="">
-                        </div>
-                        <div class="bottom">使用文档</div>
-                    </div>
-                    <div class="item">
-                        <div class="top">
-                            <img src="../../assets/images/df5.png" alt="">
-                        </div>
-                        <div class="middle">
-                            <img src="../../assets/images/d5.png" alt="">
-                        </div>
-                        <div class="bottom">账号信息</div>
+                        <div class="bottom">{{item.title}}</div>
                     </div>
                 </div>
             </div>
@@ -133,22 +52,13 @@
                     </div>
                     <div class="center-center">
                         <div class="left">
-                            <div class="left-item" :class="securityIndex==0?'selected':''" @click="selectSecurity(0)">
-                                源代码安全
-                            </div>
-                            <div class="left-item" :class="securityIndex==1?'selected':''" @click="selectSecurity(1)">
-                                程序安全
-                            </div>
-                            <div class="left-item" :class="securityIndex==2?'selected':''" @click="selectSecurity(2)">
-                                数据库安全
-                            </div>
-                            <div class="left-item" :class="securityIndex==3?'selected':''" @click="selectSecurity(3)">
-                                服务器安全
+                            <div class="left-item" v-for="(item,index) in systemSecurityList" :class="securityIndex==index?'selected':''" @click="selectSecurity(index)">
+                                {{item.title}}
                             </div>
                         </div>
                         <div class="middle"></div>
                         <div class="right">
-                            <div v-for="item in securityList[securityIndex]" class="right-item">
+                            <div v-for="item in systemSecurityList[securityIndex].children" class="right-item">
                                 <img :src="item.img" alt="">
                                 <div class="text">{{item.title}}</div>
                             </div>
@@ -161,21 +71,9 @@
                         技术支持
                     </div>
                     <div class="items">
-                        <div class="item">
-                            <img src="../../assets/images/j1.png" class="item-img" alt="">
-                            <div class="item-title">程序使用培训</div>
-                        </div>
-                        <div class="item">
-                            <img src="../../assets/images/j2.png" class="item-img" alt="">
-                            <div class="item-title">项目问题咨询</div>
-                        </div>
-                        <div class="item">
-                            <img src="../../assets/images/j3.png" class="item-img" alt="">
-                            <div class="item-title">项目部署及维护</div>
-                        </div>
-                        <div class="item">
-                            <img src="../../assets/images/j4.png" class="item-img" alt="">
-                            <div class="item-title">后期功能升级和修改</div>
+                        <div class="item" v-for="item in technologySupportList">
+                            <img :src="item.img" class="item-img" alt="">
+                            <div class="item-title">{{item.title}}</div>
                         </div>
                     </div>
                 </div>
@@ -188,6 +86,7 @@
 <script>
     import Header from "../../components/Header";
     import Background from "../../components/Background";    import Footer from "../../components/Footer";
+    import {appPage} from "../../../public/MockData";
 
 
     export default {
@@ -199,92 +98,11 @@
         },
         data() {
             return {
-                businessList:[
-                    {
-                        img:require('../../assets/images/k1.png')
-                    },
-                    {
-                        img:require('../../assets/images/k2.png')
-                    },
-                    {
-                        img:require('../../assets/images/k3.png')
-                    },
-                    {
-                        img:require('../../assets/images/k4.png')
-                    },
-                    {
-                        img:require('../../assets/images/k5.png')
-                    },
-                    {
-                        img:require('../../assets/images/k6.png')
-                    },
-                    {
-                        img:require('../../assets/images/k7.png')
-                    },
-                    {
-                        img:require('../../assets/images/k8.png')
-                    },
-                    {
-                        img:require('../../assets/images/k9.png')
-                    },
-                    {
-                        img:require('../../assets/images/k10.png')
-                    },
-                ],
-                securityList: [
-                    [{
-                        title: '防SQL注入',
-                        img: require('../../assets/images/bz1.png')
-                    },{
-                        title: '过滤拦截机制',
-                        img: require('../../assets/images/bz2.png')
-                    },{
-                        title: '并发安全机制',
-                        img: require('../../assets/images/bz3.png')
-                    },{
-                        title: '加密(MDS、RSA、DES)',
-                        img: require('../../assets/images/bz4.png')
-                    }],
-                    [{
-                        title: '身份认证机制',
-                        img: require('../../assets/images/bz5.png')
-                    },{
-                        title: '权限控制',
-                        img: require('../../assets/images/bz6.png')
-                    },{
-                        title: '渗透测试',
-                        img: require('../../assets/images/bz7.png')
-                    },{
-                        title: '日志追踪',
-                        img: require('../../assets/images/bz8.png')
-                    }],
-                    [{
-                        title: '双机容错',
-                        img: require('../../assets/images/bz9.png')
-                    },{
-                        title: '数据备份',
-                        img: require('../../assets/images/bz10.png')
-                    },{
-                        title: '灾难恢复',
-                        img: require('../../assets/images/bz11.png')
-                    },{
-                        title: '数据存储(基于RAID的存储技术)',
-                        img: require('../../assets/images/bz12.png')
-                    }],
-                    [{
-                        title: '防火墙',
-                        img: require('../../assets/images/bz13.png')
-                    },{
-                        title: '入侵检测',
-                        img: require('../../assets/images/bz14.png')
-                    },{
-                        title: '漏洞扫描',
-                        img: require('../../assets/images/bz15.png')
-                    },{
-                        title: '物理隔离',
-                        img: require('../../assets/images/bz16.png')
-                    }],
-                ],
+                businessList:appPage.businessList,
+                appDevProgress:appPage.appDevProgress,
+                payStandard:appPage.payStandard,
+                systemSecurityList:appPage.systemSecurityList,
+                technologySupportList:appPage.technologySupportList,
                 businessIndex: 0,
                 securityIndex: 0,
                 screenWidth: '',

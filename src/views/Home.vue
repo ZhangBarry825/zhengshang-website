@@ -20,11 +20,11 @@
       </swiper>
     </div>
     <div class="our-service">
-      <div class="float-back" :style="'min-width:'+ (1300+halfMargin)+'px'"></div>
+      <div class="float-back active-left" :style="'min-width:'+ (1300+halfMargin)+'px'"></div>
       <div class="center">
         <div class="center-title">我们的服务</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in serviceList" :key="index">
+          <div class="item active-item2" v-for="(item,index) in serviceList" :key="index">
             <div class="img" :style="'background-image: url('+item.img+');'"></div>
             <div class="item-title">{{item.title}}</div>
             <div class="item-description">{{item.description}}</div>
@@ -36,7 +36,7 @@
       <div class="center">
         <div class="center-title">行业解决方案</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in homeData.solution" v-if="index<3" :key="index" >
+          <div :class="'item active-solve'+index" v-for="(item,index) in homeData.solution" v-if="index<3" :key="index" >
             <div class="item-title" :style="'background-image: url('+item.img+')'">
               <div class="title1">{{item.title}}</div>
               <div class="title2">{{item.content}}</div>
@@ -52,7 +52,7 @@
                 </div>
               </div>
             </div>
-            <div class="more">
+            <div class="more" @click="openDialog">
               <div class="text">了解更多</div>
               <img src="../assets/images/right-blue1.png" alt />
             </div>
@@ -61,10 +61,10 @@
       </div>
     </div>
     <div class="project-process">
-      <div class="center-back" :style="'width: '+(1300+halfMargin)+'px'">
-        <div class="center">
+      <div class="center-back active-right" :style="'width: '+(1300+halfMargin)+'px'">
+        <div class="center active-left2">
           <div class="center-title">项目服务流程</div>
-          <img src="../assets/images/xmfwlc2.png" alt />
+          <img class="active-item3" src="../assets/images/xmfwlc2.png" alt />
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
               <animate-number
                 from="1"
                 :to="item.number"
-                duration="2000"
+                duration="1500"
                 easing="easeOutQuad"
                 ref="myNum"
               ></animate-number>
@@ -213,6 +213,14 @@ export default {
       this.aboutus = data.aboutus
       console.log(data, "首页")
     },
+    openDialog(){
+      var form = document.createElement('form');
+      form.action = 'http://xuxusb3.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
+      form.target = '_blank';
+      form.method = 'POST';
+      document.body.appendChild(form);
+      form.submit();
+    },
     alertDialog () {
       setInterval(() => {
         var form = document.createElement('form');
@@ -230,14 +238,26 @@ export default {
     //咨询弹窗 30s
     // this.alertDialog()
 
+    that.$ami('.active-item1', 0, 'top', '0%', 1, true, () => {
+      console.log('123')
+      that.$refs.myNum[0].start()
+      that.$refs.myNum[1].start()
+      that.$refs.myNum[2].start()
+      that.$refs.myNum[3].start()
+    });
 
-    // this.$nextTick(() => {
-    //   //轮播图特效
-    //   that.$ami('.active-item1', 0, 'top', '100%', 0.9, true, () => {
-    //     that.$refs.myNum
-    //     that.$refs.myNum.start
-    //   });
-    // });
+    that.$ami('.active-item2',200,'top','10%',0,true)
+    that.$ami('.active-left',0,'left','100%',1,true)
+    that.$ami('.active-left2',0,'left','10%',1,true)
+
+    setTimeout(()=>{
+      that.$ami('.active-solve0',0,'bottom','20%',.2,true)
+      that.$ami('.active-solve1',200,'bottom','20%',.2,true)
+      that.$ami('.active-solve2',400,'bottom','20%',.2,true)
+      that.$ami('.active-right',0,'right','30%',1,true)
+    },100)
+
+    // that.$ami('.active-item3',0,'top','10%',.5,true)
 
     this.screenWidth = document.body.clientWidth;
     this.screenHeight = document.body.clientHeight;
@@ -257,6 +277,7 @@ export default {
   @include page-style;
   height: 100%;
   background-color: #f4f5f8;
+  overflow: hidden;
 
   .home-back {
     background-image: url('../assets/images/home-back.gif');
@@ -295,17 +316,50 @@ export default {
         .line3 {
           width: 164px;
           height: 62px;
-          background: rgba(254, 130, 56, 1);
           border-radius: 31px;
           display: flex;
           justify-content: center;
           align-items: center;
           cursor: pointer;
 
+
+          background-color: rgba(254, 130, 56, 1);
+
+          z-index: 1;
+          position: relative;
+          font-size: inherit;
+          font-family: inherit;
+          color: white;
+          outline: none;
+          border: none;
+          overflow: hidden;
+          transition: color 0.4s ease-in-out;
+
           img {
             width: 24px;
             height: 9px;
           }
+        }
+        .line3::before{
+          content: '';
+          z-index: -1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 1em;
+          height: 1em;
+          border-radius: 50%;
+          background-color: #3cefff;
+          transform-origin: center;
+          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+          transition: transform 0.45s ease-in-out;
+        }
+        .line3:hover {
+          cursor: pointer;
+          color: #161616;
+        }
+        .line3:hover::before {
+          transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
         }
       }
 
@@ -410,9 +464,15 @@ export default {
           }
         }
 
+
         .item:hover {
           color: rgba(47,103,241,0.31);
           background-color: rgba(47,103,241,0.31);
+
+          .img{
+            transition: all 1.5s;
+            transform: rotateY(540deg);
+          }
         }
       }
     }

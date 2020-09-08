@@ -1,7 +1,7 @@
 import scrollReveal from 'scrollreveal';
 
 
-export function animateFun(className,delayTime,originDirection,distanceLength,scaleRatio,resetAgain,callback){
+export function animateFun(className,delayTime,originDirection,distanceLength,scaleRatio,resetAgain,callback=()=>{}){
     scrollReveal().reveal(className, {
         // 动画的时长
         duration: 500,

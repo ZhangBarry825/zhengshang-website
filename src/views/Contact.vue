@@ -124,7 +124,25 @@ export default {
         phone: '',
         description: ''
       },
-      Address: {}
+      Address: {
+        companys:[
+          {
+            place:'',
+            qq:'',
+            tel:''
+          },
+          {
+            place:'',
+            qq:'',
+            tel:''
+          },
+          {
+            place:'',
+            qq:'',
+            tel:''
+          }
+        ]
+      }
     }
   },
   computed: {
@@ -142,10 +160,19 @@ export default {
       this.Address = data
     },
     submitForm (formName) {
+      let that = this
       this.$refs[formName].validate((valid) => {
         if (valid) {
           saveapi({ name: this.formData.name, mobile: this.formData.phone, remark: this.formData.description }).then(res => {
-            alert(res.msg);
+            if(res.code==1){
+              that.$message({
+                message:'提交成功',
+                type:'success'
+              })
+            }else {
+              that.$message('提交错误')
+            }
+
             console.log(res)
           })
         } else {

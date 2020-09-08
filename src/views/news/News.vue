@@ -77,7 +77,7 @@ export default {
       pindex: '',
       page: 1,
       activeIndex: 0,
-      newslist: [{ img: '', title: '' }],
+      newslist: [],
       recommend: [{ img: '', title: '' }],
       total: 1
     }
@@ -183,7 +183,10 @@ export default {
       .top-items {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        .top-item:nth-child(2){
+          margin: 0 75px;
+        }
         .top-item {
           cursor: pointer;
           width: 381px;

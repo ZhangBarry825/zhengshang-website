@@ -5,7 +5,7 @@
       <div class="center">
         <div class="title">{{info.title}}</div>
         <div class="time">{{info.category}} | {{info.ctime}}</div>
-        <div class="article">{{info.content}}</div>
+        <div class="article" v-html="info.content"></div>
       </div>
       <div class="more-list">
         <div class="previous" @click="previous" v-if="info.pre">

@@ -6,16 +6,16 @@
       <div class="center">
         <div class="left-item">
           <div class="left">
-            <img :src="datalist[0].img" alt />
+            <img :src="datalist[0].img||''" alt />
           </div>
           <div class="right">
-            <div class="title">{{datalist[0].title}}</div>
+            <div class="title">{{datalist[0].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[0].remark}}</div>
             <div class="line2">
               <div class="text" v-for="(item, index) in datalist[0].content" :key="index">{{item}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/business/app-develop'})">
               <div class="text">了解更多</div>
               <img src="../../assets/images/right-blue2.png" alt />
             </div>
@@ -23,33 +23,33 @@
         </div>
         <div class="right-item">
           <div class="right">
-            <div class="title">{{datalist[1].title}}</div>
+            <div class="title">{{datalist[1].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[1].remark}}</div>
             <div class="line2">
               <div class="text" v-for="(item, index) in datalist[1].content" :key="index">{{item}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/business/mini-program'})">
               <div class="text">了解更多</div>
               <img src="../../assets/images/right-blue2.png" alt />
             </div>
           </div>
           <div class="left">
-            <img :src="datalist[1].img" alt />
+            <img :src="datalist[1].img||''" alt />
           </div>
         </div>
         <div class="left-item">
           <div class="left">
-            <img :src="datalist[2].img" alt />
+            <img :src="datalist[2].img||''" alt />
           </div>
           <div class="right">
-            <div class="title">{{datalist[2].title}}</div>
+            <div class="title">{{datalist[2].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[2].remark}}</div>
             <div class="line2">
               <div class="text" v-for="(item, index) in datalist[2].content" :key="index">{{item}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/business/web-construct'})">
               <div class="text">了解更多</div>
               <img src="../../assets/images/right-blue2.png" alt />
             </div>
@@ -57,33 +57,33 @@
         </div>
         <div class="right-item">
           <div class="right">
-            <div class="title">{{datalist[3].title}}</div>
+            <div class="title">{{datalist[3].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[3].remark}}</div>
             <div class="line2">
               <div class="text" v-for="(item, index) in datalist[3].content" :key="index">{{item}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/business/system'})">
               <div class="text">了解更多</div>
               <img src="../../assets/images/right-blue2.png" alt />
             </div>
           </div>
           <div class="left">
-            <img :src="datalist[3].img" alt />
+            <img :src="datalist[3].img||''" alt />
           </div>
         </div>
         <div class="left-item">
           <div class="left">
-            <img :src="datalist[4].img" alt />
+            <img :src="datalist[4].img||''" alt />
           </div>
           <div class="right">
-            <div class="title">{{datalist[4].title}}</div>
+            <div class="title">{{datalist[4].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[4].remark}}</div>
             <div class="line2">
               <div class="text" v-for="(item, index) in datalist[4].content" :key="index">{{item}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/business/internet-things'})">
               <div class="text">了解更多</div>
               <img src="../../assets/images/right-blue2.png" alt />
             </div>
@@ -91,19 +91,19 @@
         </div>
         <div class="right-item">
           <div class="right">
-            <div class="title">{{datalist[5].title}}</div>
+            <div class="title">{{datalist[5].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[5].remark}}</div>
             <div class="line2">
               <div class="text" v-for="(item, index) in datalist[5].content" :key="index">{{item}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/business/gov-cloud'})">
               <div class="text">了解更多</div>
               <img src="../../assets/images/right-blue2.png" alt />
             </div>
           </div>
           <div class="left">
-            <img :src="datalist[5].img" alt />
+            <img :src="datalist[5].img||''" alt />
           </div>
         </div>
       </div>
@@ -136,16 +136,29 @@ export default {
   },
   data () {
     return {
-      datalist: []
+      datalist: [{
+        title:''
+      },{
+        title:''
+      },{
+        title:''
+      },{
+        title:''
+      },{
+        title:''
+      },{
+        title:''
+      }]
     }
   },
-  created () {
+  mounted() {
     this.retrieveData()
   },
   methods: {
     //   获取数据
     async retrieveData () {
       let { data } = await Businessapi()
+      console.log(data,998)
       this.datalist = data.datalist
       console.log(data, "业务领域")
     },
@@ -156,6 +169,7 @@ export default {
 
 <style scoped lang="scss">
 .business-page {
+  overflow: hidden;
   @include page-style;
   background-color: #ffffff;
   .content {

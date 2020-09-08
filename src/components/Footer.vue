@@ -6,8 +6,8 @@
       </div>
       <div class="line2">
         <div class="column1">
-          <div class="line">QQ邮箱：{{ieveData.qq}}</div>
-          <div class="line">联系电话：{{ieveData.tel}}</div>
+          <div class="line">QQ邮箱：{{pageData.qq}}</div>
+          <div class="line">联系电话：{{pageData.tel}}</div>
           <div class="line">总部：{{companys[0].name}}</div>
           <div class="line">办公地址：{{companys[0].place}}</div>
         </div>
@@ -22,8 +22,8 @@
           </div>
         </div>
         <div class="column3">
-          <div class="line">{{ieveData.copyright}}</div>
-          <div class="line">{{ieveData.icp}}</div>
+          <div class="line">{{pageData.copyright}}</div>
+          <div class="line">{{pageData.icp}}</div>
         </div>
       </div>
     </div>
@@ -36,18 +36,27 @@ export default {
   name: "Footer",
   data () {
     return {
-      ieveData: {
+      pageData: {
+        qq:'',
+        icp:'',
+        tel:''
       },
-      companys: []
+      companys: [{
+        name:''
+      },{
+        name:''
+      },{
+        name:''
+      }]
     }
   },
   created () {
-    this.retrieveData()
+    this.receiveData()
   },
   methods: {
-    async retrieveData () {
+    async receiveData () {
       let { data } = await bottomIn()
-      this.ieveData = data
+      this.pageData = data
       this.companys = data.companys
       console.log(data)
     },

@@ -36,8 +36,8 @@
       <div class="center">
         <div class="center-title">行业解决方案</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in homeData.solution" :key="index">
-            <div class="item-title">
+          <div class="item" v-for="(item,index) in homeData.solution" v-if="index<3" :key="index" >
+            <div class="item-title" :style="'background-image: url('+item.img+')'">
               <div class="title1">{{item.title}}</div>
               <div class="title2">{{item.content}}</div>
             </div>
@@ -103,7 +103,7 @@
       <div class="center">
         <div class="center-title">新闻中心</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in homeData.news" :key="index">
+          <div class="item" v-for="(item,index) in homeData.news" v-if="index<4" :key="index">
             <div class="left">
               <div class="img" :style="'background-image: url('+item.img+')'"></div>
             </div>
@@ -124,44 +124,7 @@
             v-for="(item, index) in homeData.partner"
             :key="index"
             class="item"
-            :style="'background-image: url('+item.img+')'"
-          ></div>
-          <!-- <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt2.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt3.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt4.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt5.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt6.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt7.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt8.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt9.png')+')'"
-          ></div>
-          <div
-            class="item"
-            :style="'background-image: url('+require('../assets/images/pt10.png')+')'"
-          ></div>-->
+            :style="'background-image: url('+item.img+')'"></div>
         </div>
       </div>
     </div>
@@ -174,7 +137,7 @@
           <div class="right">
             <div class="text">{{aboutus.content}}</div>
             <div class="more">
-              <img src="../assets/images/right-blue2.png" alt />
+              <img @click="$router.push({path:'/about'})" src="../assets/images/right-blue2.png" alt />
             </div>
           </div>
         </div>
@@ -182,19 +145,15 @@
     </div>
     <Footer></Footer>
 
-    <link rel="stylesheet" href="http://5sh5sh.cn/assets/css/index/cgwl_online.css" />
-    <div class="cgwl-form" id="cgwl-kefu">
+    <link rel='stylesheet' href='http://xuxusb3.cn/assets/css/index/cgwl_online.css'>
+    <div class="cgwl-form" id="cgwl-kefu" >
       <i class="cgwl-icon"></i>
-      <form
-        class="cgwl-item"
-        action="http://5sh5sh.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0"
-        method="post"
-        target="_blank"
-      >
-        <input type="hidden" name="product" value="123" />
-        <input type="submit" value="在线咨询" />
+      <form class="cgwl-item" action="http://xuxusb3.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0" method="post" target="_blank" >
+        <input type="hidden" name="product" value=''>
+        <input type="submit" value='在线咨询'>
       </form>
     </div>
+
   </div>
 </template>
 
@@ -257,7 +216,7 @@ export default {
     alertDialog () {
       setInterval(() => {
         var form = document.createElement('form');
-        form.action = 'http://5sh5sh.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
+        form.action = 'http://xuxusb3.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
         form.target = '_blank';
         form.method = 'POST';
         document.body.appendChild(form);
@@ -272,14 +231,13 @@ export default {
     // this.alertDialog()
 
 
-    this.$nextTick(() => {
-      //轮播图特效
-      that.$ami('.active-item1', 0, 'top', '100%', 0.9, true, () => {
-        console.log('哈哈哈哈哈')
-        that.$refs.myNum
-        that.$refs.myNum.start
-      });
-    });
+    // this.$nextTick(() => {
+    //   //轮播图特效
+    //   that.$ami('.active-item1', 0, 'top', '100%', 0.9, true, () => {
+    //     that.$refs.myNum
+    //     that.$refs.myNum.start
+    //   });
+    // });
 
     this.screenWidth = document.body.clientWidth;
     this.screenHeight = document.body.clientHeight;
@@ -420,6 +378,7 @@ export default {
         justify-content: space-around;
 
         .item {
+          transition: background-color .8s;
           width: 345px;
           height: 367px;
           display: flex;
@@ -432,7 +391,6 @@ export default {
           .img {
             width: 126px;
             height: 142px;
-
             @include back-img-center;
           }
 
@@ -453,7 +411,8 @@ export default {
         }
 
         .item:hover {
-          border: 1px solid #245af2;
+          color: rgba(47,103,241,0.31);
+          background-color: rgba(47,103,241,0.31);
         }
       }
     }
@@ -832,6 +791,7 @@ export default {
               font-size: 24px;
               font-weight: 400;
               color: #333333;
+              @include line-hidden(1);
             }
 
             .line2 {

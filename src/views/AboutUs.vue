@@ -7,30 +7,24 @@
         <div class="data">
           <div class="item">
             <img src="../assets/images/g1.png" alt />
-            <div class="text">7年项目开发经验</div>
+            <div class="text">{{config.first}}</div>
           </div>
           <div class="item">
             <img src="../assets/images/g2.png" alt />
-            <div class="text">78人技术团队</div>
+            <div class="text">{{config.second}}</div>
           </div>
           <div class="item">
             <img src="../assets/images/g3.png" alt />
-            <div class="text">3000+合作客户</div>
+            <div class="text">{{config.third}}</div>
           </div>
         </div>
         <div class="introduction">
           <div class="center-title">关于我们</div>
           <div class="center-title-en">ABOUT US</div>
           <div class="content">
-            <div
-              class="left"
-              :style="'background-image: url('+require('../assets/images/us-about.png')+')'"
-            ></div>
+            <div class="left" :style="'background-image: url('+aboutus.img+')'"></div>
             <div class="right">
-              <div class="text">
-                郑州正尚网络科技有限公司，位于郑州郑东新区金水东路绿地新都会6号楼。是一家集网站建设、小程序开发、APP开发、OA办公系统、智慧城市服务系统、大数据分析系统、物联网管理平台于一体一站式互联网服务。
-                <br />我们是追求品质与力求不断超越自己的团队，每一位成员也是亲密的伙伴，与公司一起成长与发展。我们尊重每次合作的机会，不断精进，团队秉承专注、专业的技术服务思维。视服务质量为企业使命，视客户为企业之本，以服务客户为企业宗旨，以高效而良好的服务为客户切实节约成本、创造价值。
-              </div>
+              <div class="text">{{aboutus.content}}</div>
               <div class="more">
                 <img src="../assets/images/right-blue2.png" alt />
               </div>
@@ -47,8 +41,8 @@
                     <img src="../assets/images/jy1.png" alt />
                   </div>
                 </div>
-                <div class="line2">一流服务体验</div>
-                <div class="line3">尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</div>
+                <div class="line2">{{idea[0].key}}</div>
+                <div class="line3">{{idea[0].value}}</div>
               </div>
               <div class="left-item">
                 <div class="line1">
@@ -56,8 +50,8 @@
                     <img src="../assets/images/jy2.png" alt />
                   </div>
                 </div>
-                <div class="line2">诚信沟通合作</div>
-                <div class="line3">尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</div>
+                <div class="line2">{{idea[1].key}}</div>
+                <div class="line3">{{idea[1].value}}</div>
               </div>
             </div>
             <div class="middle">
@@ -70,8 +64,8 @@
                     <img src="../assets/images/jy3.png" alt />
                   </div>
                 </div>
-                <div class="line2">专业技术创新</div>
-                <div class="line3">尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</div>
+                <div class="line2">{{idea[2].key}}</div>
+                <div class="line3">{{idea[2].value}}</div>
               </div>
               <div class="right-item">
                 <div class="line1">
@@ -79,8 +73,8 @@
                     <img src="../assets/images/jy4.png" alt />
                   </div>
                 </div>
-                <div class="line2">勇于担当</div>
-                <div class="line3">尊重客户，及时响应客户需求，快速解决客户问题，站在客户立场思考和推进工作，深入了解客户需求的变化，提供超出客户预期的产品和服务。</div>
+                <div class="line2">{{idea[3].key}}</div>
+                <div class="line3">{{idea[3].value}}</div>
               </div>
             </div>
           </div>
@@ -93,35 +87,23 @@
         <div class="images">
           <div class="left">
             <div class="left-top">
-              <div
-                class="left-top-left"
-                :style="'background-image: url('+require('../assets/images/gs1.png')+')'"
-              ></div>
+              <div class="left-top-left" :style="'background-image: url('+environment.img1+')'"></div>
               <div class="left-top-right">
                 <div
                   class="left-top-right-item"
-                  :style="'background-image: url('+require('../assets/images/gs2.png')+')'"
+                  :style="'background-image: url('+environment.img2+')'"
                 ></div>
                 <div
                   class="left-top-right-item"
-                  :style="'background-image: url('+require('../assets/images/gs3.png')+')'"
+                  :style="'background-image: url('+environment.img3+')'"
                 ></div>
               </div>
             </div>
-            <div
-              class="left-down"
-              :style="'background-image: url('+require('../assets/images/gs4.png')+')'"
-            ></div>
+            <div class="left-down" :style="'background-image: url('+environment.img4+')'"></div>
           </div>
           <div class="right">
-            <div
-              class="right-item"
-              :style="'background-image: url('+require('../assets/images/gs5.png')+')'"
-            ></div>
-            <div
-              class="right-item"
-              :style="'background-image: url('+require('../assets/images/gs6.png')+')'"
-            ></div>
+            <div class="right-item" :style="'background-image: url('+environment.img5+')'"></div>
+            <div class="right-item" :style="'background-image: url('+environment.img6+')'"></div>
           </div>
         </div>
       </div>
@@ -135,6 +117,7 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Background from "../components/Background";
+import { aboutUsapi } from '../utils/api'
 
 export default {
   name: "AboutUs",
@@ -144,6 +127,27 @@ export default {
     Background,
 
   },
+  data () {
+    return {
+      aboutus: {},
+      idea: [],
+      environment: {},
+      config: {}
+    }
+  },
+  created () {
+    this.retrieveData()
+  },
+  methods: {
+    async retrieveData () {
+      let { data } = await aboutUsapi()
+      this.aboutus = data.aboutus
+      this.idea = data.idea
+      this.environment = data.environment
+      this.config = data.config
+      console.log(data, "关于我们")
+    }
+  }
 }
 </script>
 

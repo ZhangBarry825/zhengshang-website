@@ -3,16 +3,16 @@ import qs from 'qs'
 import { MessageBox, Message } from 'element-ui'
 
 const service = axios.create({
-    baseURL: 'http://127.0.0.1:8080', // url = base url + request url
-    withCredentials: true, // send cookies when cross-domain requests
+    baseURL: 'http://top.zhengshangwl.com', // url = base url + request url
+    // withCredentials: true, // send cookies when cross-domain requests
     timeout: 10000 // request timeout
 })
 
 service.interceptors.request.use(
     config => {
 
-        config.headers['X-Token'] = ''
-        config.data=qs.stringify(config.data)
+        // config.headers['X-Token'] = ''
+        config.data = qs.stringify(config.data)
 
         return config
     },
@@ -25,7 +25,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     response => {
         const res = response.data
-        if (res.code !== 200) {
+        if (res.code !== 1) {
             Message({
                 message: res.message || 'Error',
                 type: 'error',

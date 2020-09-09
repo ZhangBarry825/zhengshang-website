@@ -92,7 +92,7 @@ export default {
       this.Acquisition = data
       this.pindex = data[0].index
       this.getList()
-      console.log(data, "新闻种类")
+      //console.log(data, "新闻种类")
     },
     // 获取列表
     async getList () {
@@ -106,7 +106,7 @@ export default {
         data.rows.splice(1, 1);
         data.rows.splice(2, 1);
         this.newslist = data.rows
-        console.log(this.newslist, "1111111111")
+        //console.log(this.newslist, "1111111111")
       } else if (this.page == 1 && data.rows.length > 0 && data.rows.length < 3) {
         this.recommend = data.rows
         data.rows = []
@@ -114,16 +114,16 @@ export default {
         this.newslist = data.rows
       }
       this.total = data.total
-      console.log(this.recommend, "获取列表")
-      console.log(this.newslist, "获取列表")
+      //console.log(this.recommend, "获取列表")
+      //console.log(this.newslist, "获取列表")
     },
     handleSizeChange (val) {
       this.page = val
       this.getList()
-      console.log(val)
+      //console.log(val)
     },
     menuChange (index, title) {
-      console.log(index, title)
+      //console.log(index, title)
       this.recommend = []
       this.newslist = []
       this.pindex = this.Acquisition[index].index

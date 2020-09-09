@@ -58,7 +58,7 @@ export default {
       let { data } = await bottomIn()
       this.pageData = data
       this.companys = data.companys
-      console.log(data)
+      //console.log(data)
     },
   },
 }

@@ -57,7 +57,7 @@ export default {
       let { data } = await detailsapi({ id: this.id })
       this.info = data
       this.loading = false
-      console.log(data, "详情")
+      //console.log(data, "详情")
 
     },
     switchDetails (id) {

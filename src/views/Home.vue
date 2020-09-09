@@ -213,7 +213,7 @@ export default {
       this.homeData = data
       this.textList = data.carousel
       this.aboutus = data.aboutus
-      console.log(data, "首页")
+      //console.log(data, "首页")
     },
     openDialog(){
       this.$dia()
@@ -221,7 +221,7 @@ export default {
     alertDialog () {
       setInterval(() => {
         this.$dia()
-      }, 30000)
+      }, 60000)
     }
   },
   mounted () {
@@ -231,7 +231,7 @@ export default {
     this.alertDialog()
 
     that.$ami('.active-item1', 0, 'top', '0%', 1, true, () => {
-      console.log('123')
+      //console.log('123')
       that.$refs.myNum[0].start()
       that.$refs.myNum[1].start()
       that.$refs.myNum[2].start()

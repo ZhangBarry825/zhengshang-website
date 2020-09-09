@@ -169,8 +169,8 @@
             this.retrieveData()
             let that = this
             that.$ami('.active-data', 0, 'top', '0%', 1, true, () => {
-                console.log('123')
-                console.log( that.$refs.myNum)
+                //console.log('123')
+                //console.log( that.$refs.myNum)
                 that.$refs.myNum.start()
             });
 
@@ -203,11 +203,11 @@
                     this.aboutus = data.aboutus
                     this.idea = data.idea
                     this.environment = data.environment
-                    console.log(data.config,'11111')
+                    //console.log(data.config,'11111')
                     this.config.first = parseInt(data.config.first)
                     this.config.second = parseInt(data.config.second)
                     this.config.third = parseInt(data.config.third)
-                    console.log(data, "关于我们")
+                    //console.log(data, "关于我们")
                 })
             }
         }

@@ -175,9 +175,9 @@ export default {
     //   获取数据
     async retrieveData () {
       let { data } = await Businessapi()
-      console.log(data,998)
+      //console.log(data,998)
       this.datalist = data.datalist
-      console.log(data, "业务领域")
+      //console.log(data, "业务领域")
     },
   }
 

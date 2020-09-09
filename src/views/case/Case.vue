@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     asdasd () {
-      console.log("0000000")
+      //console.log("0000000")
     },
     //   获取数据列表
     async retrieveData () {
@@ -82,7 +82,7 @@ export default {
       this.datalist = data.rows
       this.total = data.total
       this.loading = false
-      console.log(data, '客户案例')
+      //console.log(data, '客户案例')
     },
     // 获取种类
     async typeOfAcquisition () {
@@ -90,15 +90,15 @@ export default {
       this.pindex = data[0].index
       this.tabList = data
       this.retrieveData()
-      console.log(data, '获取种类')
+      //console.log(data, '获取种类')
     },
     handleSizeChange (val) {
       this.page = val
       this.retrieveData()
-      console.log(val)
+      //console.log(val)
     },
     menuChange (index, title) {
-      console.log(index, title)
+      //console.log(index, title)
       this.pindex = this.tabList[index].index
       this.page = 1
       this.retrieveData()

@@ -168,7 +168,7 @@ export default {
     async getCarousel () {
       let { data } = await cloudapi()
       this.textList = data
-      console.log(data, "0001")
+      //console.log(data, "0001")
     },
     menuChange (name, title) {
       // console.log(name,title)

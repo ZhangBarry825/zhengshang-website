@@ -156,7 +156,7 @@ export default {
   methods: {
     async getAddress () {
       let { data } = await bottomIn()
-      console.log(data, "01001")
+      //console.log(data, "01001")
       this.Address = data
     },
     submitForm (formName) {
@@ -173,10 +173,10 @@ export default {
               that.$message('提交错误')
             }
 
-            console.log(res)
+            //console.log(res)
           })
         } else {
-          console.log('error submit!!');
+          //console.log('error submit!!');
           return false;
         }
       });
@@ -189,8 +189,8 @@ export default {
 
     },
     getClickInfo (e) {
-      console.log(e.point.lng)
-      console.log(e.point.lat)
+      //console.log(e.point.lng)
+      //console.log(e.point.lat)
       this.center.lng = e.point.lng
       this.center.lat = e.point.lat
     }

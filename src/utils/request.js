@@ -3,7 +3,7 @@ import qs from 'qs'
 import { MessageBox, Message } from 'element-ui'
 
 const service = axios.create({
-    baseURL: 'http://top.zhengshangwl.com', // url = base url + request url
+    baseURL: 'https://www.zhengshangwl.com', // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
     timeout: 10000 // request timeout
 })

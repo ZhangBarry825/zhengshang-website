@@ -256,7 +256,7 @@
             let that = this
             this.swiper.slideTo(1, 1000, false)
             //咨询弹窗 30s
-            // this.alertDialog()
+            this.alertDialog()
 
             that.$ami('.active-item1', 0, 'top', '0%', 1, true, () => {
                 //console.log('123')
@@ -357,7 +357,7 @@
                     .line2 {
                         margin-top: 49px;
                         margin-bottom: 115px;
-                        font-size: 18px;
+                        font-size: 14px;
                         color: rgba(255, 255, 255, 1);
                         max-width: 600px;
                         line-height: 1.8;

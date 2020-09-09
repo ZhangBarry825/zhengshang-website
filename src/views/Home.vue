@@ -174,6 +174,7 @@ export default {
   },
   data () {
     return {
+      timer:'',
       textList: [],
       serviceList: homePageData.serviceList,
       ourAdvantages: homePageData.ourAdvantages,
@@ -219,7 +220,7 @@ export default {
       this.$dia()
     },
     alertDialog () {
-      setInterval(() => {
+      this.timer =setInterval(() => {
         this.$dia()
       }, 60000)
     }
@@ -289,6 +290,9 @@ export default {
       })();
     };
 
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
   }
 }
 </script>

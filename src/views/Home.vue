@@ -72,7 +72,7 @@
       <div class="center">
         <div class="center-title">我们的优势</div>
         <div class="items">
-          <div class="item active-top" v-for="(item,index) in ourAdvantages" :key="index">
+          <div :class="'item active-top'+index" v-for="(item,index) in ourAdvantages" :key="index">
             <img :src="item.img" alt />
             <div class="text">{{item.title}}</div>
           </div>
@@ -228,7 +228,7 @@ export default {
     let that = this
     this.swiper.slideTo(1, 1000, false)
     //咨询弹窗 30s
-    // this.alertDialog()
+    this.alertDialog()
 
     that.$ami('.active-item1', 0, 'top', '0%', 1, true, () => {
       console.log('123')
@@ -263,6 +263,15 @@ export default {
       that.$ami('.active-news1',0,'right','10%',1,true)
       that.$ami('.active-news2',0,'left','10%',1,true)
       that.$ami('.active-news3',0,'right','10%',1,true)
+
+      that.$ami('.active-top0',0,'top','10%',1,true)
+      that.$ami('.active-top1',100,'top','10%',1,true)
+      that.$ami('.active-top2',200,'top','10%',1,true)
+      that.$ami('.active-top3',300,'top','10%',1,true)
+      that.$ami('.active-top4',400,'top','10%',1,true)
+      that.$ami('.active-top5',500,'top','10%',1,true)
+      that.$ami('.active-top6',600,'top','10%',1,true)
+      that.$ami('.active-top7',700,'top','10%',1,true)
     },300)
     that.$ami('.active-about1',300,'top','100%',1,true)
     that.$ami('.active-about2',300,'left','30%',1,true)

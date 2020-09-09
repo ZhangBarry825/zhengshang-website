@@ -39,7 +39,11 @@ export default {
   data () {
     return {
       id: '',
-      info: {},
+      info: {
+        info:{
+          content:''
+        }
+      },
       loading: false
     }
   },

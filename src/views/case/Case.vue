@@ -15,10 +15,9 @@
           <van-grid-item
             v-for="(item,index) in datalist"
             :key="index"
-            @click="$router.push({path: '/case-detail',query: {id: item.id}})"
-          >
+            @click="$router.push({path: '/case-detail',query: {id: item.id}})">
             <div class="item-box">
-              <div class="img" :style="'background-image: url('+item.img+')'"></div>
+              <div class="img-box"><div class="img" :style="'background-image: url('+item.img+')'"></div></div>
               <div class="bottom">
                 <div class="line1">{{item.title}}</div>
                 <div class="line2">{{item.remark}}</div>
@@ -164,10 +163,16 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: center;
-          .img {
+          .img-box{
             width: 381px;
             height: 258px;
-            @include back-img-center;
+            overflow: hidden;
+            .img {
+              transition: all 1s;
+              width: 381px;
+              height: 258px;
+              @include back-img-center;
+            }
           }
           .bottom {
             width: 100%;
@@ -191,6 +196,9 @@ export default {
         }
         .item-box:hover {
           box-shadow: 0px 3px 30px 0px rgba(106, 122, 156, 0.3);
+          .img{
+            transform: scale(1.1);
+          }
         }
       }
       .pagination {

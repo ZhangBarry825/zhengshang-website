@@ -112,7 +112,7 @@
             </div>
           </div>
         </div>
-        <div class="more">
+        <div class="more" @click="openDialog">
           <div class="text">了解更多</div>
           <img class="more1" src="../../assets/images/more1.png" alt />
           <img class="more0" src="../../assets/images/more0.png" alt />

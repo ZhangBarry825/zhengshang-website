@@ -30,7 +30,7 @@ Vue.prototype.$ami = animateFun;
 
 Vue.prototype.$dia = ()=>{
   var form = document.createElement('form');
-  form.action = 'http://xuxusb3.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
+  form.action = 'https://live02.wasnnznyy.com/chat/chat/rRRLt%40AwGdSzybKiEGFYfA%24%24?lng=cn';
   form.target = '_blank';
   form.method = 'POST';
   document.body.appendChild(form);

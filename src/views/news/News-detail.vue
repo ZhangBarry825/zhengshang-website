@@ -101,7 +101,11 @@ export default {
         margin: 45px 0;
       }
       .article {
+        min-height: 200px;
         width: 100%;
+        ::v-deep img{
+          max-width: 100%;
+        }
       }
     }
     .more-list {

@@ -117,7 +117,7 @@
               </div>
             </div>
             <div class="right">
-              <div v-for="(item, index) in systemDevelopment_right" :key="index">
+              <div :class="'active-right'+index" v-for="(item, index) in systemDevelopment_right" :key="index">
                 <div class="connect" v-if="index!=0"></div>
                 <div class="right-item">
                   <img :src="item.img" alt />
@@ -166,7 +166,7 @@
         <div class="delivery">
           <h2 class="title">交付标准</h2>
           <div class="items">
-            <div class="item" v-for="(item, index) in deliveryStandard" :key="index">
+            <div :class="'item active-jf'+index " v-for="(item, index) in deliveryStandard" :key="index">
               <div class="logo">
                 <img :src="item.logo" alt />
               </div>
@@ -206,7 +206,7 @@
         <div class="security">
           <h2 class="security-title">系统安全标准</h2>
           <div class="items">
-            <div class="item" v-for="(item, index) in systemSafetyStandards" :key="index">
+            <div :class="'item active-sec'+index" v-for="(item, index) in systemSafetyStandards" :key="index">
               <img class="back" :src="item.back" />
               <div class="title">
                 <img :src="item.img" alt />
@@ -278,6 +278,45 @@ export default {
     }
   },
   mounted () {
+    let that = this
+    that.$ami('.line0',0,'left','50%',1,true)
+    that.$ami('.line1',200,'left','50%',1,true)
+    that.$ami('.line2',400,'left','50%',1,true)
+    that.$ami('.line3',0,'top','50%',1,true)
+    that.$ami('.line4',0,'bottom','50%',1,true)
+    that.$ami('.line5',0,'right','50%',1,true)
+    that.$ami('.line6',200,'right','50%',1,true)
+    that.$ami('.line7',400,'right','50%',1,true)
+
+    that.$ami('.dots',400,'left','50%',1,true)
+    that.$ami('.left-img-box',0,'left','50%',1,true)
+
+
+    setTimeout(()=>{
+      that.$ami('.active-right0',0,'right','30%',1,true)
+      that.$ami('.active-right1',100,'right','30%',1,true)
+      that.$ami('.active-right2',200,'right','30%',1,true)
+      that.$ami('.active-right3',300,'right','30%',1,true)
+      that.$ami('.active-right4',400,'right','30%',1,true)
+      that.$ami('.active-right5',500,'right','30%',1,true)
+
+      that.$ami('.active-jf0',0,'bottom','10%',.9,true)
+      that.$ami('.active-jf1',200,'bottom','10%',.9,true)
+      that.$ami('.active-jf2',400,'bottom','10%',.9,true)
+      that.$ami('.active-jf3',600,'bottom','10%',.9,true)
+      that.$ami('.active-jf4',800,'bottom','10%',.9,true)
+
+      that.$ami('.active-sec0',400,'left','50%',1,true)
+      that.$ami('.active-sec1',0,'left','50%',1,true)
+      that.$ami('.active-sec2',0,'right','50%',1,true)
+      that.$ami('.active-sec3',400,'right','50%',1,true)
+
+
+    },200)
+
+
+
+
     this.screenWidth = document.body.clientWidth;
     this.screenHeight = document.body.clientHeight;
     window.onresize = () => {
@@ -293,6 +332,7 @@ export default {
 <style scoped lang="scss">
 .business-page {
   @include page-style;
+  overflow: hidden;
 
   .ability {
     width: 100%;
@@ -333,6 +373,7 @@ export default {
           align-items: flex-end;
 
           .line {
+            transition: all .7s;
             cursor: pointer;
             width: 270px;
             height: 156px;
@@ -757,6 +798,7 @@ export default {
               margin-top: 90px;
             }
             .support-item {
+              cursor: pointer;
               width: 323px;
               height: 208px;
               background: rgba(255, 255, 255, 1);

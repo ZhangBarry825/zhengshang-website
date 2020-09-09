@@ -9,7 +9,7 @@
                         可开发行业
                     </div>
                     <div class="list-line1">
-                        <div class="item" @mouseenter="itemHover(0)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog" @mouseenter="itemHover(0)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==0?require('../../assets/images/kkh0.png'):require('../../assets/images/kk0.png')"
                                      alt="">
@@ -22,7 +22,7 @@
                                 <img v-show="activeIndex==0" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(1)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(1)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==1?require('../../assets/images/kkh1.png'):require('../../assets/images/kk1.png')"
                                      alt="">
@@ -35,7 +35,7 @@
                                 <img v-show="activeIndex==1" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(2)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(2)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==2?require('../../assets/images/kkh2.png'):require('../../assets/images/kk2.png')"
                                      alt="">
@@ -48,7 +48,7 @@
                                 <img v-show="activeIndex==2" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(3)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(3)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==3?require('../../assets/images/kkh3.png'):require('../../assets/images/kk3.png')"
                                      alt="">
@@ -61,7 +61,7 @@
                                 <img v-show="activeIndex==3" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(4)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(4)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==4?require('../../assets/images/kkh4.png'):require('../../assets/images/kk4.png')"
                                      alt="">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="list-line2">
-                        <div class="item" @mouseenter="itemHover(5)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(5)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==5?require('../../assets/images/kkh5.png'):require('../../assets/images/kk5.png')"
                                      alt="">
@@ -89,7 +89,7 @@
                                 <img v-show="activeIndex==5" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(6)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(6)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==6?require('../../assets/images/kkh6.png'):require('../../assets/images/kk6.png')"
                                      alt="">
@@ -102,7 +102,7 @@
                                 <img v-show="activeIndex==6" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(7)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(7)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==7?require('../../assets/images/kkh7.png'):require('../../assets/images/kk7.png')"
                                      alt="">
@@ -115,7 +115,7 @@
                                 <img v-show="activeIndex==7" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(8)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(8)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==8?require('../../assets/images/kkh8.png'):require('../../assets/images/kk8.png')"
                                      alt="">
@@ -128,7 +128,7 @@
                                 <img v-show="activeIndex==8" src="../../assets/images/more0.png" alt="">
                             </div>
                         </div>
-                        <div class="item" @mouseenter="itemHover(9)" @mouseleave="itemHover(-1)">
+                        <div class="item" @click="openDialog"  @mouseenter="itemHover(9)" @mouseleave="itemHover(-1)">
                             <div class="item-line1">
                                 <img :src="activeIndex==9?require('../../assets/images/kkh9.png'):require('../../assets/images/kk9.png')"
                                      alt="">
@@ -149,7 +149,7 @@
             <div class="progress">
                 <div class="center">
                     <div class="title">系统开发流程</div>
-                    <div class="content">
+                    <div class="content active-top">
                         <img src="../../assets/images/progress0.png" alt="">
                         <div class="items">
                             <div class="item item1">
@@ -187,35 +187,35 @@
             <div class="delivery-standard">
                 <div class="title">交付标准</div>
                 <div class="items">
-                    <div class="item">
+                    <div class="item active-jf0">
                         <div class="logo">
                             <img src="../../assets/images/d1.png" alt="">
                         </div>
                         <div class="item-text">项目计划书</div>
                         <img class="hoverImg" src="../../assets/images/df1.png">
                     </div>
-                    <div class="item">
+                    <div class="item active-jf1">
                         <div class="logo">
                             <img src="../../assets/images/d2.png" alt="">
                         </div>
                         <div class="item-text">设计稿源文件</div>
                         <img class="hoverImg" src="../../assets/images/df2.png">
                     </div>
-                    <div class="item">
+                    <div class="item active-jf2">
                         <div class="logo">
                             <img src="../../assets/images/d3.png" alt="">
                         </div>
                         <div class="item-text">源代码</div>
                         <img class="hoverImg" src="../../assets/images/df3.png">
                     </div>
-                    <div class="item">
+                    <div class="item active-jf3">
                         <div class="logo">
                             <img src="../../assets/images/d4.png" alt="">
                         </div>
                         <div class="item-text">使用文档</div>
                         <img class="hoverImg" src="../../assets/images/df4.png">
                     </div>
-                    <div class="item">
+                    <div class="item active-jf4">
                         <div class="logo">
                             <img src="../../assets/images/d5.png" alt="">
                         </div>
@@ -225,7 +225,7 @@
                 </div>
             </div>
             <div class="security">
-                <div class="left">
+                <div class="left active-left">
                     <div class="left-content" :style="'width:'+(520+(screenWidth-1300)/2) +'px'">
                         <div class="center-content">
                             <div class="cc-title">
@@ -252,17 +252,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="right">
+                <div class="right active-right">
                     <div class="right-title">系统安全标准</div>
                     <img src="../../assets/images/right-img.png" alt="">
                 </div>
             </div>
             <div class="technology-support">
-                <div class="left">
+                <div class="left active-left">
                     <img src="../../assets/images/ss-l.png" alt="">
                 </div>
-                <div class="right">
-                    <div class="right-title">技术支1持</div>
+                <div class="right active-right">
+                    <div class="right-title">技术支持</div>
                     <div class="right-content" :style="'width:'+(745+(screenWidth-1300)/2)+'px;'">
                         <div class="content-content">
                             <div class="right-item">
@@ -352,6 +352,9 @@
             }
         },
         methods: {
+            openDialog(){
+              this.$dia()
+            },
             itemHover(index) {
                 this.activeIndex = index
             },
@@ -360,6 +363,18 @@
             }
         },
         mounted() {
+            let that = this
+            that.$ami('.active-top',200,'top','10%',0,true)
+            that.$ami('.active-jf0',0,'top','10%',0,true)
+            that.$ami('.active-jf1',100,'top','10%',0,true)
+            that.$ami('.active-jf2',200,'top','10%',0,true)
+            that.$ami('.active-jf3',300,'top','10%',0,true)
+            that.$ami('.active-jf4',300,'top','10%',0,true)
+
+            that.$ami('.active-left',0,'left','100%',1,true)
+            that.$ami('.active-right',0,'right','100%',1,true)
+
+
             this.screenWidth = document.body.clientWidth;
             this.screenHeight = document.body.clientHeight;
             window.onresize = () => {
@@ -425,6 +440,7 @@
                         }
 
                         .item {
+                            transition: all .5s;
                             cursor: pointer;
                             width: 258px;
                             height: 218px;
@@ -483,6 +499,7 @@
                         }
 
                         .item {
+                            transition: all .5s;
                             cursor: pointer;
                             width: 258px;
                             height: 218px;

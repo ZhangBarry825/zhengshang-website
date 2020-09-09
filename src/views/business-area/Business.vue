@@ -5,19 +5,20 @@
     <div class="content">
       <div class="center">
         <div class="left-item">
-          <div class="left">
+          <div class="left active-bottom">
             <img :src="datalist[0].img||''" alt />
           </div>
-          <div class="right">
+          <div class="right active-right">
             <div class="title">{{datalist[0].title||''}}</div>
             <div class="border"></div>
             <div class="line1">{{datalist[0].remark}}</div>
             <div class="line2">
-              <div class="text" v-for="(item, index) in datalist[0].content" :key="index">{{item}}</div>
+              <div :class="'text active-right-item'+index" v-for="(item, index) in datalist[0].content" :key="index">{{item}}</div>
             </div>
             <div class="more" @click="$router.push({path:'/business/app-develop'})">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/right-blue2.png" alt />
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
         </div>
@@ -27,19 +28,20 @@
             <div class="border"></div>
             <div class="line1">{{datalist[1].remark}}</div>
             <div class="line2">
-              <div class="text" v-for="(item, index) in datalist[1].content" :key="index">{{item}}</div>
+              <div :class="'text active-right-item'+index" v-for="(item, index) in datalist[1].content" :key="index">{{item}}</div>
             </div>
             <div class="more" @click="$router.push({path:'/business/mini-program'})">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/right-blue2.png" alt />
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
-          <div class="left">
+          <div class="left active-bottom">
             <img :src="datalist[1].img||''" alt />
           </div>
         </div>
         <div class="left-item">
-          <div class="left">
+          <div class="left active-bottom">
             <img :src="datalist[2].img||''" alt />
           </div>
           <div class="right">
@@ -47,11 +49,12 @@
             <div class="border"></div>
             <div class="line1">{{datalist[2].remark}}</div>
             <div class="line2">
-              <div class="text" v-for="(item, index) in datalist[2].content" :key="index">{{item}}</div>
+              <div :class="'text active-right-item'+index" v-for="(item, index) in datalist[2].content" :key="index">{{item}}</div>
             </div>
             <div class="more" @click="$router.push({path:'/business/web-construct'})">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/right-blue2.png" alt />
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
         </div>
@@ -61,19 +64,20 @@
             <div class="border"></div>
             <div class="line1">{{datalist[3].remark}}</div>
             <div class="line2">
-              <div class="text" v-for="(item, index) in datalist[3].content" :key="index">{{item}}</div>
+              <div :class="'text active-right-item'+index" v-for="(item, index) in datalist[3].content" :key="index">{{item}}</div>
             </div>
             <div class="more" @click="$router.push({path:'/business/system'})">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/right-blue2.png" alt />
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
-          <div class="left">
+          <div class="left active-bottom">
             <img :src="datalist[3].img||''" alt />
           </div>
         </div>
         <div class="left-item">
-          <div class="left">
+          <div class="left active-bottom">
             <img :src="datalist[4].img||''" alt />
           </div>
           <div class="right">
@@ -81,11 +85,12 @@
             <div class="border"></div>
             <div class="line1">{{datalist[4].remark}}</div>
             <div class="line2">
-              <div class="text" v-for="(item, index) in datalist[4].content" :key="index">{{item}}</div>
+              <div :class="'text active-right-item'+index" v-for="(item, index) in datalist[4].content" :key="index">{{item}}</div>
             </div>
             <div class="more" @click="$router.push({path:'/business/internet-things'})">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/right-blue2.png" alt />
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
         </div>
@@ -95,14 +100,15 @@
             <div class="border"></div>
             <div class="line1">{{datalist[5].remark}}</div>
             <div class="line2">
-              <div class="text" v-for="(item, index) in datalist[5].content" :key="index">{{item}}</div>
+              <div :class="'text active-right-item'+index" v-for="(item, index) in datalist[5].content" :key="index">{{item}}</div>
             </div>
             <div class="more" @click="$router.push({path:'/business/gov-cloud'})">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/right-blue2.png" alt />
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
-          <div class="left">
+          <div class="left active-bottom">
             <img :src="datalist[5].img||''" alt />
           </div>
         </div>
@@ -152,7 +158,18 @@ export default {
     }
   },
   mounted() {
-    this.retrieveData()
+    let that = this
+    that.retrieveData()
+
+    that.$ami('.active-bottom',0,'bottom','30%',.5,true)
+    // that.$ami('.active-right',300,'right','100%',1,true)
+
+    setTimeout(()=>{
+      that.$ami('.active-right-item0',0,'right','30%',1,true)
+      that.$ami('.active-right-item1',200,'right','30%',1,true)
+      that.$ami('.active-right-item2',300,'right','30%',1,true)
+
+    },200)
   },
   methods: {
     //   获取数据
@@ -236,15 +253,61 @@ export default {
             justify-content: center;
             cursor: pointer;
             .text {
+              transition: all .5s;
               font-size: 16px;
               font-weight: 400;
               color: #004ce5;
             }
             img {
+              transition: all .5s;
               margin-left: 10px;
               width: 26px;
               height: 9px;
             }
+            .more1{
+              display: block;
+            }
+            .more0{
+              display: none;
+            }
+
+            z-index: 1;
+            position: relative;
+            font-size: inherit;
+            font-family: inherit;
+            color: white;
+            outline: none;
+            overflow: hidden;
+            transition: color 0.4s ease-in-out;
+          }
+          .more::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background-color: #004ce5;
+            transform-origin: center;
+            transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+            transition: transform 0.45s ease-in-out;
+          }
+          .more:hover {
+            cursor: pointer;
+            .text{
+              color: #ffffff;
+            }
+            .more1{
+              display: none;
+            }
+            .more0{
+              display: block;
+            }
+          }
+          .more:hover::before {
+            transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
           }
         }
       }
@@ -302,15 +365,61 @@ export default {
             justify-content: center;
             cursor: pointer;
             .text {
+              transition: all .5s;
               font-size: 16px;
               font-weight: 400;
               color: #004ce5;
             }
             img {
+              transition: all .5s;
               margin-left: 10px;
               width: 26px;
               height: 9px;
             }
+            .more1{
+              display: block;
+            }
+            .more0{
+              display: none;
+            }
+
+            z-index: 1;
+            position: relative;
+            font-size: inherit;
+            font-family: inherit;
+            color: white;
+            outline: none;
+            overflow: hidden;
+            transition: color 0.4s ease-in-out;
+          }
+          .more::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background-color: #004ce5;
+            transform-origin: center;
+            transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+            transition: transform 0.45s ease-in-out;
+          }
+          .more:hover {
+            cursor: pointer;
+            .text{
+              color: #ffffff;
+            }
+            .more1{
+              display: none;
+            }
+            .more0{
+              display: block;
+            }
+          }
+          .more:hover::before {
+            transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
           }
         }
       }

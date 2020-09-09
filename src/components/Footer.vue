@@ -1,10 +1,10 @@
 <template>
   <div class="footer-page">
     <div class="center">
-      <div class="line1">
+      <div class="foo-line1">
         <img src="../assets/images/logo.png" alt />
       </div>
-      <div class="line2">
+      <div class="foo-line2">
         <div class="column1">
           <div class="line">QQ邮箱：{{pageData.qq}}</div>
           <div class="line">联系电话：{{pageData.tel}}</div>
@@ -88,7 +88,7 @@ export default {
       line-height: 1.5;
     }
 
-    .line1 {
+    .foo-line1 {
       width: 100%;
       display: flex;
       justify-content: flex-start;
@@ -100,7 +100,7 @@ export default {
       }
     }
 
-    .line2 {
+    .foo-line2 {
       width: 100%;
       display: flex;
       flex-direction: row;

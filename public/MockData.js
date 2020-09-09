@@ -86,7 +86,7 @@ export const homePageData = {
             title: '创新创业公司'
         },
         {
-            number: 10000,
+            number: 100,
             symbol: '+',
             title: '政府和公共服务机构'
         },
@@ -578,22 +578,19 @@ export const govCloud = {
         }],
     tabList: [
         {
-            title: 'APP开发'
+            title: '智慧城市'
         },
         {
-            title: '小程序开发'
+            title: '政府'
         },
         {
-            title: '网站建设'
+            title: '金融'
         },
         {
-            title: '系统集成'
+            title: '交通'
         },
         {
-            title: '物联网'
-        },
-        {
-            title: '政务云'
+            title: '企业'
         },
     ]
 }

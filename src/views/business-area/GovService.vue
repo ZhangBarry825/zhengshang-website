@@ -9,7 +9,7 @@
             <div class="context-center">
               <div class="line1">{{item.title}}</div>
               <div class="line2">{{item.content}}</div>
-              <div class="line3">立即咨询</div>
+              <div class="line3" @click="openDialog">立即咨询</div>
             </div>
           </div>
         </swiper-slide>
@@ -22,7 +22,7 @@
       <div class="center">
         <div class="center-title">服务领域</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in areaList" :key="index">
+          <div :class="'item active-ser'+index" v-for="(item,index) in areaList" :key="index">
             <div class="line1">
               <img :src="item.url" alt />
             </div>
@@ -51,7 +51,7 @@
               <div class="text">{{item.title}}</div>
             </div>
             <div class="line2">{{item.description}}</div>
-            <div class="line3">
+            <div class="line3" @click="openDialog">
               <div class="text">了解更多</div>
               <img class="blue" src="../../assets/images/r-b.png" alt />
               <img class="white" src="../../assets/images/r-w.png" alt />
@@ -64,7 +64,7 @@
       <div class="center">
         <div class="center-title">智慧的政务功能方案</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in functionList" :key="index">
+          <div :class="'item active-fun'+index" v-for="(item,index) in functionList" :key="index">
             <div class="line1">
               <div class="img">
                 <img :src="item.src" alt />
@@ -80,7 +80,7 @@
       <div class="center">
         <div class="center-title">方案特点及架构</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in specialList" :key="index">
+          <div :class="'item active-spe'+index" v-for="(item,index) in specialList" :key="index">
             <div class="line1">
               <img :src="item.logo" alt class="img" />
               <div class="text">{{item.title}}</div>
@@ -114,7 +114,8 @@
         </div>
         <div class="more">
           <div class="text">了解更多</div>
-          <img src="../../assets/images/right-blue1.png" alt />
+          <img class="more1" src="../../assets/images/more1.png" alt />
+          <img class="more0" src="../../assets/images/more0.png" alt />
         </div>
       </div>
     </div>
@@ -161,6 +162,9 @@ export default {
     }
   },
   methods: {
+    openDialog(){
+      this.$dia()
+    },
     async getCarousel () {
       let { data } = await cloudapi()
       this.textList = data
@@ -173,6 +177,28 @@ export default {
   mounted () {
     this.swiper.slideTo(1, 1000, false)
     this.getCarousel()
+
+    let that = this
+    that.$ami('.active-ser0',0,'top','10%',0,true)
+    that.$ami('.active-ser1',100,'top','10%',0,true)
+    that.$ami('.active-ser2',200,'top','10%',0,true)
+    that.$ami('.active-ser3',300,'top','10%',0,true)
+
+    that.$ami('.active-fun0',0,'top','10%',.8,true)
+    that.$ami('.active-fun1',100,'top','10%',.8,true)
+    that.$ami('.active-fun2',200,'top','10%',.8,true)
+    that.$ami('.active-fun3',300,'top','10%',.8,true)
+    that.$ami('.active-fun4',400,'top','10%',.8,true)
+    that.$ami('.active-fun5',500,'top','10%',.8,true)
+    that.$ami('.active-fun6',600,'top','10%',.8,true)
+    that.$ami('.active-fun7',700,'top','10%',.8,true)
+
+    that.$ami('.active-spe0',0,'left','10%',.8,true)
+    that.$ami('.active-spe1',0,'right','10%',.8,true)
+    that.$ami('.active-spe2',0,'left','10%',.8,true)
+    that.$ami('.active-spe3',0,'right','10%',.8,true)
+
+
 
   }
 }
@@ -426,6 +452,7 @@ export default {
         }
 
         .item {
+          transition: all .5s;
           width: 370px;
           height: 278px;
           background: #ffffff;
@@ -531,6 +558,7 @@ export default {
         justify-content: flex-start;
 
         .item {
+          cursor: pointer;
           width: 310px;
           height: 352px;
           display: flex;
@@ -723,22 +751,70 @@ export default {
         }
       }
       .more {
-        margin-top: 80px;
+        margin-top: 53px;
         width: 164px;
-        height: 61px;
+        height: 56px;
         border: 2px solid #004ce5;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         cursor: pointer;
         .text {
+          transition: all .5s;
           font-size: 16px;
           font-weight: 400;
-          color: #004be5;
+          color: #004ce5;
         }
         img {
-          margin-left: 5px;
+          transition: all .5s;
+          margin-left: 10px;
+          width: 26px;
+          height: 9px;
         }
+        .more1{
+          display: block;
+        }
+        .more0{
+          display: none;
+        }
+
+        z-index: 1;
+        position: relative;
+        font-size: inherit;
+        font-family: inherit;
+        color: white;
+        outline: none;
+        overflow: hidden;
+        transition: color 0.4s ease-in-out;
+      }
+      .more::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: #004ce5;
+        transform-origin: center;
+        transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+        transition: transform 0.45s ease-in-out;
+      }
+      .more:hover {
+        cursor: pointer;
+        .text{
+          color: #ffffff;
+        }
+        .more1{
+          display: none;
+        }
+        .more0{
+          display: block;
+        }
+      }
+      .more:hover::before {
+        transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
       }
     }
   }

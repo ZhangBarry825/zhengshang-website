@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="project-process">
-      <div class="center-back active-right" :style="'width: '+(1300+halfMargin)+'px'">
+      <div class="center-back " :style="'width: '+(1300+halfMargin)+'px'">
         <div class="center active-left2">
           <div class="center-title">项目服务流程</div>
           <img class="active-item3" src="../assets/images/xmfwlc2.png" alt />
@@ -72,7 +72,7 @@
       <div class="center">
         <div class="center-title">我们的优势</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in ourAdvantages" :key="index">
+          <div class="item active-top" v-for="(item,index) in ourAdvantages" :key="index">
             <img :src="item.img" alt />
             <div class="text">{{item.title}}</div>
           </div>
@@ -103,7 +103,7 @@
       <div class="center">
         <div class="center-title">新闻中心</div>
         <div class="items">
-          <div class="item" v-for="(item,index) in homeData.news" v-if="index<4" :key="index">
+          <div :class="'item active-news'+index" @click="$router.push({path: '/news-detail?id='+ item.id})" v-for="(item,index) in homeData.news" v-if="index<4" :key="index">
             <div class="left">
               <div class="img" :style="'background-image: url('+item.img+')'"></div>
             </div>
@@ -123,7 +123,7 @@
           <div
             v-for="(item, index) in homeData.partner"
             :key="index"
-            class="item"
+            :class="'item active-partner'+index"
             :style="'background-image: url('+item.img+')'"></div>
         </div>
       </div>
@@ -131,12 +131,14 @@
     <div class="about-us">
       <div class="center">
         <div class="center-title">关于我们</div>
-        <div class="center-title-en">{{aboutus.title}}</div>
+        <div class="center-title-en active-about1">{{'ABOUT US'||aboutus.title}}</div>
         <div class="content">
-          <div class="left" :style="'background-image: url('+aboutus.img+')'"></div>
-          <div class="right">
+          <div class="left active-about2" @click="$router.push({path:'/about'})">
+            <div class="img" :style="'background-image: url('+aboutus.img+')'"></div>
+          </div>
+          <div class="right active-about3">
             <div class="text">{{aboutus.content}}</div>
-            <div class="more">
+            <div class="more" @click="$router.push({path:'/about'})">
               <img @click="$router.push({path:'/about'})" src="../assets/images/right-blue2.png" alt />
             </div>
           </div>
@@ -214,21 +216,11 @@ export default {
       console.log(data, "首页")
     },
     openDialog(){
-      var form = document.createElement('form');
-      form.action = 'http://xuxusb3.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
-      form.target = '_blank';
-      form.method = 'POST';
-      document.body.appendChild(form);
-      form.submit();
+      this.$dia()
     },
     alertDialog () {
       setInterval(() => {
-        var form = document.createElement('form');
-        form.action = 'http://xuxusb3.cn/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=9&groupid=0';
-        form.target = '_blank';
-        form.method = 'POST';
-        document.body.appendChild(form);
-        form.submit();
+        this.$dia()
       }, 30000)
     }
   },
@@ -255,7 +247,27 @@ export default {
       that.$ami('.active-solve1',200,'bottom','20%',.2,true)
       that.$ami('.active-solve2',400,'bottom','20%',.2,true)
       that.$ami('.active-right',0,'right','30%',1,true)
-    },100)
+
+      that.$ami('.active-partner0',0,'top','70%',.9,true)
+      that.$ami('.active-partner1',100,'top','70%',.9,true)
+      that.$ami('.active-partner2',200,'top','70%',.9,true)
+      that.$ami('.active-partner3',300,'top','70%',.9,true)
+      that.$ami('.active-partner4',400,'top','70%',.9,true)
+      that.$ami('.active-partner5',0,'top','70%',.9,true)
+      that.$ami('.active-partner6',100,'bottom','70%',.9,true)
+      that.$ami('.active-partner7',200,'bottom','70%',.9,true)
+      that.$ami('.active-partner8',300,'bottom','70%',.9,true)
+      that.$ami('.active-partner9',400,'bottom','70%',.9,true)
+
+      that.$ami('.active-news0',0,'left','10%',1,true)
+      that.$ami('.active-news1',0,'right','10%',1,true)
+      that.$ami('.active-news2',0,'left','10%',1,true)
+      that.$ami('.active-news3',0,'right','10%',1,true)
+    },300)
+    that.$ami('.active-about1',300,'top','100%',1,true)
+    that.$ami('.active-about2',300,'left','30%',1,true)
+    that.$ami('.active-about3',300,'right','30%',1,true)
+
 
     // that.$ami('.active-item3',0,'top','10%',.5,true)
 
@@ -432,6 +444,7 @@ export default {
         justify-content: space-around;
 
         .item {
+          cursor: pointer;
           transition: background-color .8s;
           width: 345px;
           height: 367px;
@@ -707,6 +720,15 @@ export default {
             color: #333333;
           }
         }
+        .item:hover {
+          cursor:pointer;
+          color: rgba(47,103,241,0.31);
+
+          img{
+            transition: all 1.5s;
+            transform: rotateY(540deg);
+          }
+        }
 
         .item:nth-child(1),
         .item:nth-child(2),
@@ -817,8 +839,13 @@ export default {
         .item:nth-child(2) {
           margin-bottom: 91px;
         }
-
+        .item:hover{
+          .img{
+            transform: scale(1.2);
+          }
+        }
         .item {
+          cursor: pointer;
           width: 628px;
           height: 207px;
           background: #ffffff;
@@ -827,15 +854,17 @@ export default {
           box-shadow: 0px 3px 50px 0px rgba(0, 0, 0, 0.2);
 
           .left {
-            padding: 20px;
-            padding-right: 0;
+            width: 200px;
+            height: 196px;
+            margin-left: 20px;
             box-sizing: border-box;
-
+            overflow: hidden;
+            margin-top: -30px;
             .img {
+              transition: all 1s;
               width: 200px;
               height: 196px;
               @include back-img-center;
-              margin-top: -50px;
             }
           }
 
@@ -914,7 +943,32 @@ export default {
           background-position: center center;
           background-size: 80%;
           background-repeat: no-repeat;
+
+
+          z-index: 1;
+          position: relative;
+          font-size: inherit;
+          font-family: inherit;
+          color: white;
+          outline: none;
+          overflow: hidden;
+          cursor: pointer;
         }
+        .item::after {
+          content: '';
+          z-index: -1;
+          background-color: hsla(0, 0%, 100%, 0.2);
+          position: absolute;
+          top: -50%;
+          bottom: -50%;
+          width: 1.25em;
+          transform: translate3d(-525%, 0, 0) rotate(35deg);
+        }
+        .item:hover::after {
+          transition: transform 0.45s ease-in-out;
+          transform: translate3d(200%, 0, 0) rotate(35deg);
+        }
+
       }
     }
   }
@@ -941,7 +995,7 @@ export default {
       }
 
       .center-title-en {
-        z-index: 1;
+        z-index: 3;
         width: 271px;
         height: 116px;
         background: #014ce5;
@@ -966,12 +1020,23 @@ export default {
         justify-content: flex-end;
 
         .left {
+          cursor: pointer;
           width: 572px;
           height: 461px;
-          @include back-img-center;
           position: absolute;
           margin-top: -80px;
           left: 0;
+          overflow: hidden;
+          z-index: 2;
+          .img{
+            transition: all 1s;
+            width: 100%;
+            height: 100%;
+            @include back-img-center;
+          }
+          .img:hover{
+            transform: scale(1.2);
+          }
         }
 
         .right {

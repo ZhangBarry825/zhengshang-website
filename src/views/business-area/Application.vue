@@ -13,7 +13,7 @@
                         <img src="../../assets/images/l.png" alt="">
                     </div>
                     <div class="right">
-                        <div class="item" v-for="(item,index) in businessList" :class="businessIndex==index?'selected':''" @click="businessSelect(index)">
+                        <div class="item active-item" v-for="(item,index) in businessList" :class="businessIndex==index?'selected':''" @mouseenter="businessSelect(index)">
                             <img class="visible" :src="item.img1" alt="">
                             <img class="hidden" :src="item.img0" alt="">
                             <div class="text">{{item.title}}</div>
@@ -32,7 +32,7 @@
             <div class="center">
                 <div class="title">交付标准</div>
                 <div class="items">
-                    <div class="item" v-for="item in payStandard">
+                    <div :class="'item active-jf'+index" v-for="(item,index) in payStandard">
                         <div class="top">
                             <img :src="item.backImg" alt="">
                         </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="middle"></div>
                         <div class="right">
-                            <div v-for="item in systemSecurityList[securityIndex].children" class="right-item">
+                            <div v-for="(item,index) in systemSecurityList[securityIndex].children" class="right-item">
                                 <img :src="item.img" alt="">
                                 <div class="text">{{item.title}}</div>
                             </div>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="items">
                         <div class="item" v-for="item in technologySupportList">
-                            <img :src="item.img" class="item-img" alt="">
+                            <div class="img"><img :src="item.img" class="item-img" alt=""></div>
                             <div class="item-title">{{item.title}}</div>
                         </div>
                     </div>
@@ -118,6 +118,17 @@
             }
         },
         mounted() {
+            let that = this
+            that.$ami('.active-item',200,'right','50%',.8,true)
+
+            setTimeout(()=>{
+                that.$ami('.active-jf0',0,'top','50%',.8,true)
+                that.$ami('.active-jf1',0,'bottom','50%',.8,true)
+                that.$ami('.active-jf2',0,'top','50%',.8,true)
+                that.$ami('.active-jf3',0,'bottom','50%',.8,true)
+                that.$ami('.active-jf4',0,'top','50%',.8,true)
+            },200)
+
             this.screenWidth = document.body.clientWidth;
             this.screenHeight = document.body.clientHeight;
             window.onresize = () => {
@@ -307,6 +318,11 @@
                     }
 
                     .item:hover {
+                        .top{
+                            img{
+                                transform: scale(1.2);
+                            }
+                        }
                         .bottom {
                             background-color: #004ce5;
                             color: #ffffff;
@@ -328,6 +344,7 @@
                             overflow: hidden;
 
                             img {
+                                transition: all .5s;
                                 width: 100%;
                             }
                         }
@@ -347,6 +364,7 @@
                         }
 
                         .bottom {
+                            transition: all .5s;
                             width: 100%;
                             height: 50%;
                             display: flex;
@@ -447,6 +465,7 @@
                             align-items: center;
 
                             .right-item {
+                                cursor: pointer;
                                 width: 25%;
                                 display: flex;
                                 flex-direction: column;
@@ -458,6 +477,12 @@
                                     font-size: 20px;
                                     font-weight: 400;
                                     color: rgba(51, 51, 51, 1);
+                                }
+                            }
+                            .right-item:hover{
+                                img{
+                                    transition: all 1.5s;
+                                    transform: rotateY(540deg);
                                 }
                             }
                         }
@@ -480,12 +505,19 @@
                         flex-direction: row;
                         justify-content: space-between;
                         .item{
+                            cursor: pointer;
                             width: 287px;
                             display: flex;
                             flex-direction: column;
-                            .item-img{
+                            .img{
                                 width:287px;
                                 height:201px;
+                                overflow: hidden;
+                                .item-img{
+                                    transition: all 1s;
+                                    width:100%;
+                                    height:100%;
+                                }
                             }
                             .item-title{
                                 width: 100%;
@@ -494,6 +526,11 @@
                                 font-weight:500;
                                 color:rgba(51,51,51,1);
                                 margin: 30px 0;
+                            }
+                        }
+                        .item:hover{
+                            .item-img{
+                                transform: scale(1.2);
                             }
                         }
                     }

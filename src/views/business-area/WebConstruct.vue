@@ -111,31 +111,31 @@
                 <div class="center">
                     <div class="title">网站开发流程</div>
                     <div class="items">
-                        <div class="item">
+                        <div class="item active-pro0">
                             <img src="../../assets/images/w1.png" alt="">
                             <h2 class="text">1、行业数据分析</h2>
                         </div>
-                        <div class="item">
+                        <div class="item active-pro1">
                             <img src="../../assets/images/w2.png" alt="">
                             <h2 class="text">2、品牌定位规范</h2>
                         </div>
-                        <div class="item">
+                        <div class="item active-pro2">
                             <img src="../../assets/images/w3.png" alt="">
                             <h2 class="text">3、功能需求调研</h2>
                         </div>
-                        <div class="item">
+                        <div class="item active-pro3">
                             <img src="../../assets/images/w4.png" alt="">
                             <h2 class="text">4、交互视觉设计</h2>
                         </div>
-                        <div class="item">
+                        <div class="item active-pro4">
                             <img src="../../assets/images/w5.png" alt="">
                             <h2 class="text">5、双端同步开发</h2>
                         </div>
-                        <div class="item">
+                        <div class="item active-pro5">
                             <img src="../../assets/images/w6.png" alt="">
                             <h2 class="text">6、后端并行开发</h2>
                         </div>
-                        <div class="item">
+                        <div class="item active-pro6">
                             <img src="../../assets/images/w7.png" alt="">
                             <h2 class="text">7、测试上线交付使用</h2>
                         </div>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="imgs">
                         <img class="left" src="../../assets/images/dots0.png" alt="">
-                        <img class="right" src="../../assets/images/paper.png" alt="">
+                        <img class="right active-right" src="../../assets/images/paper.png" alt="">
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@
             <div class="system-security">
                 <div class="title">系统安全标准</div>
                 <div class="items">
-                    <div class="item">
+                    <div class="item active-sec0">
                         <div class="top">源代码安全</div>
                         <div class="bottom">
                             <div class="li">
@@ -216,7 +216,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item active-sec1">
                         <div class="top">程序安全</div>
                         <div class="bottom">
                             <div class="li">
@@ -237,7 +237,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item active-sec2">
                         <div class="top">数据库安全</div>
                         <div class="bottom">
                             <div class="li">
@@ -261,7 +261,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item active-sec3">
                         <div class="top">服务器安全</div>
                         <div class="bottom">
                             <div class="li">
@@ -360,6 +360,34 @@
                 this.activeIndex = index
             }
         },
+        mounted() {
+            let that = this
+            that.$ami('.line0',0,'left','50%',1,true)
+            that.$ami('.line1',200,'left','50%',1,true)
+            that.$ami('.line2',400,'left','50%',1,true)
+            that.$ami('.line3',0,'top','50%',1,true)
+            that.$ami('.line4',0,'bottom','50%',1,true)
+            that.$ami('.line5',0,'right','50%',1,true)
+            that.$ami('.line6',200,'right','50%',1,true)
+            that.$ami('.line7',400,'right','50%',1,true)
+
+            that.$ami('.active-pro0',0,'top','100%',1,true)
+            that.$ami('.active-pro1',100,'top','100%',1,true)
+            that.$ami('.active-pro2',200,'top','100%',1,true)
+            that.$ami('.active-pro3',300,'top','100%',1,true)
+            that.$ami('.active-pro4',400,'top','100%',1,true)
+            that.$ami('.active-pro5',500,'top','100%',1,true)
+            that.$ami('.active-pro6',600,'top','100%',1,true)
+            that.$ami('.active-right',200,'right','100%',1,true)
+
+            that.$ami('.active-sec0',400,'left','50%',1,true)
+            that.$ami('.active-sec1',0,'left','50%',1,true)
+            that.$ami('.active-sec2',0,'right','50%',1,true)
+            that.$ami('.active-sec3',400,'right','50%',1,true)
+
+            that.$ami('.dots',400,'left','50%',1,true)
+            that.$ami('.left-img-box',0,'left','50%',1,true)
+        }
 
     }
 </script>
@@ -367,6 +395,7 @@
 <style scoped lang="scss">
     .web-page {
         @include page-style;
+        overflow: hidden;
         z-index: 0;
         .ability {
             width: 100%;
@@ -407,6 +436,7 @@
                         align-items: flex-end;
 
                         .line {
+                            transition: all .5s;
                             cursor: pointer;
                             width: 270px;
                             height: 156px;

@@ -12,9 +12,10 @@
               <div class="line1">{{item.title}}</div>
               <div class="line2">{{item.context}}</div>
             </div>
-            <div class="more">
+            <div class="more" @click="openDialog">
               <div class="text">了解更多</div>
-              <img src="../../assets/images/more1.png" alt="">
+              <img class="more1" src="../../assets/images/more1.png" alt />
+              <img class="more0" src="../../assets/images/more0.png" alt />
             </div>
           </div>
           <div class="right">
@@ -70,7 +71,7 @@
       <div class="progress">
         <div class="title">小程序开发流程</div>
         <div class="content">
-          <div class="left">
+          <div class="left active-left">
             <img src="../../assets/images/pro00.png" alt="">
           </div>
           <div class="right">
@@ -162,31 +163,31 @@
       <div class="deliver-center">
         <div class="deliver-title">交付标准</div>
         <div class="items">
-          <div class="item">
+          <div class="item active-del1">
             <div class="circle">
               <img src="../../assets/images/q1.png" alt="">
             </div>
             <div class="text">产品文档</div>
           </div>
-          <div class="item">
+          <div class="item active-del2">
             <div class="circle">
               <img src="../../assets/images/q2.png" alt="">
             </div>
             <div class="text">设计稿源文件</div>
           </div>
-          <div class="item">
+          <div class="item active-del3">
             <div class="circle">
               <img src="../../assets/images/q3.png" alt="">
             </div>
             <div class="text">源代码</div>
           </div>
-          <div class="item">
+          <div class="item active-del4">
             <div class="circle">
               <img src="../../assets/images/q4.png" alt="">
             </div>
             <div class="text">使用文档</div>
           </div>
-          <div class="item">
+          <div class="item active-del5">
             <div class="circle">
               <img src="../../assets/images/q5.png" alt="">
             </div>
@@ -290,19 +291,27 @@
       </div>
       <div class="items">
         <div class="item">
-          <img src="../../assets/images/j1.png" class="item-img" alt="">
+          <div class="img">
+            <img src="../../assets/images/j1.png" class="item-img" alt="">
+          </div>
           <div class="item-title">程序使用培训</div>
         </div>
         <div class="item">
-          <img src="../../assets/images/j2.png" class="item-img" alt="">
+          <div class="img">
+            <img src="../../assets/images/j2.png" class="item-img" alt="">
+          </div>
           <div class="item-title">项目问题咨询</div>
         </div>
         <div class="item">
-          <img src="../../assets/images/j3.png" class="item-img" alt="">
+          <div class="img">
+            <img src="../../assets/images/j3.png" class="item-img" alt="">
+          </div>
           <div class="item-title">项目部署及维护</div>
         </div>
         <div class="item">
-          <img src="../../assets/images/j4.png" class="item-img" alt="">
+          <div class="img">
+            <img src="../../assets/images/j4.png" class="item-img" alt="">
+          </div>
           <div class="item-title">后期功能升级和修改</div>
         </div>
       </div>
@@ -487,6 +496,9 @@
       }
     },
     methods: {
+      openDialog(){
+        this.$dia()
+      },
       changePage(index){
         this.progressPage+=index
         if(this.progressPage==1){
@@ -561,6 +573,16 @@
         // }
 
       }
+    },
+    mounted() {
+      let that = this
+      that.$ami('.active-left',200,'left','30%',.5,true)
+      that.$ami('.active-del1',0,'top','30%',1,true)
+      that.$ami('.active-del2',100,'top','30%',1,true)
+      that.$ami('.active-del3',200,'top','30%',1,true)
+      that.$ami('.active-del4',300,'top','30%',1,true)
+      that.$ami('.active-del5',400,'top','30%',1,true)
+
     }
   }
 </script>
@@ -629,24 +651,69 @@
             }
 
             .more {
-              cursor: pointer;
               width: 164px;
-              height: 62px;
-              border: 2px solid rgba(0, 76, 229, 1);
+              height: 56px;
+              border: 2px solid #004ce5;
               display: flex;
-              justify-content: center;
               align-items: center;
-
-              font-size: 16px;
-              font-weight: 400;
-              color: rgba(0, 75, 229, 1);
-              line-height: 26px;
-
-              img {
-                width: 24px;
-                height: 9px;
-                margin-left: 10px;
+              justify-content: center;
+              cursor: pointer;
+              .text {
+                transition: all .5s;
+                font-size: 16px;
+                font-weight: 400;
+                color: #004ce5;
               }
+              img {
+                transition: all .5s;
+                margin-left: 10px;
+                width: 26px;
+                height: 9px;
+              }
+              .more1{
+                display: block;
+              }
+              .more0{
+                display: none;
+              }
+
+              z-index: 1;
+              position: relative;
+              font-size: inherit;
+              font-family: inherit;
+              color: white;
+              outline: none;
+              overflow: hidden;
+              transition: color 0.4s ease-in-out;
+            }
+            .more::before {
+              content: '';
+              z-index: -1;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 1em;
+              height: 1em;
+              border-radius: 50%;
+              background-color: #004ce5;
+              transform-origin: center;
+              transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+              transition: transform 0.45s ease-in-out;
+            }
+            .more:hover {
+              cursor: pointer;
+              .text{
+                color: #ffffff;
+              }
+              .more1{
+                display: none;
+              }
+              .more0{
+                display: block;
+              }
+            }
+            .more:hover::before {
+              transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
             }
           }
 
@@ -1043,9 +1110,15 @@
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
-          .item-img{
+          .img{
+            overflow: hidden;
             width:287px;
             height:201px;
+            .item-img{
+              transition: all 1s;
+              width:100%;
+              height:100%;
+            }
           }
           .item-title{
             width: 100%;
@@ -1054,6 +1127,12 @@
             font-weight:500;
             color:rgba(51,51,51,1);
             margin: 30px 0;
+          }
+        }
+        .item:hover{
+          cursor: pointer;
+          .item-img{
+            transform: scale(1.2);
           }
         }
       }

@@ -26,6 +26,7 @@
                             layout="prev, pager, next"
                             @current-change="handleSizeChange"
                             :total="total"
+                            :page-size="pageSize"
                     ></el-pagination>
                 </div>
             </div>
@@ -56,7 +57,8 @@
                 page: 1,
                 datalist: [],
                 total: 0,
-                loading: false
+                loading: false,
+                pageSize:8
             }
         },
         created() {
@@ -70,15 +72,15 @@
                  Caseapi({
                     pindex: that.pindex,
                     page: that.page,
-                    limit: 8
+                    limit: that.pageSize
                 }).then(res=>{
                     let data=res.data
                      that.datalist = data.rows
                      that.total = data.total
                      that.loading = false
-                     console.log(data, '客户案例')
-                     console.log(that.total, 'this.total')
-                     console.log(that.page, 'this.total')
+                     //console.log(data, '客户案例')
+                     //console.log(that.total, 'this.total')
+                     //console.log(that.page, 'this.total')
                 })
 
             },
@@ -162,6 +164,7 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 .center-item-box {
+                    transition: all .3s;
                     margin: 20px;
                     cursor: pointer;
                     width: 280px;
@@ -170,10 +173,9 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-
                     .img-box {
                         width: 100%;
-                        height: 280px;
+                        height: 290px;
                         overflow: hidden;
 
                         .img {
@@ -187,21 +189,21 @@
 
                     .bottom {
                         width: 100%;
-                        height: calc(100% - 280px);
+                        height: calc(100% - 290px);
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
 
                         .line1 {
-                            font-size: 24px;
+                            font-size: 20px;
                             font-weight: 400;
                             color: #333333;
                         }
 
                         .line2 {
-                            font-size: 16px;
-                            margin-top: 10px;
+                            font-size: 14px;
+                            margin-top: 5px;
                             font-weight: 400;
                             color: #9eaac3;
                             @include line-hidden(1);

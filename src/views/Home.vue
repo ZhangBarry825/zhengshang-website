@@ -63,9 +63,34 @@
         </div>
         <div class="project-process">
             <div class="center-back " :style="'width: '+(1300+halfMargin)+'px'">
-                <div class="center active-left2">
+                <div class="center">
                     <div class="center-title">项目服务流程</div>
-                    <img class="active-item3" src="../assets/images/xmfwlc2.png" alt/>
+                    <div class="center-pic-box">
+                        <div class="xm">
+                            <img class="active-xm" src="../assets/images/xm.png" alt/>
+                        </div>
+                        <div class="xm0">
+                            <img class="active-xm0" src="../assets/images/xm0.png" alt/>
+                        </div>
+                        <div class="xm1">
+                            <img class="active-xm1" src="../assets/images/xm1.png" alt/>
+                        </div>
+                        <div class="xm2">
+                            <img class="active-xm2" src="../assets/images/xm2.png" alt/>
+                        </div>
+                        <div class="xm3">
+                            <img class="active-xm3" src="../assets/images/xm3.png" alt/>
+                        </div>
+                        <div class="xm4">
+                            <img class="active-xm4" src="../assets/images/xm4.png" alt/>
+                        </div>
+                        <div class="xm5">
+                            <img class="active-xm5" src="../assets/images/xm5.png" alt/>
+                        </div>
+                        <div class="xm6">
+                            <img class="active-xm6" src="../assets/images/xm6.png" alt/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,24 +173,22 @@
             </div>
         </div>
 
-
-        <div class="center-dialog" v-if="showCenterDialog">
-            <div class="dialog-content">
-                <img class="close" @click="showCenterDialog=false" src="../assets/images/cc-close.png" alt="">
-                <div class="line1">正尚网络科技欢迎您</div>
-                <div class="line2">请问您是想了解App还是小程序开发呢？</div>
-                <div class="line3">
-                    <div class="title">全年服务热线：</div>
-                    <div class="tel">
-                        <img src="../assets/images/kefu.png" alt="">
-                        <div class="num">15238699705</div>
+        <transition name="fade">
+            <div class="center-dialog" v-show="showCenterDialog">
+                <div class="dialog-box">
+                    <img class="dialog-back" src="../assets/images/dialog-b.png" alt="">
+                    <img @click="showCenterDialog=false" class="close-dialog" src="../assets/images/cccc.png" alt="">
+                    <div class="center-text">
+                        <div class="line1">您好，欢迎来到正尚网络，</div>
+                        <div class="line2">请问有什么可以帮您？</div>
+                        <div class="line3">
+                            <div class="btn1" @click="showCenterDialog=false">稍后再说</div>
+                            <div class="btn2" @click="openDialog">现在咨询</div>
+                        </div>
                     </div>
                 </div>
-                <el-row class="bottom-row">
-                    <el-button type="primary" @click="openDialog">立即咨询</el-button>
-                </el-row>
             </div>
-        </div>
+        </transition>
         <Footer></Footer>
     </div>
 </template>
@@ -299,6 +322,15 @@
             that.$ami('.active-about3', 300, 'right', '30%', 1, true)
 
 
+            that.$ami('.active-xm0', 0, 'top', '100%', .3, true)
+            that.$ami('.active-xm1', 100, 'top', '100%', .3, true)
+            that.$ami('.active-xm2', 200, 'top', '100%', .3, true)
+            that.$ami('.active-xm3', 300, 'top', '100%', .3, true)
+            that.$ami('.active-xm4', 400, 'top', '100%', .3, true)
+            that.$ami('.active-xm5', 500, 'top', '100%', .3, true)
+            that.$ami('.active-xm6', 600, 'top', '100%', .3, true)
+
+
             // that.$ami('.active-item3',0,'top','10%',.5,true)
 
             this.screenWidth = document.body.clientWidth;
@@ -318,6 +350,14 @@
 </script>
 
 <style lang="scss" scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+    {
+        opacity: 0;
+    }
     .home {
         @include page-style;
         height: 100%;
@@ -524,6 +564,7 @@
                             transition: all 1.5s;
                             transform: rotateY(540deg);
                         }
+
                         .item-description {
                             color: rgba(255, 255, 255, 1);
                         }
@@ -709,6 +750,54 @@
                         font-weight: 500;
                         color: #ffffff;
                         margin-bottom: 83px;
+                    }
+
+                    .center-pic-box {
+                        position: relative;
+                        margin-top: 120px;
+
+                        .xm0, .xm1, .xm2, .xm3, .xm4, .xm5, .xm6 {
+                            position: absolute;
+
+                            img {
+                                position: relative;
+                            }
+                        }
+
+                        .xm0 {
+                            left: 430px;
+                            bottom: 286px;
+                        }
+
+                        .xm1 {
+                            left: 108px;
+                            top: -28px;
+                        }
+
+                        .xm2 {
+                            left: 260px;
+                            top: -91px;
+                        }
+
+                        .xm3 {
+                            right: 270px;
+                            top: -92px;
+                        }
+
+                        .xm4 {
+                            right: 112px;
+                            top: -15px;
+                        }
+
+                        .xm5 {
+                            right: 305px;
+                            bottom: 171px;
+                        }
+
+                        .xm6 {
+                            left: 286px;
+                            bottom: 175px;
+                        }
                     }
                 }
             }
@@ -1123,93 +1212,74 @@
         .center-dialog {
             z-index: 5;
             position: fixed;
-            top: 30%;
-            left: calc(50% - 200px);
+            top: 20%;
+            left: calc(50% - 250px);
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .2);
-            background-color: #ffffff;
 
-            .dialog-content {
-                min-height: 100px;
-                min-width: 400px;
-                background-color: #ffffff;
-                border: none;
+            .dialog-box {
+                width: 500px;
+                height: 496px;
+                position: relative;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                padding: 30px;
-                box-sizing: border-box;
+                justify-content: flex-end;
 
-                .close {
-                    width: 25px;
-                    height: 25px;
+                .dialog-back {
                     position: absolute;
-                    right: 30px;
-                    top: 30px;
+                }
+
+                .close-dialog {
                     cursor: pointer;
+                    position: absolute;
+                    right: 40px;
+                    top: 170px;
                 }
 
-                .line1 {
-                    font-size: 22px;
-                    text-align: center;
-                    width: 100%;
-                    letter-spacing: 1px;
-                    box-sizing: border-box;
-                    color: #3A3C4C;
-                    margin-bottom: 20px;
-                }
-
-                .line2 {
-                    font-size: 16px;
-                    line-height: 20px;
-                    text-align: left;
-                    max-height: 60px;
-                    overflow: auto;
-                    width: 100%;
-                    word-wrap: break-word;
-                    color: #3A3C4C;
-                }
-
-                .line3 {
-                    margin-top: 30px;
+                .center-text {
+                    z-index: 5;
+                    height: 270px;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
-
-                    .title {
-                        font-size: 14px;
-                        text-align: left;
-                        word-wrap: break-word;
-                        color: rgba(58, 60, 76, 0.64);
-                    }
-
-                    .tel {
-                        margin-top: 5px;
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        img{
-                            width: 30px;
-                            height: 30px;
-                        }
-                        .num{
-                            font-size: 25px;
-                            color: #666666;
-                        }
-                    }
-                }
-
-                .bottom-row {
-                    padding-top: 20px;
-                    width: 100%;
-                    display: flex;
                     justify-content: center;
+                    align-items: center;
 
-                    .el-button {
+                    .line1 {
+                        font-size: 24px;
+                        color: #ffffff;
+                    }
+
+                    .line2 {
+                        margin-top: 20px;
+                        font-size: 28px;
+                        color: #ffffff;
+                        letter-spacing: 3px;
+                    }
+
+                    .line3 {
+                        display: flex;
                         width: 100%;
-                        background-color: #ff6600;
-                        border-color: #ff6600;
+                        justify-content: space-around;
+                        margin-top: 30px;
+
+                        .btn1 {
+                            cursor: pointer;
+                            font-size: 20px;
+                            color: #ffffff;
+                            border: 1px solid #ffffff;
+                            border-radius: 50px;
+                            padding: 15px 40px;
+                        }
+
+                        .btn2 {
+                            cursor: pointer;
+                            font-size: 20px;
+                            color: #014ce5;
+                            background-color: #ffffff;
+                            border-radius: 50px;
+                            padding: 15px 40px;
+                        }
                     }
                 }
             }

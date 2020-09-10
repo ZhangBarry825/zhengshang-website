@@ -4,7 +4,7 @@
     <div class="content" v-loading="loading">
       <div class="center">
         <div class="content-left">
-          <img :src="info.info.content" alt />;
+          <img :src="info.info.content" alt />
         </div>
         <div class="content-right">
           <div

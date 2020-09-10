@@ -37,12 +37,6 @@ Vue.prototype.$dia = ()=>{
   form.submit();
 };
 
-let author={
-  'powered by': 'BarryZhang',
-  'email':'530027054@qq.com'
-}
-console.warn(author)
-
 
 new Vue({
   router,

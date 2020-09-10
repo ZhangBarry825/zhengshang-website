@@ -24,7 +24,7 @@
             <div class="center">
                 <div class="center-title">我们的服务</div>
                 <div class="items">
-                    <div class="item active-item2" v-for="(item,index) in serviceList" :key="index">
+                    <div class="item active-item2" @click="openDialog" v-for="(item,index) in serviceList" :key="index">
                         <div class="img" :style="'background-image: url('+item.img+');'"></div>
                         <div class="item-title">{{item.title}}</div>
                         <div class="item-description">{{item.description}}</div>
@@ -148,6 +148,24 @@
             </div>
         </div>
 
+
+        <div class="center-dialog" v-if="showCenterDialog">
+            <div class="dialog-content">
+                <img class="close" @click="showCenterDialog=false" src="../assets/images/cc-close.png" alt="">
+                <div class="line1">正尚网络科技欢迎您</div>
+                <div class="line2">请问您是想了解App还是小程序开发呢？</div>
+                <div class="line3">
+                    <div class="title">全年服务热线：</div>
+                    <div class="tel">
+                        <img src="../assets/images/kefu.png" alt="">
+                        <div class="num">15238699705</div>
+                    </div>
+                </div>
+                <el-row class="bottom-row">
+                    <el-button type="primary" @click="openDialog">立即咨询</el-button>
+                </el-row>
+            </div>
+        </div>
         <Footer></Footer>
     </div>
 </template>
@@ -184,7 +202,8 @@
                     // observeParents: true,
                 },
                 homeData: {},
-                aboutus: {}
+                aboutus: {},
+                showCenterDialog: false
             }
         },
         computed: {
@@ -205,35 +224,9 @@
 
         methods: {
             open() {
-                this.$alert(``, '客服会话', {
-                    dangerouslyUseHTMLString: true,
-                    showConfirmButton:false
-                });
-                var KLT_MINI_IFRAME = document.getElementById("KLT-MINI-IFRAME");
-                var search = window.location.search.substr(1, window.location.search.length)
-                KLT_MINI_IFRAME.src = KLT_MINI_IFRAME.src + search;
-            },
-            KLT_SUBMIT_FORM(formID, formName, isBlank) {
-                if (typeof isBlank != 'boolean') isBlank = false;
-                var KLT_H = 'https://live02.wasnnznyy.com/chat/chat/rRRLt%40AwGdSzybKiEGFYfA%24%24?lng=cn';
-                var KLT_F = document.getElementById(formID);
-                var KLT_A = 'data-klt-title';
-                var KLT_I_L = KLT_F.querySelectorAll('[' + KLT_A + ']');
-                var KLT_F_T = {form_name: formName, form_content: []};
-                for (var i = 0, count = KLT_I_L.length; i < count; i++) {
-                    var item = KLT_I_L[i];
-                    if (item.getAttribute) KLT_F_T.form_content.push({
-                        item_name: item.getAttribute(KLT_A),
-                        item_value: item.value
-                    });
-                }
-                var _d = encodeURIComponent(JSON.stringify(KLT_F_T).replace('<', '&lt;').replace('>', '&gt;'));
-                var _h = KLT_H + '&form_text=' + encodeURIComponent(_d);
-                if (isBlank) {
-                    window.open(_h, '_blank');
-                } else {
-                    location.href = _h;
-                }
+                this.showCenterDialog = true
+                clearInterval(this.timer)
+                this.autoAlertDialog()
             },
             //   获取轮播
             async getCarousel() {
@@ -246,9 +239,9 @@
             openDialog() {
                 this.$dia()
             },
-            alertDialog() {
+            autoAlertDialog() {
                 this.timer = setInterval(() => {
-                    this.$dia()
+                    this.open()
                 }, 30000)
             }
         },
@@ -256,7 +249,7 @@
             let that = this
             this.swiper.slideTo(1, 1000, false)
             //咨询弹窗 30s
-            this.alertDialog()
+            this.autoAlertDialog()
 
             that.$ami('.active-item1', 0, 'top', '0%', 1, true, () => {
                 //console.log('123')
@@ -402,7 +395,8 @@
                         width: 1em;
                         height: 1em;
                         border-radius: 50%;
-                        background-color: #3cefff;
+                        /*background-color: #3cefff;*/
+                        background-color: #004ce5;
                         transform-origin: center;
                         transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
                         transition: transform 0.45s ease-in-out;
@@ -517,6 +511,7 @@
                             font-weight: 400;
                             color: rgba(158, 170, 195, 1);
                             @include line-hidden(3);
+                            transition: all .5s;
                         }
                     }
 
@@ -528,6 +523,9 @@
                         .img {
                             transition: all 1.5s;
                             transform: rotateY(540deg);
+                        }
+                        .item-description {
+                            color: rgba(255, 255, 255, 1);
                         }
                     }
                 }
@@ -1117,6 +1115,101 @@
                                 height: 12px;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .center-dialog {
+            z-index: 5;
+            position: fixed;
+            top: 30%;
+            left: calc(50% - 200px);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .2);
+            background-color: #ffffff;
+
+            .dialog-content {
+                min-height: 100px;
+                min-width: 400px;
+                background-color: #ffffff;
+                border: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+                box-sizing: border-box;
+
+                .close {
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    right: 30px;
+                    top: 30px;
+                    cursor: pointer;
+                }
+
+                .line1 {
+                    font-size: 22px;
+                    text-align: center;
+                    width: 100%;
+                    letter-spacing: 1px;
+                    box-sizing: border-box;
+                    color: #3A3C4C;
+                    margin-bottom: 20px;
+                }
+
+                .line2 {
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-align: left;
+                    max-height: 60px;
+                    overflow: auto;
+                    width: 100%;
+                    word-wrap: break-word;
+                    color: #3A3C4C;
+                }
+
+                .line3 {
+                    margin-top: 30px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .title {
+                        font-size: 14px;
+                        text-align: left;
+                        word-wrap: break-word;
+                        color: rgba(58, 60, 76, 0.64);
+                    }
+
+                    .tel {
+                        margin-top: 5px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            width: 30px;
+                            height: 30px;
+                        }
+                        .num{
+                            font-size: 25px;
+                            color: #666666;
+                        }
+                    }
+                }
+
+                .bottom-row {
+                    padding-top: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    .el-button {
+                        width: 100%;
+                        background-color: #ff6600;
+                        border-color: #ff6600;
                     }
                 }
             }

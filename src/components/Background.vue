@@ -81,8 +81,9 @@ export default {
   background-image: url('../assets/images/mini1.png');
   .center {
     .right {
-      width: 593px;
-      height: 462px;
+      margin-right: 50px;
+      width: 736px;
+      height: 532px;
       background-image: url('../assets/images/mini2.png');
     }
   }

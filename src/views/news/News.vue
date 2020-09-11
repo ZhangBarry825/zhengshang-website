@@ -102,9 +102,7 @@ export default {
         this.recommend.push(data.rows[0])
         this.recommend.push(data.rows[1])
         this.recommend.push(data.rows[2])
-        data.rows.splice(0, 1);
-        data.rows.splice(1, 1);
-        data.rows.splice(2, 1);
+        data.rows.splice(0, 3);
         this.newslist = data.rows
         //console.log(this.newslist, "1111111111")
       } else if (this.page == 1 && data.rows.length > 0 && data.rows.length < 3) {

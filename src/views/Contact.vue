@@ -69,7 +69,7 @@
         </div>
         <div class="item">
           <div class="item-left">
-            <img src="../assets/images/address.png" alt />
+            <img src="../assets/images/tel.png" alt />
           </div>
           <div class="item-right">
             <div class="line1">电话</div>

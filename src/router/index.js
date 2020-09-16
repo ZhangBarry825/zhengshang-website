@@ -91,15 +91,21 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    window.scrollTo(0,0)
+    const isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+    if(isMobile){
+        window.location.href="http://www.zhengshangwl.com/mobile/index.html";
+    }else{
+        window.scrollTo(0,0)
 
-    if(routes.find((val)=>{
-        return val.path == to.path
-    })){
-        next()
-    }else {
-        next('/')
+        if(routes.find((val)=>{
+            return val.path == to.path
+        })){
+            next()
+        }else {
+            next('/')
+        }
     }
+
 })
 
 export default router

@@ -148,6 +148,7 @@
                 <div class="center-title">合作伙伴</div>
                 <div class="items">
                     <div
+                            v-if="index<10"
                             v-for="(item, index) in homeData.partner"
                             :key="index"
                             :class="'item active-partner'+index"

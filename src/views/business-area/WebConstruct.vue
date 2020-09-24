@@ -302,28 +302,28 @@
                                     <img src="../../assets/images/su1.png" >
                                     <div class="title-text">程序使用培训</div>
                                 </div>
-                                <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                                <div class="support-item-context">项目完成上线后，提供详细的使用说明文档和源码，并有专人答疑解惑</div>
                             </div>
                             <div class="support-item">
                                 <div class="support-item-title">
                                     <img src="../../assets/images/su2.png" >
                                     <div class="title-text">项目问题咨询</div>
                                 </div>
-                                <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                                <div class="support-item-context">从项目立项到上线，过程中有任何问题都可以咨询我们的销售顾问或技术人员</div>
                             </div>
                             <div class="support-item">
                                 <div class="support-item-title">
                                     <img src="../../assets/images/su3.png" >
                                     <div class="title-text">项目部署及维护</div>
                                 </div>
-                                <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                                <div class="support-item-context">项目完成后，会进行整体的测试，后期使用过程中有bug可以联系我们，会有专人对您的项目进行维护</div>
                             </div>
                             <div class="support-item">
                                 <div class="support-item-title">
                                     <img src="../../assets/images/su4.png" >
                                     <div class="title-text">后期功能升级和修改</div>
                                 </div>
-                                <div class="support-item-context">程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训程序使用培训</div>
+                                <div class="support-item-context">项目使用过程中，想升级功能或改版，随时联系我们，会有销售顾问给您提供专业化的建议</div>
                             </div>
                         </div>
 
